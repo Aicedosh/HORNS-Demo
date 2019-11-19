@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1423536454702813858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.22, y: 0, z: 0}
-  m_LocalScale: {x: 0.40133333, y: 0.40133333, z: 0.40133333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1423536454703173256}
   - {fileID: 1423536454703173258}
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4a72f56d9f90b42a12a7d9a12d93bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Home: {fileID: 0}
+  Tavern: {fileID: 0}
 --- !u!195 &1423536454702781443
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -377,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423536454703173260}
   - component: {fileID: 1423536454708092842}
+  - component: {fileID: 3738088651031634259}
   m_Layer: 0
   m_Name: BasicBandit_Clothes
   m_TagString: Untagged
@@ -502,6 +505,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0050076693, y: -0.104066074, z: -0.0239001}
     m_Extent: {x: 0.44236904, y: 0.8386418, z: 0.26055178}
   m_DirtyAABB: 0
+--- !u!114 &3738088651031634259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423536454702813868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b1c1c7efeab79499e9a74a4659f112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1423536454702813870
 GameObject:
   m_ObjectHideFlags: 0

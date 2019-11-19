@@ -38,6 +38,16 @@ public class AgentUI : MonoBehaviour
         selectedAgent?.PerformNextAction();
     }
 
+    public void GoHome()
+    {
+        selectedAgent?.GoHome();
+    }
+
+    public void GoTavern()
+    {
+        selectedAgent?.GoTavern();
+    }
+
     public void SelectAgent(AgentAI agent)
     {
         selectedAgent = agent;
