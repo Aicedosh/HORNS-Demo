@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &243576857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7b7d7c30b9591408f72ca74177451a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Variable: {fileID: 6490725817241155928}
-  DesiredValue: 100
-  ValueFactor: 1
 --- !u!114 &4143187021060360411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  RadishCount: {fileID: 6490725817241155928}
+  RadishCount: {fileID: 0}
 --- !u!1 &6193596796457351598
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2262063338916219367}
-  - component: {fileID: 6490725817241155928}
+  - component: {fileID: 7951670541037362781}
   m_Layer: 0
   m_Name: RadishCount
   m_TagString: Untagged
@@ -74,7 +59,7 @@ Transform:
   m_Father: {fileID: 1021885140679898971}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6490725817241155928
+--- !u!114 &7951670541037362781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,10 +68,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6193596796457351598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c294f569d5cbc498a230f5545d3705, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Radishes
+  Name: Radish
 --- !u!1001 &2156975465730898393
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,4 +31,17 @@ public class AgentAI : MonoBehaviour
         HORNS.Action action = agent.GetNextAction();
         action?.Perform();
     }
+
+    public Transform Home;
+    public Transform Tavern;
+
+    public void GoHome()
+    {
+        GetComponent<Navigator>().GoTo(Home);
+    }
+
+    public void GoTavern()
+    {
+        GetComponent<Navigator>().GoTo(Tavern);
+    }
 }
