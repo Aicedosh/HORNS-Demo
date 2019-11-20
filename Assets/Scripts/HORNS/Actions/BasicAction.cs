@@ -38,7 +38,7 @@ public abstract class BasicAction : MonoBehaviour
     protected virtual void AddResults(HORNS.Action action) { }
 
     //Call this method in subclass on action's end (e.g. agent is at the desired target)
-    protected void OnActionEnd()
+    protected virtual void OnActionEnd()
     {
         agentAI.IsExecuting = false;
     }

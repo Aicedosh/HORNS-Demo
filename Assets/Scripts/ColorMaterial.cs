@@ -19,6 +19,10 @@ public class ColorMaterial : MonoBehaviour
 
     void Update()
     {
+        if(propBlock == null)
+        {
+            return;
+        }
         renderer.GetPropertyBlock(propBlock);
         propBlock.SetColor("_Color", Color);
         renderer.SetPropertyBlock(propBlock);

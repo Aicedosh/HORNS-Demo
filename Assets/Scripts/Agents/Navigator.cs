@@ -50,6 +50,28 @@ public class Navigator : MonoBehaviour
         return true;
     }
 
+    public Transform GoToNearest(IEnumerable<Transform> transforms, System.Action finishCallback = null)
+    {
+        if (isWalking)
+        {
+            return null;
+        }
+
+        float dist = float.PositiveInfinity;
+        Transform nearest = null;
+        foreach(Transform transform in transforms)
+        {
+            float d = GetDistanceTo(transform.position);
+            if(d < dist)
+            {
+                dist = d;
+                nearest = transform;
+            }
+        }
+
+        return nearest != null && GoTo(nearest, finishCallback) ? nearest : null;
+    }
+
     private float GetDistanceTo(Vector3 pos)
     {
         NavMeshPath path = new NavMeshPath();

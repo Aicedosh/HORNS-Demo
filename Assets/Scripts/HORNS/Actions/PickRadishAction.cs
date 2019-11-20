@@ -7,12 +7,20 @@ public class PickRadishAction : BasicAction
 {
     Navigator navigator;
 
-    public Transform Target;
     public IntVariable RadishCount;
+    public RadishField RadishField;
+
+    private Transform target;
 
     protected override void ActionResult()
     {
-        navigator.GoTo(Target, OnActionEnd);
+        target = navigator.GoToNearest(RadishField.GetAllRadishPositions(), OnActionEnd);
+    }
+
+    protected override void OnActionEnd()
+    {
+        RadishField.Remove(target);
+        base.OnActionEnd();
     }
 
     protected override void AddResults(Action action)
