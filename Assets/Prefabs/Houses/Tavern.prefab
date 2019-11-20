@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 2850882909205921094}
   - component: {fileID: 5926928466529779933}
   - component: {fileID: 4022674999765006744}
+  - component: {fileID: 836526356255935826}
   m_Layer: 0
   m_Name: Tavern
   m_TagString: Untagged
@@ -176,12 +177,25 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.12, y: 1.84, z: 1.765}
+  m_Extents: {x: 1.12, y: 1.84, z: 1.43}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.12, y: 1.49, z: -0.02}
   m_TimeToStationary: 0.5
+--- !u!65 &836526356255935826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282126483210735445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.24, y: 3.68, z: 3.53}
+  m_Center: {x: 0.12, y: 1.49, z: -0.02}
 --- !u!1 &2072892699703280998
 GameObject:
   m_ObjectHideFlags: 0

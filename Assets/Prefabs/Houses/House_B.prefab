@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8287500059942942253}
   - component: {fileID: 2343814537360955328}
   - component: {fileID: 820094805520762824}
+  - component: {fileID: 7587223429779815116}
   m_Layer: 0
   m_Name: House_B_AddonBottom
   m_TagString: Untagged
@@ -95,6 +96,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -1.264, y: -2.0080001, z: 0.75000006}
   m_TimeToStationary: 0.5
+--- !u!65 &7587223429779815116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351704167443616625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1734312, y: 2.1314168, z: 1.4999998}
+  m_Center: {x: -1.2641095, y: -2.0081334, z: 0.7499999}
 --- !u!1 &1263508566634238633
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +462,7 @@ GameObject:
   - component: {fileID: 221755136068396092}
   - component: {fileID: 8557725431462255015}
   - component: {fileID: 7939860052166010536}
+  - component: {fileID: 8899664949345525377}
   m_Layer: 0
   m_Name: House_B
   m_TagString: Untagged
@@ -514,6 +529,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.94, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &8899664949345525377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839473472953603631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.05, y: 6.51, z: 2.13}
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!1 &4194883447849380721
 GameObject:
   m_ObjectHideFlags: 0

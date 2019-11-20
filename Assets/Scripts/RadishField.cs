@@ -7,9 +7,12 @@ public class RadishField : SpawnOnClick
 {
     private List<GameObject> radishes = new List<GameObject>();
 
+    public IntVariable RadishCount;
+
     public override void OnClick(Vector3 position)
     {
         radishes.Add(SpawnWithRandomRotation(position));
+        RadishCount.LibVariable.Value++;
     }
 
     public IEnumerable<Transform> GetAllRadishPositions()
@@ -19,7 +22,7 @@ public class RadishField : SpawnOnClick
 
     public void Remove(Transform transform)
     {
-        Destroy(transform.gameObject);
         radishes.Remove(transform.gameObject);
+        RadishCount.LibVariable.Value--;
     }
 }

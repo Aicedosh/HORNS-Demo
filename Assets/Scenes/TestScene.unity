@@ -105,7 +105,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.21
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -113,7 +113,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.07
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -213,7 +213,7 @@ RectTransform:
   m_Children:
   - {fileID: 1989324503}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -439,75 +439,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348009668}
   m_CullTransparentMesh: 0
---- !u!1001 &419309263
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5500997901128978590, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_Name
-      value: Radish
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.12539381
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 26.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.48258805
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.33900914
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.2097852
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7798537
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 63.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 46.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d24fd2b8e4f26004b9d9badfcc8dceab, type: 3}
 --- !u!1001 &626371377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,6 +446,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9198142280997534113, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RestSpot
+      value: 
+      objectReference: {fileID: 927714271}
     - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_Name
@@ -524,7 +460,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Variable
       value: 
-      objectReference: {fileID: 1927625106}
+      objectReference: {fileID: 1616334255}
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -563,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
@@ -594,17 +530,22 @@ PrefabInstance:
         type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 1085619418}
+      objectReference: {fileID: 0}
     - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishCount
       value: 
-      objectReference: {fileID: 1927625106}
+      objectReference: {fileID: 0}
     - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishField
       value: 
       objectReference: {fileID: 1201502180}
+    - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RadishCountOnField
+      value: 
+      objectReference: {fileID: 1201502181}
     - target: {fileID: 2857730139254788372, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: AgentCanvasGroup
@@ -630,6 +571,16 @@ PrefabInstance:
       propertyPath: Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4408212736644705059, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RadishAtDestination
+      value: 
+      objectReference: {fileID: 1616334255}
+    - target: {fileID: 4408212736644705059, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: Destination
+      value: 
+      objectReference: {fileID: 916832439}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 661d3c841be874140922bbd9332f7d13, type: 3}
 --- !u!1 &705507993
@@ -721,7 +672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &790014075
 GameObject:
@@ -964,7 +915,7 @@ Transform:
   - {fileID: 5006512735953367638}
   - {fileID: 966642933}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &916832439 stripped
 Transform:
@@ -989,6 +940,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1061,6 +1013,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 33.159, y: 131.93701, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1decce49ab383764bbf7de816def2193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowardsSpeed: 20
+  AngularSpeed: 20
+  MoveSpeed: 15
+  RotateSpeed: 60
 --- !u!1001 &966642932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1136,12 +1104,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 966642932}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1085619418 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5495310531319091764, guid: d24fd2b8e4f26004b9d9badfcc8dceab,
-    type: 3}
-  m_PrefabInstance: {fileID: 419309263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201502175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1117,7 @@ GameObject:
   - component: {fileID: 1201502177}
   - component: {fileID: 1201502176}
   - component: {fileID: 1201502180}
+  - component: {fileID: 1201502181}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -1234,7 +1197,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1201502180
 MonoBehaviour:
@@ -1249,6 +1212,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5500997901128978590, guid: d24fd2b8e4f26004b9d9badfcc8dceab, type: 3}
+  RadishCount: {fileID: 1201502181}
+--- !u!114 &1201502181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201502175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Number of radishes
 --- !u!1 &1412427532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1263,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 170.1, y: 369}
+  m_SizeDelta: {x: 227.79, y: 369}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1412427534
 MonoBehaviour:
@@ -1357,7 +1334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1424932602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1529,8 +1506,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1616334254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1282126483210735445, guid: 9c0a0f8939d330144837925c6b6f16f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7127766819909881616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1616334255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616334254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Radishes in tavern
 --- !u!1001 &1771202970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1740,18 +1736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786798206}
   m_CullTransparentMesh: 0
---- !u!114 &1834010226 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7951670541037362781, guid: 661d3c841be874140922bbd9332f7d13,
-    type: 3}
-  m_PrefabInstance: {fileID: 1861988120}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1861988120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1759,6 +1743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9198142280997534113, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RestSpot
+      value: 
+      objectReference: {fileID: 1953819087}
     - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_Name
@@ -1773,7 +1762,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Variable
       value: 
-      objectReference: {fileID: 1834010226}
+      objectReference: {fileID: 1616334255}
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1812,7 +1801,7 @@ PrefabInstance:
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1021885140679898971, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
@@ -1858,17 +1847,22 @@ PrefabInstance:
         type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 1085619418}
+      objectReference: {fileID: 0}
     - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishCount
       value: 
-      objectReference: {fileID: 1834010226}
+      objectReference: {fileID: 1616334255}
     - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishField
       value: 
       objectReference: {fileID: 1201502180}
+    - target: {fileID: 8919458755940194725, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RadishCountOnField
+      value: 
+      objectReference: {fileID: 1201502181}
     - target: {fileID: 2857730139254788372, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: AgentCanvasGroup
@@ -1899,6 +1893,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4408212736644705059, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: RadishAtDestination
+      value: 
+      objectReference: {fileID: 1616334255}
+    - target: {fileID: 4408212736644705059, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: Destination
+      value: 
+      objectReference: {fileID: 916832439}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 661d3c841be874140922bbd9332f7d13, type: 3}
@@ -1979,18 +1983,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916116791}
   m_CullTransparentMesh: 0
---- !u!114 &1927625106 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7951670541037362781, guid: 661d3c841be874140922bbd9332f7d13,
-    type: 3}
-  m_PrefabInstance: {fileID: 626371377}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1953819087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 329753464911840100, guid: 6df0084c7e0854e4e81adaaaeec44124,

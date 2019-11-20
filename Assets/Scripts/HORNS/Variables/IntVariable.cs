@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class IntVariable : Variable<int>
 {
-    public new IntegerSolver IntSolver { get; } = new IntegerSolver();
-
     public override VariableSolver<int> Solver => IntSolver ;
+    public IntegerSolver IntSolver { get; } = new IntegerSolver();
 }

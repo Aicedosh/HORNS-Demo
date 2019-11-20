@@ -28,12 +28,17 @@ public class Navigator : MonoBehaviour
     {
         if(isWalking && nav.pathPending == false && nav.remainingDistance <= GoalDistance)
         {
-            isWalking = false;
-            finishCallback?.Invoke();
-            nav.isStopped = false;
+            Stop();
         }
 
         anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold);
+    }
+
+    public void Stop()
+    {
+        isWalking = false;
+        finishCallback?.Invoke();
+        nav.isStopped = false;
     }
 
     public bool GoTo(Transform transform, System.Action finishCallback = null)

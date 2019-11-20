@@ -14,20 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoalDistance: 1.2
   WalkAnimationTreshold: 0.2
---- !u!114 &8919458755940194725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10334d8387bc3fa448a44bd1c0706077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  RadishCount: {fileID: 0}
 --- !u!114 &4382469221237806989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,50 +29,62 @@ MonoBehaviour:
   DesiredValue: 100
   ValueFactor: 1
   Variable: {fileID: 0}
---- !u!1 &6193596796457351598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2262063338916219367}
-  - component: {fileID: 7951670541037362781}
-  m_Layer: 0
-  m_Name: RadishCount
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2262063338916219367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6193596796457351598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1021885140679898971}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7951670541037362781
+--- !u!114 &4408212736644705059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6193596796457351598}
+  m_GameObject: {fileID: 1021885140680190843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Script: {fileID: 11500000, guid: f893e662f8a11f9449033132f7d8f5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Radish
+  HasRadish: {fileID: 4582430324654899538}
+  RadishAtDestination: {fileID: 0}
+  Destination: {fileID: 0}
+--- !u!114 &4582430324654899538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HasRadish
+--- !u!114 &8919458755940194725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10334d8387bc3fa448a44bd1c0706077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RadishCountOnField: {fileID: 0}
+  HasRadish: {fileID: 4582430324654899538}
+  RadishField: {fileID: 0}
+--- !u!114 &9198142280997534113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4cc87e580795f42b6852f5cd2e24de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestSpot: {fileID: 0}
 --- !u!1001 &2156975465730898393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,12 +177,6 @@ PrefabInstance:
 --- !u!1 &1021885140680190843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1423536454702813858, guid: 931ebc841e28ee742bf76817681050d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 2156975465730898393}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1021885140679898971 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1423536454703173250, guid: 931ebc841e28ee742bf76817681050d8,
     type: 3}
   m_PrefabInstance: {fileID: 2156975465730898393}
   m_PrefabAsset: {fileID: 0}

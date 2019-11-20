@@ -12,7 +12,14 @@ public class AgentAI : MonoBehaviour
     {
         foreach(BasicAction action in gameObject.GetComponents<BasicAction>())
         {
-            agent.AddAction(action.CreateAction(this)); //TODO: Those names are awful... Change to HORNSAction/LibraryAction or something
+            if(action.IsIdle)
+            {
+                agent.AddIdleAction(action.CreateAction(this));
+            }
+            else
+            {
+                agent.AddAction(action.CreateAction(this)); //TODO: Those names are awful... Change to HORNSAction/LibraryAction or something
+            }
         }
 
         foreach(INeed need in gameObject.GetComponents<INeed>())
@@ -22,7 +29,12 @@ public class AgentAI : MonoBehaviour
         IsExecuting = false;
     }
 
-    public void PerformNextAction() //TODO: Change to do this automatically
+    private void Update()
+    {
+        PerformNextAction();
+    }
+
+    public void PerformNextAction()
     {
         if(IsExecuting)
         {
