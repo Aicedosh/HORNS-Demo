@@ -9,6 +9,8 @@ public class CameraMovement : MonoBehaviour
     public float MoveSpeed;
     public float RotateSpeed;
 
+    public float ZeroLevel;
+
     private void Start()
     {
         
@@ -17,8 +19,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float a = -transform.position.y / transform.forward.y;
-        Vector3 pivot = new Vector3(transform.position.x + a * transform.forward.x, 0, transform.position.z + a * transform.forward.z);
+        float a = (ZeroLevel-transform.position.y) / transform.forward.y;
+        Vector3 pivot = new Vector3(transform.position.x + a * transform.forward.x, ZeroLevel, transform.position.z + a * transform.forward.z);
 
         Vector3 forward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
 
