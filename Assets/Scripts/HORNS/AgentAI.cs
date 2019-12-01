@@ -44,6 +44,11 @@ public class AgentAI : MonoBehaviour
         action?.Perform();
     }
 
+    public void RecalculatePlan()
+    {
+        agent.RecalculateActions();
+    }
+
     public Transform Home;
     public Transform Tavern;
 

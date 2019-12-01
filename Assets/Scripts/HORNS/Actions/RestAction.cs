@@ -8,7 +8,7 @@ public class RestAction : BasicAction
     public Transform RestSpot;
     private Navigator navigator;
 
-    protected override void ActionResult()
+    protected override void Perform()
     {
         navigator.GoTo(RestSpot, OnActionEnd);
     }

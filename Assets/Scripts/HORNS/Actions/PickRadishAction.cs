@@ -11,16 +11,19 @@ public class PickRadishAction : BasicAction
 
     private Transform target;
 
-    protected override void ActionResult()
+    protected override void Perform()
     {
         target = navigator.GoToNearest(RadishField.GetAllRadishPositions(), OnActionEnd);
-        RadishField.Remove(target);
     }
 
-    protected override void OnActionEnd()
+    protected override void OnActionEnd(bool success)
     {
-        Destroy(target.gameObject);
-        base.OnActionEnd();
+        if(success)
+        {
+            RadishField.Remove(target);
+            Destroy(target.gameObject);
+        }
+        base.OnActionEnd(success);
     }
 
     protected override void SetupAction(Action action)

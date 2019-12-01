@@ -16,7 +16,7 @@ public class DeliverRadish : BasicAction
         action.AddResult(RadishAtDestination.Variable, new IntegerAddResult(1));
     }
 
-    protected override void ActionResult()
+    protected override void Perform()
     {
         navigator.GoTo(Destination, OnActionEnd);
     }

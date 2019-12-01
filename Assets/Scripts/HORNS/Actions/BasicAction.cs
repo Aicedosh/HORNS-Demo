@@ -13,25 +13,26 @@ public abstract class BasicAction : MonoBehaviour
             this.basicAction = basicAction;
         }
 
-        protected override void ActionResult()
+        public override void Perform()
         {
             //Debug.Log("Performing action");
             basicAction.agentAI.IsExecuting = true;
-            basicAction.ActionResult();
-
+            basicAction.Perform();
         }
     }
 
     private AgentAI agentAI;
+    private HORNS.Action action;
 
-    protected abstract void ActionResult();
+    protected abstract void Perform();
 
     public virtual bool IsIdle => false;
+
 
     public HORNS.Action CreateAction(AgentAI agentAI)
     {
         this.agentAI = agentAI;
-        Action action = new Action(this);
+        action = new Action(this);
         SetupAction(action);
 
         return action;
@@ -40,8 +41,17 @@ public abstract class BasicAction : MonoBehaviour
     protected virtual void SetupAction(HORNS.Action action) { }
 
     //Call this method in subclass on action's end (e.g. agent is at the desired target)
-    protected virtual void OnActionEnd()
+    protected virtual void OnActionEnd(bool success)
     {
+        Debug.Log($"Action ends with {(success ? "success" : "failure")}");
         agentAI.IsExecuting = false;
+        if(success)
+        {
+            action.Apply();
+        }
+        else
+        {
+            agentAI.RecalculatePlan();
+        }
     }
 }

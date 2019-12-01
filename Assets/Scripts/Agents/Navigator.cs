@@ -8,8 +8,8 @@ public class Navigator : MonoBehaviour
     private NavMeshAgent nav;
     private Animator anim;
 
-
-    private System.Action finishCallback;
+    private System.Action<bool> finishCallback;
+    private GameObject currentTarget;
     private bool isWalking = false;
 
     public float GoalDistance;
@@ -26,22 +26,29 @@ public class Navigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isWalking && nav.pathPending == false && nav.remainingDistance <= GoalDistance)
+        if(isWalking)
         {
-            Stop();
+            if(currentTarget == null)
+            {
+                Stop(false);
+            }
+            else if(nav.pathPending == false && nav.remainingDistance <= GoalDistance)
+            {
+                Stop(true);
+            }
         }
 
         anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold);
     }
 
-    public void Stop()
+    public void Stop(bool success)
     {
         isWalking = false;
-        finishCallback?.Invoke();
+        finishCallback?.Invoke(success);
         nav.isStopped = false;
     }
 
-    public bool GoTo(Transform transform, System.Action finishCallback = null)
+    public bool GoTo(Transform transform, System.Action<bool> finishCallback = null)
     {
         if (isWalking)
         {
@@ -49,13 +56,14 @@ public class Navigator : MonoBehaviour
         }
 
         this.finishCallback = finishCallback;
+        this.currentTarget = transform.gameObject;
         nav.SetDestination(transform.position);
         isWalking = true;
         
         return true;
     }
 
-    public Transform GoToNearest(IEnumerable<Transform> transforms, System.Action finishCallback = null)
+    public Transform GoToNearest(IEnumerable<Transform> transforms, System.Action<bool> finishCallback = null)
     {
         if (isWalking)
         {
