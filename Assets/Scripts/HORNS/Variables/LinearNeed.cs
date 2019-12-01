@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using HORNS;
 
-public class LinearNeed : Need<int>
+public class LinearNeed : DemoNeed<int>
 {
     public float ValueFactor;
 
     public IntVariable Variable;
-    public override Variable<int> GenericVariable => Variable;
+    public override DemoVariable<int> GenericVariable => Variable;
 
     protected override float Evaluate(int value)
     {
@@ -17,12 +15,12 @@ public class LinearNeed : Need<int>
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HORNS;
+﻿using HORNS;
 using UnityEngine;
 
 public class PickRadishAction : BasicAction
@@ -28,9 +26,9 @@ public class PickRadishAction : BasicAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition<bool, BooleanResult, BooleanSolver, BooleanPrecondition>(new BooleanPrecondition(HasRadish.LibVariable, false, HasRadish.BoolSolver));
-        action.AddPrecondition<int, IntegerAddResult, IntegerSolver, IntegerPrecondition>(new IntegerPrecondition(RadishCountOnField.LibVariable, 1, IntegerPrecondition.Condition.AtLeast, RadishCountOnField.IntSolver));
-        action.AddResult<bool, BooleanResult, BooleanSolver, BooleanPrecondition>(new BooleanResult(HasRadish.LibVariable, true), HasRadish.BoolSolver);
+        action.AddPrecondition(HasRadish.Variable, new BooleanPrecondition(false));
+        action.AddPrecondition(RadishCountOnField.Variable, new IntegerPrecondition(1, IntegerPrecondition.Condition.AtLeast));
+        action.AddResult(HasRadish.Variable, new BooleanResult(true));
     }
 
     // Start is called before the first frame update
@@ -42,6 +40,6 @@ public class PickRadishAction : BasicAction
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

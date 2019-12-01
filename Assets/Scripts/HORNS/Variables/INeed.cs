@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface INeed
+﻿public interface IDemoNeed
 {
     void AddTo(HORNS.Agent agent);
 }

@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HORNS;
-using UnityEngine;
+﻿using HORNS;
 
-public class BoolVariable : Variable<bool>
+public class BoolVariable : DemoVariable<bool>
 {
-    public override VariableSolver<bool> Solver => BoolSolver;
-    public BooleanSolver BoolSolver { get; } = new BooleanSolver();
+    public HORNS.BoolVariable Variable { get; } = new HORNS.BoolVariable();
+    public override Variable<bool> LibVariable => Variable;
 }

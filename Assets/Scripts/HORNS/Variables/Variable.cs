@@ -1,14 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HORNS;
+﻿using HORNS;
 using UnityEngine;
 
-public abstract class Variable<T> : MonoBehaviour, IPrintable
+public abstract class DemoVariable<T> : MonoBehaviour, IPrintable
 {
-    private HORNS.Variable<T> variable = new HORNS.Variable<T>();
-    public HORNS.Variable<T> LibVariable => variable;
-
-    public abstract HORNS.VariableSolver<T> Solver { get; }
+    public abstract Variable<T> LibVariable { get; }
 
     public string Name;
 

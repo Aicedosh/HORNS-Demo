@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public abstract class Need<T> : MonoBehaviour, INeed, IPrintable
+public abstract class DemoNeed<T> : MonoBehaviour, IDemoNeed, IPrintable
 {
-    public abstract Variable<T> GenericVariable { get; }
+    public abstract DemoVariable<T> GenericVariable { get; }
     public T DesiredValue;
 
-    private class LibNeed : HORNS.Need<T>
+    private class LibNeed : Need<T>
     {
         private readonly Func<T, float> evaluationFunction;
 
-        public LibNeed(HORNS.Variable<T> variable, T desired, VariableSolver<T> solver, Func<T, float> evaluationFunction) : base(variable, desired, solver)
+        public LibNeed(Variable<T> variable, T desired, Func<T, float> evaluationFunction) : base(variable, desired)
         {
             this.evaluationFunction = evaluationFunction;
         }
@@ -23,12 +21,13 @@ public abstract class Need<T> : MonoBehaviour, INeed, IPrintable
             return evaluationFunction(value);
         }
     }
-    private HORNS.Need<T> need;
 
-    public HORNS.Need<T> GetNeed()
+    private Need<T> need;
+
+    public Need<T> GetNeed()
     {
-        if(need == null)
-            need = new LibNeed(GenericVariable.LibVariable, DesiredValue, GenericVariable.Solver, Evaluate);
+        if (need == null)
+            need = new LibNeed(GenericVariable.LibVariable, DesiredValue, Evaluate);
 
         return need;
     }

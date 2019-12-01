@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HORNS;
-using UnityEngine;
+﻿using HORNS;
 
-public class IntVariable : Variable<int>
+public class IntVariable : DemoVariable<int>
 {
-    public override VariableSolver<int> Solver => IntSolver ;
-    public IntegerSolver IntSolver { get; } = new IntegerSolver();
+    public HORNS.IntVariable Variable { get; } = new HORNS.IntVariable();
+    public override Variable<int> LibVariable => Variable;
 }

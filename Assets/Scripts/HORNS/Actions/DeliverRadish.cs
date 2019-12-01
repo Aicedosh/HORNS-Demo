@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using HORNS;
+﻿using HORNS;
 using UnityEngine;
 
 public class DeliverRadish : BasicAction
@@ -13,9 +11,9 @@ public class DeliverRadish : BasicAction
 
     protected override void SetupAction(Action action)
     {
-        action.AddPrecondition<bool, BooleanResult, BooleanSolver, BooleanPrecondition>(new BooleanPrecondition(HasRadish.LibVariable, true, HasRadish.BoolSolver));
-        action.AddResult<bool, BooleanResult, BooleanSolver, BooleanPrecondition>(new BooleanResult(HasRadish.LibVariable, false), HasRadish.BoolSolver);
-        action.AddResult<int, IntegerAddResult, IntegerSolver, IntegerPrecondition>(new IntegerAddResult(RadishAtDestination.LibVariable, 1), RadishAtDestination.IntSolver);
+        action.AddPrecondition(HasRadish.Variable, new BooleanPrecondition(true));
+        action.AddResult(HasRadish.Variable, new BooleanResult(false));
+        action.AddResult(RadishAtDestination.Variable, new IntegerAddResult(1));
     }
 
     protected override void ActionResult()
@@ -32,6 +30,6 @@ public class DeliverRadish : BasicAction
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
