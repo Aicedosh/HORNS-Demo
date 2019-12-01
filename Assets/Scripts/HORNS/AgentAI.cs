@@ -10,9 +10,9 @@ public class AgentAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(BasicAction action in gameObject.GetComponents<BasicAction>())
+        foreach (BasicAction action in gameObject.GetComponents<BasicAction>())
         {
-            if(action.IsIdle)
+            if (action.IsIdle)
             {
                 agent.AddIdleAction(action.CreateAction(this));
             }
@@ -22,7 +22,7 @@ public class AgentAI : MonoBehaviour
             }
         }
 
-        foreach(INeed need in gameObject.GetComponents<INeed>())
+        foreach (IDemoNeed need in gameObject.GetComponents<IDemoNeed>())
         {
             need.AddTo(agent);
         }
@@ -36,7 +36,7 @@ public class AgentAI : MonoBehaviour
 
     public void PerformNextAction()
     {
-        if(IsExecuting)
+        if (IsExecuting)
         {
             return;
         }

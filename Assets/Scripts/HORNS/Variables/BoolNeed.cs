@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using HORNS;
 
-public class BoolNeed : Need<bool>
+public class BoolNeed : DemoNeed<bool>
 {
     public BoolVariable Variable { get; }
-    public override Variable<bool> GenericVariable => Variable;
+    public override DemoVariable<bool> GenericVariable => Variable;
 
     public float TrueValue;
     public float FalseValue;
@@ -15,5 +13,5 @@ public class BoolNeed : Need<bool>
         return value ? TrueValue : FalseValue;
     }
 
-    
+
 }
