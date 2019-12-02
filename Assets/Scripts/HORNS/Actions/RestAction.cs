@@ -17,13 +17,13 @@ public class RestAction : BasicAction
 
     protected override void OnActionEnd(bool success)
     {
-        base.OnActionEnd(success);
         if (success)
         {
             
         }
         else
         {
+            base.OnActionEnd(success);
             navigator.Stop();
         }
     }
