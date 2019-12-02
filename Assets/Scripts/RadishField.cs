@@ -22,6 +22,5 @@ public class RadishField : SpawnOnClick
     public void Remove(Transform transform)
     {
         radishes.Remove(transform.gameObject);
-        RadishCount.LibVariable.Value--;
     }
 }

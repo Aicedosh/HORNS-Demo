@@ -15,6 +15,19 @@ public class RestAction : BasicAction
 
     public override bool IsIdle => true;
 
+    protected override void OnActionEnd(bool success)
+    {
+        base.OnActionEnd(success);
+        if (success)
+        {
+            
+        }
+        else
+        {
+            navigator.Stop();
+        }
+    }
+
     protected override void SetupAction(Action action)
     {
         action.AddCost(100); //will perform not so willingly

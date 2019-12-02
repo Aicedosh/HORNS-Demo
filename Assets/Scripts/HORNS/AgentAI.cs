@@ -5,7 +5,8 @@ using UnityEngine;
 public class AgentAI : MonoBehaviour
 {
     private HORNS.Agent agent = new HORNS.Agent();
-    public bool IsExecuting { get; set; }
+    public BasicAction CurrentAction { get; set; }
+    public bool PerformedActionThisFrame { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,6 @@ public class AgentAI : MonoBehaviour
         {
             need.AddTo(agent);
         }
-        IsExecuting = false;
     }
 
     private void Update()
@@ -36,7 +36,7 @@ public class AgentAI : MonoBehaviour
 
     public void PerformNextAction()
     {
-        if (IsExecuting)
+        if (CurrentAction != null)
         {
             return;
         }
@@ -46,19 +46,15 @@ public class AgentAI : MonoBehaviour
 
     public void RecalculatePlan()
     {
+        Debug.Log("Recalculating...");
         agent.RecalculateActions();
     }
 
     public Transform Home;
     public Transform Tavern;
 
-    public void GoHome()
+    public void CancelAction()
     {
-        GetComponent<Navigator>().GoTo(Home);
-    }
-
-    public void GoTavern()
-    {
-        GetComponent<Navigator>().GoTo(Tavern);
+        CurrentAction.Cancel();
     }
 }

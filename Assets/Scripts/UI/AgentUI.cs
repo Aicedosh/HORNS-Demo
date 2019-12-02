@@ -8,7 +8,6 @@ public class AgentUI : MonoBehaviour
 {
     private AgentAI selectedAgent;
     public Text Text;
-    public Button PerformActionButton;
 
     // Start is called before the first frame update
     void Start()
@@ -30,22 +29,11 @@ public class AgentUI : MonoBehaviour
         }
 
         Text.text = variableString;
-        PerformActionButton.enabled = !selectedAgent.IsExecuting;
     }
 
     public void PerformAction()
     {
         selectedAgent?.PerformNextAction();
-    }
-
-    public void GoHome()
-    {
-        selectedAgent?.GoHome();
-    }
-
-    public void GoTavern()
-    {
-        selectedAgent?.GoTavern();
     }
 
     public void SelectAgent(AgentAI agent)

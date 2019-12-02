@@ -15,8 +15,8 @@ public abstract class BasicAction : MonoBehaviour
 
         public override void Perform()
         {
-            //Debug.Log("Performing action");
-            basicAction.agentAI.IsExecuting = true;
+            Debug.Log("Performing action");
+            basicAction.agentAI.CurrentAction = basicAction;
             basicAction.Perform();
         }
     }
@@ -44,7 +44,8 @@ public abstract class BasicAction : MonoBehaviour
     protected virtual void OnActionEnd(bool success)
     {
         Debug.Log($"Action ends with {(success ? "success" : "failure")}");
-        agentAI.IsExecuting = false;
+        agentAI.CurrentAction = null;
+        agentAI.PerformedActionThisFrame = true;
         if(success)
         {
             action.Apply();
@@ -53,5 +54,12 @@ public abstract class BasicAction : MonoBehaviour
         {
             agentAI.RecalculatePlan();
         }
+        agentAI.PerformedActionThisFrame = false;
+    }
+
+    public void Cancel()
+    {
+        Debug.Log("Cancelled action");
+        OnActionEnd(false);
     }
 }

@@ -18,12 +18,16 @@ public class PickRadishAction : BasicAction
 
     protected override void OnActionEnd(bool success)
     {
+        base.OnActionEnd(success);
         if(success)
         {
             RadishField.Remove(target);
             Destroy(target.gameObject);
         }
-        base.OnActionEnd(success);
+        else
+        {
+            navigator.Stop();
+        }
     }
 
     protected override void SetupAction(Action action)
@@ -32,6 +36,7 @@ public class PickRadishAction : BasicAction
         action.AddPrecondition(HasRadish.Variable, new BooleanPrecondition(false));
         action.AddPrecondition(RadishCountOnField.Variable, new IntegerPrecondition(1, IntegerPrecondition.Condition.AtLeast));
         action.AddResult(HasRadish.Variable, new BooleanResult(true));
+        action.AddResult(RadishCountOnField.Variable, new IntegerAddResult(-1));
     }
 
     // Start is called before the first frame update

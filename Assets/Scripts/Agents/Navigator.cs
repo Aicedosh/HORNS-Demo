@@ -41,10 +41,15 @@ public class Navigator : MonoBehaviour
         anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold);
     }
 
-    public void Stop(bool success)
+    private void Stop(bool success)
+    {
+        Stop();
+        finishCallback?.Invoke(success);
+    }
+
+    public void Stop()
     {
         isWalking = false;
-        finishCallback?.Invoke(success);
         nav.isStopped = false;
     }
 

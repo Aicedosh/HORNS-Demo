@@ -85,6 +85,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestSpot: {fileID: 0}
+--- !u!114 &1917238784338334935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3571a78b438cee54b95f1a2138142775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RadishOnFIeld: {fileID: 0}
+  HasRadish: {fileID: 4582430324654899538}
 --- !u!1001 &2156975465730898393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +185,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.15027022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423536454702781454, guid: 931ebc841e28ee742bf76817681050d8,
+        type: 3}
+      propertyPath: ObservedVariables.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423536454702781454, guid: 931ebc841e28ee742bf76817681050d8,
+        type: 3}
+      propertyPath: ObservedVariables.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931ebc841e28ee742bf76817681050d8, type: 3}

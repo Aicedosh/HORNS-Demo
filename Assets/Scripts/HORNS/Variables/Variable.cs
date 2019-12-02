@@ -1,7 +1,7 @@
 ﻿using HORNS;
 using UnityEngine;
 
-public abstract class DemoVariable<T> : MonoBehaviour, IPrintable
+public abstract class DemoVariable<T> : DemoVariable, IPrintable
 {
     public abstract Variable<T> LibVariable { get; }
 
@@ -15,5 +15,10 @@ public abstract class DemoVariable<T> : MonoBehaviour, IPrintable
     public string GetName()
     {
         return Name;
+    }
+
+    public override void AddObserver(IVariableObserver observer)
+    {
+        LibVariable.Observe(observer);
     }
 }
