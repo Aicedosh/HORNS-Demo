@@ -59,5 +59,17 @@ public class CameraMovement : MonoBehaviour
         {
             transform.RotateAround(pivot, Vector3.up, -RotateSpeed * Time.deltaTime);
         }
+
+        if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
+        {
+            transform.RotateAround(pivot, transform.right, -AngularSpeed * Time.deltaTime);
+            transform.Translate(forward * TowardsSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
+        {
+            transform.RotateAround(pivot, transform.right, AngularSpeed * Time.deltaTime);
+            transform.Translate(forward * -TowardsSpeed * Time.deltaTime);
+        }
     }
 }

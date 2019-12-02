@@ -6,6 +6,7 @@ public class DeliverRadish : BasicAction
     private Navigator navigator;
 
     public BoolVariable HasRadish;
+    public BoolVariable IsLonely;
     public IntVariable RadishAtDestination;
     public Transform Destination;
 
@@ -14,6 +15,7 @@ public class DeliverRadish : BasicAction
         action.AddPrecondition(HasRadish.Variable, new BooleanPrecondition(true));
         action.AddResult(HasRadish.Variable, new BooleanResult(false));
         action.AddResult(RadishAtDestination.Variable, new IntegerAddResult(1));
+        action.AddResult(IsLonely.Variable, new BooleanResult(true));
     }
 
     protected override void Perform()

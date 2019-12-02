@@ -2,7 +2,7 @@
 
 public class BoolNeed : DemoNeed<bool>
 {
-    public BoolVariable Variable { get; }
+    public BoolVariable Variable;
     public override DemoVariable<bool> GenericVariable => Variable;
 
     public float TrueValue;
