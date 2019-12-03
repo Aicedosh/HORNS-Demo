@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RadishOnFIeld: {fileID: 0}
   HasRadish: {fileID: 4582430324654899538}
+  IsLonely: {fileID: 5432970074331973282}
 --- !u!114 &4143187021060360411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +85,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoalDistance: 1.2
   WalkAnimationTreshold: 0.2
+  Speed: 1.3
+  WalkSpeedChangeIntervalMinSec: 1.2
+  WalkSpeedChangeIntervalMaxSec: 3
+  WalkSpeedChangeTimeMinSec: 0.3
+  WalkSpeedChangeTimeMaxSec: 1
+  WalkSpeedDeltaPerc: 0.15
 --- !u!114 &4382469221237806989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +189,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestSpot: {fileID: 0}
+--- !u!114 &3282056002770687166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variables:
+  - {fileID: 5432970074331973282}
+  - {fileID: 4582430324654899538}
 --- !u!1001 &2156975465730898393
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,8 +1,10 @@
 ﻿using System;
 using HORNS;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-public abstract class DemoNeed<T> : MonoBehaviour, IDemoNeed, IPrintable
+public abstract class DemoNeed<T> : MonoBehaviour, IDemoNeed, IDisplayable
 {
     public abstract DemoVariable<T> GenericVariable { get; }
     public T DesiredValue;
@@ -34,18 +36,10 @@ public abstract class DemoNeed<T> : MonoBehaviour, IDemoNeed, IPrintable
 
     protected abstract float Evaluate(T value);
 
-    public string GetName()
-    {
-        return GenericVariable.GetName() + " Need";
-    }
-
-    public string GetText()
-    {
-        return GenericVariable.GetText() + "/" + DesiredValue.ToString();
-    }
-
     public void AddTo(Agent agent)
     {
         agent.AddNeed(GetNeed());
     }
+
+    public abstract LayoutGroup GetComponent();
 }

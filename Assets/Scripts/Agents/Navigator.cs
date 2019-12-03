@@ -11,9 +11,23 @@ public class Navigator : MonoBehaviour
     private System.Action<bool> finishCallback;
     private GameObject currentTarget;
     private bool isWalking = false;
+    private bool isFollowing = false;
 
     public float GoalDistance;
     public float WalkAnimationTreshold;
+
+    public float Speed = 1.3f;
+    public float WalkSpeedChangeIntervalMinSec = 2.5f;
+    public float WalkSpeedChangeIntervalMaxSec = 7f;
+    public float WalkSpeedChangeTimeMinSec = 1.5f;
+    public float WalkSpeedChangeTimeMaxSec = 2f;
+    public float WalkSpeedDeltaPerc = 0.05f;
+
+    private float timeToChange = 0f;
+    private float changingTime;
+    private float timeSinceChange;
+    private float currentSpeed;
+    private float speedDelta;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +37,34 @@ public class Navigator : MonoBehaviour
         nav.stoppingDistance = GoalDistance;
     }
 
+    private void ChangeSpeed()
+    {
+        if(timeToChange <= 0f)
+        {
+            timeToChange = Random.Range(WalkSpeedChangeIntervalMinSec, WalkSpeedChangeIntervalMaxSec);
+            changingTime = Random.Range(WalkSpeedChangeTimeMinSec, WalkSpeedChangeTimeMaxSec);
+            speedDelta = Random.Range(1 - WalkSpeedDeltaPerc, 1 + WalkSpeedDeltaPerc);
+            timeSinceChange = 0f;
+        }
+
+        currentSpeed = Mathf.Lerp(currentSpeed, speedDelta * Speed, timeSinceChange/changingTime);
+
+        nav.speed = currentSpeed;
+        anim.speed = currentSpeed / Speed;
+        timeToChange -= Time.deltaTime;
+        timeSinceChange += Time.deltaTime;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        ChangeSpeed();
+
+        if(isFollowing)
+        {
+            nav.destination = currentTarget.transform.position;
+        }
+
         if(isWalking)
         {
             if(currentTarget == null)
@@ -50,6 +89,7 @@ public class Navigator : MonoBehaviour
     public void Stop()
     {
         isWalking = false;
+        isFollowing = false;
         nav.isStopped = false;
     }
 
@@ -66,6 +106,16 @@ public class Navigator : MonoBehaviour
         isWalking = true;
         
         return true;
+    }
+
+    public bool Follow(Transform transform, System.Action<bool> finishCallback = null)
+    {
+        bool ret = GoTo(transform, finishCallback);
+        if (ret)
+        {
+            isFollowing = true;
+        }
+        return ret;
     }
 
     public Transform GoToNearest(IEnumerable<Transform> transforms, System.Action<bool> finishCallback = null)

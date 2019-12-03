@@ -1,4 +1,7 @@
 ﻿using HORNS;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BoolNeed : DemoNeed<bool>
 {
@@ -13,5 +16,10 @@ public class BoolNeed : DemoNeed<bool>
         return value ? TrueValue : FalseValue;
     }
 
-
+    public override LayoutGroup GetComponent()
+    {
+        LayoutGroup canvas = FindObjectOfType<UIProvider>().BoolNeedPrefab;
+        var go = Instantiate(canvas);
+        return go;
+    }
 }

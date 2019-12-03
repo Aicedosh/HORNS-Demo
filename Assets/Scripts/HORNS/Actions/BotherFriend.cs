@@ -11,7 +11,7 @@ public class BotherFriend : BasicAction
 
     protected override void Perform()
     {
-        navigator.GoTo(friends[Random.Range(0, friends.Count)].GetTransform(), OnActionEnd);
+        navigator.Follow(friends[Random.Range(0, friends.Count)].GetTransform(), OnActionEnd);
     }
 
     protected override void OnActionEnd(bool success)
