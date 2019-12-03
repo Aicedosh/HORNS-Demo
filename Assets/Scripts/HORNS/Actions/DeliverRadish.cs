@@ -23,6 +23,15 @@ public class DeliverRadish : BasicAction
         navigator.GoTo(Destination, OnActionEnd);
     }
 
+    protected override void OnActionEnd(bool success)
+    {
+        if(!success)
+        {
+            navigator.Stop();
+        }
+        base.OnActionEnd(success);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

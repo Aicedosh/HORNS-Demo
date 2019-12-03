@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AgentUI : MonoBehaviour
 {
     private AgentAI selectedAgent;
-    public Text Text;
+    public LayoutGroup DisplayCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +22,6 @@ public class AgentUI : MonoBehaviour
         {
             return;
         }
-        string variableString = "";
-        foreach (var printable in selectedAgent.GetComponentsInChildren<IPrintable>())
-        {
-            variableString += printable.GetName() + ": " + printable.GetText() + "\n";
-        }
-
-        Text.text = variableString;
     }
 
     public void PerformAction()
@@ -38,6 +31,22 @@ public class AgentUI : MonoBehaviour
 
     public void SelectAgent(AgentAI agent)
     {
+        if (selectedAgent == agent)
+            return;
+
         selectedAgent = agent;
+
+        while(DisplayCanvas.transform.childCount > 0)
+        {
+            Transform child = DisplayCanvas.transform.GetChild(0);
+            child.SetParent(null); //Become Batman!
+            Destroy(child.gameObject);
+        }
+
+        foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
+        {
+            var go = displayable.GetComponent();
+            go.transform.SetParent(DisplayCanvas.transform);
+        }
     }
 }
