@@ -11,16 +11,8 @@ public abstract class DemoNeed<T> : MonoBehaviour, IDemoNeed, IDisplayable
 
     private class LibNeed : Need<T>
     {
-        private readonly Func<T, float> evaluationFunction;
-
-        public LibNeed(Variable<T> variable, T desired, Func<T, float> evaluationFunction) : base(variable, desired)
-        {
-            this.evaluationFunction = evaluationFunction;
-        }
-
-        public override float Evaluate(T value)
-        {
-            return evaluationFunction(value);
+        public LibNeed(Variable<T> variable, T desired, Func<T, float> evaluationFunction) : base(variable, desired, evaluationFunction)
+        {        
         }
     }
 

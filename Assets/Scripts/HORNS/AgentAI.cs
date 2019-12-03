@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class AgentAI : MonoBehaviour
@@ -8,9 +10,16 @@ public class AgentAI : MonoBehaviour
     public BasicAction CurrentAction { get; set; }
     public bool PerformedActionThisFrame { get; set; }
 
+    private CancellationTokenSource source;
+    private bool shouldRecalculate;
+    private bool computing;
+    private Task aiTask;
+
     // Start is called before the first frame update
     void Start()
     {
+        source = new CancellationTokenSource();
+
         foreach (BasicAction action in gameObject.GetComponents<BasicAction>())
         {
             if (action.IsIdle)
@@ -29,25 +38,49 @@ public class AgentAI : MonoBehaviour
         }
     }
 
-    private void Update()
+    private async void Update()
     {
-        PerformNextAction();
+        if(CurrentAction == null && computing == false)
+        {
+            computing = true; //necessary, as Update will be called again before we finish calculations
+            HORNS.Action action = await HandleAI(source.Token);
+            action?.Perform();
+            computing = false; //This is actually called from the same thread as the original call
+        }
     }
 
-    public void PerformNextAction()
+    private Task<HORNS.Action> HandleAI(CancellationToken token)
     {
-        if (CurrentAction != null)
+        return Task.Run(async () =>
         {
-            return;
+            return await GetNextActionAsync(token);
+        });
+    }
+
+    private async Task<HORNS.Action> GetNextActionAsync(CancellationToken token)
+    {
+        try
+        {
+            if (shouldRecalculate)
+            {
+                await agent.RecalculateActionsAsync(token);
+                shouldRecalculate = false;
+            }
+
+            HORNS.Action action = await agent.GetNextActionAsync(token);
+            return action;
         }
-        HORNS.Action action = agent.GetNextAction();
-        action?.Perform();
+        catch (TaskCanceledException)
+        {
+            return null;
+        }
     }
 
     public void RecalculatePlan()
     {
-        Debug.Log("Recalculating...");
-        agent.RecalculateActions();
+        shouldRecalculate = true;
+        source.Cancel();
+        source = new CancellationTokenSource();
     }
 
     public Transform Home;
@@ -55,6 +88,6 @@ public class AgentAI : MonoBehaviour
 
     public void CancelAction()
     {
-        CurrentAction.Cancel();
+        CurrentAction?.Cancel();
     }
 }

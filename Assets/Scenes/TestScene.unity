@@ -266,6 +266,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker Agent 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1917238784338334935, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishOnFIeld
@@ -583,6 +588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Worker Agent 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917238784338334935, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
@@ -1193,6 +1203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker Agent 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1917238784338334935, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
       propertyPath: RadishOnFIeld
@@ -1547,6 +1562,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Worker Agent 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021885140680190843, guid: 661d3c841be874140922bbd9332f7d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1917238784338334935, guid: 661d3c841be874140922bbd9332f7d13,
         type: 3}
