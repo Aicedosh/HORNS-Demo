@@ -14,8 +14,8 @@ public class GetDrink : BasicAction
     {
         base.SetupAction(action);
         action.AddPrecondition(IsResting.Variable, new BooleanPrecondition(true));
-        action.AddPrecondition(Money.Variable, new IntegerPrecondition(18, IntegerPrecondition.Condition.AtLeast));
-        action.AddResult(Money.Variable, new IntegerAddResult(-18));
+        action.AddPrecondition(Money.Variable, new IntegerPrecondition(10, IntegerPrecondition.Condition.AtLeast));
+        action.AddResult(Money.Variable, new IntegerAddResult(-10));
         action.AddResult(Drinks.Variable, new IntegerAddResult(1));
     }
 
