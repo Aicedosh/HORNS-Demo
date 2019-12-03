@@ -1,96 +1,111 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &72936189733959446
+--- !u!114 &292270207976613403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Is Resting
+--- !u!114 &675485138631890827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84dd10d4eaed1204399589e8be454617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DesiredValue: 0
-  Variable: {fileID: 5432970074331973282}
-  TrueValue: 0
-  FalseValue: 1
---- !u!114 &444989806721925024
+  Variable: {fileID: 292270207976613403}
+  TrueValue: 50
+  FalseValue: 100
+--- !u!114 &854237295975872723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c446c0dec357a74280d424d25539f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dad011ac9d0a9a409e085efe08e46b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadishPickerDurability: {fileID: 1549891555567805005}
-  Seller: {fileID: 0}
---- !u!114 &1023417086662577162
+  IsResting: {fileID: 292270207976613403}
+  Money: {fileID: 1559466080017835450}
+  Drinks: {fileID: 8305652892931632507}
+  Destination: {fileID: 0}
+--- !u!114 &1559466080017835450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33aba9bad8b99324d8bf90acf2e653fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsLonely: {fileID: 5432970074331973282}
---- !u!114 &1549891555567805005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Radish Picker Durability
---- !u!114 &1917238784338334935
+  Name: Money
+--- !u!114 &1878541188883162434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571a78b438cee54b95f1a2138142775, type: 3}
+  m_Script: {fileID: 11500000, guid: b7cfa3aa5983c2d448a43ac49415e191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadishOnFIeld: {fileID: 0}
-  HasRadish: {fileID: 4582430324654899538}
---- !u!114 &4143187021060360411
+  Money: {fileID: 1559466080017835450}
+--- !u!114 &3383972173183796386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58889c3c2de918b4997766e8c5f323ae, type: 3}
+  m_Script: {fileID: 11500000, guid: db4a72f56d9f90b42a12a7d9a12d93bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoalDistance: 1.2
-  WalkAnimationTreshold: 0.2
---- !u!114 &4382469221237806989
+  Home: {fileID: 0}
+  Tavern: {fileID: 0}
+--- !u!114 &5305950127293415450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebade38270d3c8441ad48a7a233aecce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsResting: {fileID: 292270207976613403}
+  Work: {fileID: 0}
+--- !u!114 &6399934768742855841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae7b7d7c30b9591408f72ca74177451a, type: 3}
@@ -98,91 +113,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DesiredValue: 100
   ValueFactor: 1
-  Variable: {fileID: 0}
---- !u!114 &4408212736644705059
+  Variable: {fileID: 8305652892931632507}
+--- !u!114 &7962362689225335766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f893e662f8a11f9449033132f7d8f5f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0dea8d6e12cdf0646ba440debad2afd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasRadish: {fileID: 4582430324654899538}
-  IsLonely: {fileID: 5432970074331973282}
-  RadishAtDestination: {fileID: 0}
-  Destination: {fileID: 0}
---- !u!114 &4582430324654899538
+  IsResting: {fileID: 292270207976613403}
+--- !u!114 &8305652892931632507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: HasRadish
---- !u!114 &5432970074331973282
+  Name: Drinks
+--- !u!114 &6915670093037830564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
+  m_GameObject: {fileID: 2918039251399263391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 58889c3c2de918b4997766e8c5f323ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Is Lonely
---- !u!114 &5525076692965939871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7db96a9949ead84b8a297ce69e04c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8919458755940194725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10334d8387bc3fa448a44bd1c0706077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RadishCountOnField: {fileID: 0}
-  HasRadish: {fileID: 4582430324654899538}
-  RadishField: {fileID: 0}
-  RadishPickerDurability: {fileID: 1549891555567805005}
---- !u!114 &9198142280997534113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d4cc87e580795f42b6852f5cd2e24de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RestSpot: {fileID: 0}
---- !u!1001 &2156975465730898393
+  GoalDistance: 1.2
+  WalkAnimationTreshold: 0.2
+--- !u!1001 &4305335553734055485
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -192,12 +164,12 @@ PrefabInstance:
     - target: {fileID: 1423536454702813858, guid: 931ebc841e28ee742bf76817681050d8,
         type: 3}
       propertyPath: m_Name
-      value: Worker Agent
+      value: Seller Agent Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1423536454703173250, guid: 931ebc841e28ee742bf76817681050d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1423536454703173250, guid: 931ebc841e28ee742bf76817681050d8,
         type: 3}
@@ -207,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 1423536454703173250, guid: 931ebc841e28ee742bf76817681050d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1423536454703173250, guid: 931ebc841e28ee742bf76817681050d8,
         type: 3}
@@ -249,41 +221,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781453, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.34972978
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781453, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: m_Height
-      value: 2.3496861
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781453, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.6748431
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781453, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.15027022
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781454, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: ObservedVariables.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423536454702781454, guid: 931ebc841e28ee742bf76817681050d8,
-        type: 3}
-      propertyPath: ObservedVariables.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931ebc841e28ee742bf76817681050d8, type: 3}
---- !u!1 &1021885140680190843 stripped
+--- !u!1 &2918039251399263391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1423536454702813858, guid: 931ebc841e28ee742bf76817681050d8,
     type: 3}
-  m_PrefabInstance: {fileID: 2156975465730898393}
+  m_PrefabInstance: {fileID: 4305335553734055485}
   m_PrefabAsset: {fileID: 0}
