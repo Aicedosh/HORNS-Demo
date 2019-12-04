@@ -7,7 +7,7 @@ public class StartRest : BasicAction
 
     protected override void Perform()
     {
-
+        OnActionEnd(true);
     }
 
     protected override void SetupAction(Action action)

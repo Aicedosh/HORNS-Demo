@@ -28,7 +28,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c446c0dec357a74280d424d25539f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SellerResting: {fileID: 0}
   RadishPickerDurability: {fileID: 1549891555567805005}
+  SellerMoney: {fileID: 0}
   Seller: {fileID: 0}
 --- !u!114 &1023417086662577162
 MonoBehaviour:
@@ -71,6 +73,22 @@ MonoBehaviour:
   RadishOnFIeld: {fileID: 0}
   HasRadish: {fileID: 4582430324654899538}
   IsLonely: {fileID: 5432970074331973282}
+--- !u!114 &3282056002770687166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021885140680190843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variables:
+  - {fileID: 5432970074331973282}
+  - {fileID: 4582430324654899538}
+  - {fileID: 4582430324654899538}
 --- !u!114 &4143187021060360411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,21 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestSpot: {fileID: 0}
---- !u!114 &3282056002770687166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021885140680190843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Variables:
-  - {fileID: 5432970074331973282}
-  - {fileID: 4582430324654899538}
 --- !u!1001 &2156975465730898393
 PrefabInstance:
   m_ObjectHideFlags: 0
