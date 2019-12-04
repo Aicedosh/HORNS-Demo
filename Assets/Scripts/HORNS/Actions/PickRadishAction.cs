@@ -8,6 +8,7 @@ public class PickRadishAction : BasicAction
     public IntVariable RadishCountOnField;
     public BoolVariable HasRadish;
     public RadishField RadishField;
+    public IntVariable RadishPickerDurability;
 
     private Transform target;
 
@@ -35,8 +36,10 @@ public class PickRadishAction : BasicAction
         base.SetupAction(action);
         action.AddPrecondition(HasRadish.Variable, new BooleanPrecondition(false));
         action.AddPrecondition(RadishCountOnField.Variable, new IntegerPrecondition(1, IntegerPrecondition.Condition.AtLeast));
+        action.AddPrecondition(RadishPickerDurability.Variable, new IntegerPrecondition(1, IntegerPrecondition.Condition.AtLeast));
         action.AddResult(HasRadish.Variable, new BooleanResult(true));
         action.AddResult(RadishCountOnField.Variable, new IntegerAddResult(-1));
+        action.AddResult(RadishPickerDurability.Variable, new IntegerAddResult(-1));
     }
 
     // Start is called before the first frame update
