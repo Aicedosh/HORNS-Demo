@@ -24,11 +24,6 @@ public class AgentUI : MonoBehaviour
         }
     }
 
-    public void PerformAction()
-    {
-        selectedAgent?.PerformNextAction();
-    }
-
     public void SelectAgent(AgentAI agent)
     {
         if (selectedAgent == agent)
@@ -43,10 +38,13 @@ public class AgentUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
+        if(selectedAgent != null)
         {
-            var go = displayable.GetComponent();
-            go.transform.SetParent(DisplayCanvas.transform);
+            foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
+            {
+                var go = displayable.GetComponent();
+                go.transform.SetParent(DisplayCanvas.transform);
+            }
         }
     }
 }

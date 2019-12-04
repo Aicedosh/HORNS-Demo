@@ -9,7 +9,6 @@ public abstract class VariableReactor<T> : MonoBehaviour, HORNS.IVariableObserve
     protected abstract bool ShouldRecalculate(T value);
     public void ValueChanged(T value)
     {
-        Debug.Log($"Value changed: {value}");
         if(ShouldRecalculate(value) && !agentAI.PerformedActionThisFrame)
         {
             agentAI.CancelAction();
