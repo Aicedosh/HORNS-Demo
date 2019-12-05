@@ -1452,7 +1452,12 @@ PrefabInstance:
     - target: {fileID: 2088669407480049439, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
       propertyPath: Cost
-      value: 20
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681232852588431334, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
+        type: 3}
+      propertyPath: TrueValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8496340031844349854, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
@@ -1522,12 +1527,12 @@ PrefabInstance:
     - target: {fileID: 1658909555936267925, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
       propertyPath: TimeToChange
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1658909555936267925, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
       propertyPath: Amount
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7450336967077448217, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
@@ -1538,6 +1543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: HungerSatisfied
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450336967077448217, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef, type: 3}

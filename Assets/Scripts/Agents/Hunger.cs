@@ -10,6 +10,11 @@ public class Hunger : MonoBehaviour
 
     private float timeElapsed;
 
+    private void Start()
+    {
+        HungerVariable.Variable.Value = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {

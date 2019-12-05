@@ -16,7 +16,7 @@ public class GoToWork : BasicAction
     protected override void SetupAction(Action action)
     {
         action.AddResult(Works.Variable, new BooleanResult(true));
-        action.AddCost(30);
+        action.AddCost(.3f);
     }
 
     private Navigator navigator;
