@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class ChopTree : GoToAction
+public class ChopTree : BasicAction
 {
     public Forest Forest;
 
@@ -14,6 +14,7 @@ public class ChopTree : GoToAction
     public int WoodGained;
 
     private Transform target;
+    private Navigator navigator;
 
     protected override void SetupAction(Action action)
     {
@@ -23,13 +24,27 @@ public class ChopTree : GoToAction
 
     protected override void Perform()
     {
-        target = navigator.GoToNearest(Forest.GetTreesLocations(), Arrived);
+        target = navigator.GoToNearest(Forest.GetTreesLocations(), OnActionEnd);
     }
 
     protected override void OnActionEnd(bool success)
     {
-        Forest.Remove(target);
-        Destroy(target.gameObject);
+        // TODO: PROPER FIX
+        if (target == null || target.gameObject == null)
+        {
+            base.OnActionEnd(false);
+        }
+
+        if (success)
+        {
+            Forest.Remove(target);
+            Destroy(target.gameObject);
+        }
         base.OnActionEnd(success);
+    }
+
+    void Start()
+    {
+        navigator = GetComponent<Navigator>();
     }
 }

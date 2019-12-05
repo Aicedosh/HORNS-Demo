@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Chill : BasicAction
 {
-    public IntVariable Energy;
-
     protected override void Perform()
     {
 
@@ -29,6 +27,5 @@ public class Chill : BasicAction
     protected override void SetupAction(Action action)
     {
         action.AddCost(100);
-        action.AddResult(Energy.Variable, new IntegerAddResult(-1));
     }
 }

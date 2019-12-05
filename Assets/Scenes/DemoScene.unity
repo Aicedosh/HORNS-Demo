@@ -293,6 +293,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: m_Name
+      value: Woodcutter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1964019805448322309, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: Destination
@@ -328,15 +338,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
+    - target: {fileID: 4729172102466286460, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
-      propertyPath: m_Name
-      value: Woodcutter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: TimeToComplete
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7701260752912861525, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}

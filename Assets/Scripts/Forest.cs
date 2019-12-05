@@ -49,7 +49,9 @@ public class Forest : MonoBehaviour
         var res = new List<Transform>();
         foreach (var tree in trees)
         {
-            res.Add(tree.transform);
+            // TODO: PROPER FIX
+            if (tree != null)
+                res.Add(tree.transform);
         }
 
         return res;
