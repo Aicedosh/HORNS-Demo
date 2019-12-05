@@ -45,8 +45,8 @@ public class GoToAction : BasicAction
     {
         if(arrived)
         {
-            _renderer.enabled = false;
-            _collider.enabled = false;
+            //_renderer.enabled = false;
+            //_collider.enabled = false;
             arrived = false;
             timeElapsed = 0;
             eating = true;
@@ -58,8 +58,8 @@ public class GoToAction : BasicAction
             if (timeElapsed >= TimeToComplete)
             {
                 eating = false;
-                _renderer.enabled = true;
-                _collider.enabled = true;
+                //_renderer.enabled = true;
+                //_collider.enabled = true;
                 OnActionEnd(true);
             }
         }

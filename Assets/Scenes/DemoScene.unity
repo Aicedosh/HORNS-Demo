@@ -278,13 +278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b11cdd7bec73d4496690df11a01ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntVariablePrefab: {fileID: 8796317806572859960, guid: 3e7234eb272929c47a7f16692d24a729,
+  IntVariablePrefab: {fileID: 7142918097791122693, guid: a10e01808ca7fc34b81c234fb0c0bfbf,
     type: 3}
-  IntNeedPrefab: {fileID: 8796317806572859960, guid: 3e7234eb272929c47a7f16692d24a729,
+  IntNeedPrefab: {fileID: 5944994940131602181, guid: 41ab61988ff379a4088b62818fd39b0b,
     type: 3}
   BoolVariablePrefab: {fileID: 5944994940131602181, guid: 17b1f0c92a848ac4583593e104eaf6ff,
     type: 3}
-  BoolNeedPrefab: {fileID: 8796317806572859960, guid: 3e7234eb272929c47a7f16692d24a729,
+  BoolNeedPrefab: {fileID: 5944994940131602181, guid: ea936fe963edb614a91090fc3e29748e,
     type: 3}
 --- !u!1 &615341992 stripped
 GameObject:
