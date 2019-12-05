@@ -32,7 +32,7 @@ public class Navigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         nav = GetComponent<NavMeshAgent>();
         nav.stoppingDistance = GoalDistance;
     }

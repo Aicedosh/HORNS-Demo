@@ -83,9 +83,6 @@ public class AgentAI : MonoBehaviour
         source = new CancellationTokenSource();
     }
 
-    public Transform Home;
-    public Transform Tavern;
-
     public void CancelAction()
     {
         CurrentAction?.Cancel();
