@@ -20,6 +20,7 @@ public class BoolNeed : DemoNeed<bool>
     {
         LayoutGroup canvas = FindObjectOfType<UIProvider>().BoolNeedPrefab;
         var go = Instantiate(canvas);
+        go.GetComponent<BooleanNeedDisplay>().Need = this;
         return go;
     }
 }

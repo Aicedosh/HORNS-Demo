@@ -88,7 +88,8 @@ MonoBehaviour:
   Variables:
   - {fileID: 5432970074331973282}
   - {fileID: 4582430324654899538}
-  - {fileID: 4582430324654899538}
+  - {fileID: 0}
+  - {fileID: 1549891555567805005}
 --- !u!114 &4143187021060360411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: HasRadish
+  Name: Has Radish
 --- !u!114 &5432970074331973282
 MonoBehaviour:
   m_ObjectHideFlags: 0
