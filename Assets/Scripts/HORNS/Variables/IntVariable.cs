@@ -12,6 +12,7 @@ public class IntVariable : DemoVariable<int>
     {
         LayoutGroup canvas = FindObjectOfType<UIProvider>().IntVariablePrefab;
         var go = Instantiate(canvas);
+        go.GetComponent<IntVariableDisplay>().Variable = this;
         return go;
     }
 }
