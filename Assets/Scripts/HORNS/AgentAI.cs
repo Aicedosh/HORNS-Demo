@@ -42,6 +42,7 @@ public class AgentAI : MonoBehaviour
     {
         if(CurrentAction == null && computing == false)
         {
+            Debug.Log("ACTION TIME");
             computing = true; //necessary, as Update will be called again before we finish calculations
             HORNS.Action action = await HandleAI(source.Token);
             action?.Perform();

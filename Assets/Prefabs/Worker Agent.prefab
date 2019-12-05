@@ -28,9 +28,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c446c0dec357a74280d424d25539f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SellerResting: {fileID: 0}
+  SellerWorking: {fileID: 0}
   RadishPickerDurability: {fileID: 1549891555567805005}
-  SellerMoney: {fileID: 0}
   Seller: {fileID: 0}
 --- !u!114 &1023417086662577162
 MonoBehaviour:

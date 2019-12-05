@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &870762655317628687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496340031844349854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6a3affd04bc3a40baf2aab225f1ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Works: {fileID: 5508492655109454691}
 --- !u!114 &2088669407480049439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,6 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Variable: {fileID: 5508492655109454691}
   EndValue: 0
+  Cost: 0
 --- !u!114 &2681232852588431334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +71,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Destination: {fileID: 0}
   Works: {fileID: 5508492655109454691}
+--- !u!114 &3605482878536721735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496340031844349854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ceb09367e2fa4499f5aab9d4cc625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Works: {fileID: 5508492655109454691}
+  Hunger: {fileID: 5051311571141797618}
 --- !u!1001 &5699436134436822008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,16 +92,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Tavern
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Works
-      value: 
-      objectReference: {fileID: 5508492655109454691}
     - target: {fileID: 4247288941157461094, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: m_Name
@@ -139,6 +157,36 @@ PrefabInstance:
       propertyPath: AgentCanvasGroup
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Tavern
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Works
+      value: 
+      objectReference: {fileID: 5508492655109454691}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Destination
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: MoneyRequired
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4258553868756177325, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: m_Enabled
@@ -152,3 +200,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5699436134436822008}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5051311571141797618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 648988850388729098, guid: 659b700cb1e20a34f9e47202509ee9fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5699436134436822008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496340031844349854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

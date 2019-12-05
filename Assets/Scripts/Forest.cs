@@ -43,4 +43,20 @@ public class Forest : MonoBehaviour
             }
         }
     }
+
+    public List<Transform> GetTreesLocations()
+    {
+        var res = new List<Transform>();
+        foreach (var tree in trees)
+        {
+            res.Add(tree.transform);
+        }
+
+        return res;
+    }
+
+    public void Remove(Transform tree)
+    {
+        trees.Remove(transform.gameObject);
+    }
 }

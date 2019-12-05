@@ -5,9 +5,8 @@ public class BuyRadishPicker : BasicAction
 {
     private Navigator navigator;
 
-    public BoolVariable SellerResting;
+    public BoolVariable SellerWorking;
     public IntVariable RadishPickerDurability;
-    public IntVariable SellerMoney;
     public Transform Seller;
 
     protected override void Perform()
@@ -31,9 +30,8 @@ public class BuyRadishPicker : BasicAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition(SellerResting.Variable, new BooleanPrecondition(false));
+        action.AddPrecondition(SellerWorking.Variable, new BooleanPrecondition(true));
         action.AddResult(RadishPickerDurability.Variable, new IntegerAddResult(5));
-        action.AddResult(SellerMoney.Variable, new IntegerAddResult(3));
     }
 
     // Start is called before the first frame update

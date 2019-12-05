@@ -10,7 +10,7 @@ public class GoToAction : BasicAction
         navigator.GoTo(Destination, Arrived);
     }
 
-    private void Arrived(bool success)
+    protected void Arrived(bool success)
     {
         if(!success)
         {
@@ -25,7 +25,7 @@ public class GoToAction : BasicAction
 
     public float TimeToComplete;
 
-    private Navigator navigator;
+    protected Navigator navigator;
     private SkinnedMeshRenderer _renderer;
     private CapsuleCollider _collider;
     private float timeElapsed;

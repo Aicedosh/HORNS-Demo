@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1964019805448322309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512b80ee0d694f24292f3d79c65591f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destination: {fileID: 0}
+  TimeToComplete: 1
+  Wood: {fileID: 2236544626625796585}
+  Money: {fileID: 3306472149096310601}
+  SellerWorks: {fileID: 0}
+  WoodSold: 3
+  MoneyGained: 3
+--- !u!114 &2097183600395854998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variables:
+  - {fileID: 0}
+  - {fileID: 6417791063838038214}
+--- !u!114 &2236544626625796585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Wood
+--- !u!114 &3397279526830409828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6672b97fd061dfb449e3b8fa850f0d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DesiredValue: 1000000
+  Multiplier: 10
+  Variable: {fileID: 3306472149096310601}
+--- !u!114 &4729172102466286460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbb3efd193885e4e832b9b30f2a15ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destination: {fileID: 0}
+  TimeToComplete: 5
+  Forest: {fileID: 0}
+  Energy: {fileID: 7147547205001256763}
+  Wood: {fileID: 2236544626625796585}
+  EnergyLost: 5
+  WoodGained: 1
+--- !u!114 &7410945609189825573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ecc2ff295ec8848a575acaa1285c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Energy: {fileID: 7147547205001256763}
 --- !u!1001 &5769455355568711116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 4247288941157461094, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: m_Name
-      value: Agent
+      value: Woodcutter
       objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
@@ -52,5 +146,62 @@ PrefabInstance:
       propertyPath: AgentCanvasGroup
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: MoneyRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659b700cb1e20a34f9e47202509ee9fb, type: 3}
+--- !u!1 &7701260752912861610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4247288941157461094, guid: 659b700cb1e20a34f9e47202509ee9fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5769455355568711116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6417791063838038214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 648988850388729098, guid: 659b700cb1e20a34f9e47202509ee9fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5769455355568711116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7147547205001256763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3683954681530972919, guid: 659b700cb1e20a34f9e47202509ee9fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5769455355568711116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3306472149096310601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9075821928463090309, guid: 659b700cb1e20a34f9e47202509ee9fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5769455355568711116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
