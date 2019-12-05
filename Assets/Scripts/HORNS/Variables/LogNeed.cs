@@ -15,6 +15,7 @@ public class LogNeed : DemoNeed<int>
     {
         LayoutGroup canvas = FindObjectOfType<UIProvider>().IntNeedPrefab;
         var go = Instantiate(canvas);
+        go.GetComponent<IntegerNeedDisplay>().Need = this;
         return go;
     }
 

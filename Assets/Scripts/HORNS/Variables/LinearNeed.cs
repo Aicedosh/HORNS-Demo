@@ -14,7 +14,7 @@ public class LinearNeed : DemoNeed<int>
     {
         LayoutGroup canvas = FindObjectOfType<UIProvider>().IntNeedPrefab;
         var go = Instantiate(canvas);
-        go.GetComponent<LinearNeedDisplay>().Need = this;
+        go.GetComponent<IntegerNeedDisplay>().Need = this;
         return go;
     }
 
