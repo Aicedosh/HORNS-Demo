@@ -21,6 +21,7 @@ public class LogNeed : DemoNeed<int>
 
     protected override float Evaluate(int value)
     {
+        if (value < 0) return 100;
         return Multiplier * Mathf.Log10(value + 1);
     }
 }
