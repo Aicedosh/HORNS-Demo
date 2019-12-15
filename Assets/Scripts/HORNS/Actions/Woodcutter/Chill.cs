@@ -13,6 +13,12 @@ public class Chill : GoToAction
         navigator.GoTo(Home, OnWalkEnd);
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        Energy.Variable.Value = 200;
+    }
+
     public override bool IsIdle => true;
 
     protected override void SetupAction(Action action)

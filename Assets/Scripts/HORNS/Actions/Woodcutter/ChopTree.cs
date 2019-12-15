@@ -32,13 +32,33 @@ public class ChopTree : GoToAction
         Destroy(target.gameObject);
     }
 
+    protected override void OnActionEnd()
+    {
+        GetComponentInChildren<Animator>().SetBool("Chop", false);
+    }
+
     protected override void Update()
     {
         base.Update();
-        if (target == null && agentAI.CurrentAction == this)
+        if(agentAI.CurrentAction == this)
         {
-            //Someone else chopped our tree
-            Cancel();
+            if (target == null || target.gameObject.GetComponent<Tree>().Chopper != agentAI)
+            {
+                //Someone else is either chopping our tree, or already chopped. Abort
+                Cancel();
+            }
         }
+    }
+
+    protected override void OnArrive()
+    {
+        Tree tree = target.gameObject.GetComponent<Tree>();
+        if (tree.Chopper != null && tree.Chopper != agentAI)
+        {
+            return;
+        }
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Chop", true);
+        tree.Chopper = agentAI;
     }
 }

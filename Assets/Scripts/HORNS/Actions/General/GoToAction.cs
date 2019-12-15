@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class GoToAction : BasicAction
 {
@@ -11,15 +12,19 @@ public abstract class GoToAction : BasicAction
     protected Navigator navigator;
     private SkinnedMeshRenderer _renderer;
     private CapsuleCollider _collider;
+    private NavMeshAgent _nav;
     private float timeElapsed;
     private bool arrived;
 
+    private float prevRadius;
+
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         navigator = GetComponent<Navigator>();
         _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
         _collider = GetComponent<CapsuleCollider>();
+        _nav = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -35,8 +40,7 @@ public abstract class GoToAction : BasicAction
 
                 if (Hide)
                 {
-                    _renderer.enabled = true;
-                    _collider.enabled = true;
+                    transform.Translate(new Vector3(0, 100, 0), Space.World);
                 }
 
                 Complete();
@@ -53,8 +57,7 @@ public abstract class GoToAction : BasicAction
 
             if (Hide)
             {
-                _renderer.enabled = false;
-                _collider.enabled = false;
+                transform.Translate(new Vector3(0, -100, 0), Space.World);
             }
 
             OnArrive();

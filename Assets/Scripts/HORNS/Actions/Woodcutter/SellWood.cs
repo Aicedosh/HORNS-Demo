@@ -26,4 +26,16 @@ public class SellWood : GoToAction
         action.AddResult(Wood.Variable, new IntegerAddResult(-WoodSold));
         action.AddResult(Money.Variable, new IntegerAddResult(MoneyGained));
     }
+
+    protected override void OnArrive()
+    {
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Interact", true); //TODO: Make it right
+    }
+
+    protected override void OnActionEnd()
+    {
+        base.OnActionEnd();
+        GetComponentInChildren<Animator>().SetBool("Interact", false);
+    }
 }

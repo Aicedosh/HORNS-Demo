@@ -77,7 +77,10 @@ public class Forest : MonoBehaviour
         var res = new List<Transform>();
         foreach (var tree in trees)
         {
-            res.Add(tree.Item3.transform);
+            if(tree.Item3.gameObject.GetComponent<Tree>().Chopper == null)
+            {
+                res.Add(tree.Item3.transform);
+            }
         }
 
         return res;
