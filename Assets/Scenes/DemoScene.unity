@@ -273,11 +273,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
-      propertyPath: TimeToComplete
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
       propertyPath: Hide
       value: 1
       objectReference: {fileID: 0}
@@ -399,11 +394,6 @@ PrefabInstance:
     - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: MoneyRequired
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: TimeToComplete
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
@@ -742,11 +732,6 @@ PrefabInstance:
     - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: MoneyRequired
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: TimeToComplete
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8677774692554699821, guid: 554d1051249f1f0448a485927bd1e3ce,
