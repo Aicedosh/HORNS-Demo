@@ -61,17 +61,22 @@ public class AgentAI : MonoBehaviour
     {
         return Task.Run(async () =>
         {
-            bool recalculated = false;
-            if (shouldRecalculate)
+            try
             {
-                await agent.RecalculateActionsAsync(source.Token);
-                shouldRecalculate = false;
-                recalculated = true;
+
+                bool recalculated = false;
+                if (shouldRecalculate)
+                {
+                    await agent.RecalculateActionsAsync(source.Token);
+                    shouldRecalculate = false;
+                    recalculated = true;
+                }
+                if (CurrentAction == null || recalculated)
+                {
+                    return await GetNextActionAsync(token);
+                }
             }
-            if(CurrentAction == null || recalculated)
-            {
-                return await GetNextActionAsync(token);
-            }
+            catch (TaskCanceledException e) { }
             return null;
         });
     }

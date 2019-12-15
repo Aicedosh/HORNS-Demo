@@ -80,7 +80,7 @@ MonoBehaviour:
   Forest: {fileID: 0}
   Energy: {fileID: 7147547205001256763}
   Wood: {fileID: 2236544626625796585}
-  EnergyLost: 5
+  EnergyLost: 8
   WoodGained: 1
 --- !u!114 &7410945609189825573
 MonoBehaviour:
@@ -113,16 +113,21 @@ PrefabInstance:
     - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: TimeToComplete
-      value: 0.1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: MoneyRequired
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: HungerSatisfied
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Hide
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
@@ -178,7 +183,7 @@ PrefabInstance:
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: Amount
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659b700cb1e20a34f9e47202509ee9fb, type: 3}

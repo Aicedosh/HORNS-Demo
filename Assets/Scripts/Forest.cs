@@ -88,13 +88,16 @@ public class Forest : MonoBehaviour
         List<(float, float, GameObject)> newList = new List<(float, float, GameObject)>();
         foreach(var t in trees)
         {
-            if(t.Item3.transform == tree.transform)
+            if(t.Item3 != null)
             {
-                locations.Add((t.Item1, t.Item2));
-            }
-            else
-            {
-                newList.Add(t);
+                if (t.Item3.transform == tree.transform)
+                {
+                    locations.Add((t.Item1, t.Item2));
+                }
+                else
+                {
+                    newList.Add(t);
+                }
             }
         }
         trees = newList;
