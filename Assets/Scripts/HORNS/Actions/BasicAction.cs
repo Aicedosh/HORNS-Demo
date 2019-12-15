@@ -15,19 +15,24 @@ public abstract class BasicAction : MonoBehaviour
 
         public override void Perform()
         {
-            Debug.Log("Performing action");
+            if (basicAction.agentAI.CurrentAction == basicAction)
+            {
+                //Newly calculated action is the one we are performing, do nothing
+                return;
+            }
+
+            Debug.Log($"Performing action: {basicAction.GetType().Name}");
+            if(basicAction.agentAI.CurrentAction != null)
+            {
+                Debug.Log($"Cancelling previous action: {basicAction.agentAI.CurrentAction.GetType().Name}");
+                basicAction.agentAI.CurrentAction.OnActionEnd();
+                basicAction.agentAI.CurrentAction.OnCancel();
+            }
+
             basicAction.agentAI.CurrentAction = basicAction;
             basicAction.Perform();
         }
     }
-
-    private AgentAI agentAI;
-    private HORNS.Action action;
-
-    protected abstract void Perform();
-
-    public virtual bool IsIdle => false;
-
 
     public HORNS.Action CreateAction(AgentAI agentAI)
     {
@@ -38,28 +43,50 @@ public abstract class BasicAction : MonoBehaviour
         return action;
     }
 
+    protected AgentAI agentAI;
+    private HORNS.Action action;
+
+    protected abstract void Perform();
+
+    public virtual bool IsIdle => false;
+
     protected virtual void SetupAction(HORNS.Action action) { }
 
-    //Call this method in subclass on action's end (e.g. agent is at the desired target)
-    protected virtual void OnActionEnd(bool success)
+    //Override this method to specify the uninterruptible part of action
+    protected virtual void OnComplete() { }
+
+    protected virtual void OnCancel() { }
+    protected virtual void OnActionEnd() { }
+
+    //Call this method in subclass to begin the uninterruptible part of action
+    protected void Complete()
     {
-        Debug.Log($"Action ends with {(success ? "success" : "failure")}");
-        agentAI.CurrentAction = null;
-        agentAI.PerformedActionThisFrame = true;
-        if(success)
-        {
-            action.Apply();
-        }
-        else
-        {
-            agentAI.RecalculatePlan();
-        }
-        agentAI.PerformedActionThisFrame = false;
+        Debug.Log("Completed action");
+        EndAction(true);
     }
 
     public void Cancel()
     {
         Debug.Log("Cancelled action");
-        OnActionEnd(false);
+        EndAction(false);
+    }
+
+    protected virtual void EndAction(bool success)
+    {
+        Debug.Log($"Action ends with {(success ? "success" : "failure")}");
+        OnActionEnd();
+        agentAI.CurrentAction = null;
+        agentAI.PerformedActionThisFrame = true;
+
+        if (success && action.Apply())
+        {
+            OnComplete();
+        }
+        else
+        {
+            agentAI.RecalculatePlan();
+            OnCancel();
+        }
+        agentAI.PerformedActionThisFrame = false;
     }
 }

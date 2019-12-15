@@ -11,14 +11,26 @@ public class CameraMovement : MonoBehaviour
 
     public float ZeroLevel;
 
+    public Transform Followed;
+    private Vector3 oldPos;
+
     private void Start()
     {
-        
+        if(Followed != null)
+        {
+            oldPos = Followed.position;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Followed != null)
+        {
+            transform.Translate(Followed.position - oldPos, Space.World);
+            oldPos = Followed.position;
+        }
+
         float a = (ZeroLevel-transform.position.y) / transform.forward.y;
         Vector3 pivot = new Vector3(transform.position.x + a * transform.forward.x, ZeroLevel, transform.position.z + a * transform.forward.z);
 

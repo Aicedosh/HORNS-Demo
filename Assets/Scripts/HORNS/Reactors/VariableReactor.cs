@@ -11,7 +11,7 @@ public abstract class VariableReactor<T> : MonoBehaviour, HORNS.IVariableObserve
     {
         if(ShouldRecalculate(value) && !agentAI.PerformedActionThisFrame)
         {
-            agentAI.CancelAction();
+            agentAI.RecalculatePlan();
         }
     }
 

@@ -15,10 +15,13 @@ public class AgentAI : MonoBehaviour
     private bool computing;
     private Task aiTask;
 
+    private string objectName;
+
     // Start is called before the first frame update
     void Start()
     {
         source = new CancellationTokenSource();
+        objectName = name;
 
         foreach (BasicAction action in gameObject.GetComponents<BasicAction>())
         {
@@ -28,7 +31,7 @@ public class AgentAI : MonoBehaviour
             }
             else
             {
-                agent.AddAction(action.CreateAction(this)); //TODO: Those names are awful... Change to HORNSAction/LibraryAction or something
+                agent.AddAction(action.CreateAction(this));
             }
         }
 
@@ -36,17 +39,21 @@ public class AgentAI : MonoBehaviour
         {
             need.AddTo(agent);
         }
+
+        agent.SetRecalculateCallback((a) =>
+        {
+            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions} action{(a.PlannedActions > 1 ? "s" : "")} ({a.LastPlanTime.Milliseconds}ms)");
+        });
     }
 
     private async void Update()
     {
-        if(CurrentAction == null && computing == false)
+        if (computing == false)
         {
-            Debug.Log("ACTION TIME");
             computing = true; //necessary, as Update will be called again before we finish calculations
             HORNS.Action action = await HandleAI(source.Token);
             action?.Perform();
-            computing = false; //This is actually called from the same thread as the original call
+            computing = false; //This is actually called from the same thread as the original 
         }
     }
 
@@ -54,7 +61,18 @@ public class AgentAI : MonoBehaviour
     {
         return Task.Run(async () =>
         {
-            return await GetNextActionAsync(token);
+            bool recalculated = false;
+            if (shouldRecalculate)
+            {
+                await agent.RecalculateActionsAsync(source.Token);
+                shouldRecalculate = false;
+                recalculated = true;
+            }
+            if(CurrentAction == null || recalculated)
+            {
+                return await GetNextActionAsync(token);
+            }
+            return null;
         });
     }
 
@@ -62,12 +80,6 @@ public class AgentAI : MonoBehaviour
     {
         try
         {
-            if (shouldRecalculate)
-            {
-                await agent.RecalculateActionsAsync(token);
-                shouldRecalculate = false;
-            }
-
             HORNS.Action action = await agent.GetNextActionAsync(token);
             return action;
         }
@@ -79,6 +91,11 @@ public class AgentAI : MonoBehaviour
 
     public void RecalculatePlan()
     {
+        if (source == null)
+        {
+            //We didn't even start calculations, probably someone called us too early as the reaction to variable value initialization
+            return;
+        }
         shouldRecalculate = true;
         source.Cancel();
         source = new CancellationTokenSource();

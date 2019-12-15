@@ -24,6 +24,7 @@ public class IntVariableDisplay : MonoBehaviour
     public Slider Slider;
 
     private IntObserver observer;
+    private bool changed = false;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class IntVariableDisplay : MonoBehaviour
 
     void OnInputChange(string text)
     {
+        if (changed) return;
         if (int.TryParse(text, out int val))
         {
             Variable.Variable.Value = val;
@@ -48,11 +50,13 @@ public class IntVariableDisplay : MonoBehaviour
 
     void OnSliderChange(float val)
     {
+        if (changed) return;
         Variable.Variable.Value = (int)val;
     }
 
     void VariableUpdate()
     {
+        changed = true;
         if (Variable.Variable.Value < Slider.minValue)
         {
             Slider.minValue = Variable.Variable.Value;
@@ -64,6 +68,7 @@ public class IntVariableDisplay : MonoBehaviour
 
         InputField.text = Variable.Variable.Value.ToString();
         Slider.value = Variable.Variable.Value;
+        changed = false;
     }
     
     void Update()

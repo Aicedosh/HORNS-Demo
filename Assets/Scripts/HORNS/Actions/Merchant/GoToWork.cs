@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class GoToWork : BasicAction
+public class GoToWork : GoToAction
 {
     protected override void Perform()
     {
-        navigator.GoTo(Destination, OnActionEnd);
+        navigator.GoTo(Destination, OnWalkEnd);
     }
 
     public Transform Destination;
@@ -17,14 +17,6 @@ public class GoToWork : BasicAction
     {
         action.AddResult(Works.Variable, new BooleanResult(true));
         action.AddCost(.3f);
-    }
-
-    private Navigator navigator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        navigator = GetComponent<Navigator>();
     }
 
 }

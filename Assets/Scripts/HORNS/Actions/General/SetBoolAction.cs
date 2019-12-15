@@ -12,7 +12,7 @@ public class SetBoolAction : BasicAction
 
     protected override void Perform()
     {
-        OnActionEnd(true);
+        Complete();
     }
 
     protected override void SetupAction(Action action)

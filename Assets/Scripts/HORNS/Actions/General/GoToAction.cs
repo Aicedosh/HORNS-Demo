@@ -3,34 +3,16 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class GoToAction : BasicAction
+public abstract class GoToAction : BasicAction
 {
-    protected override void Perform()
-    {
-        navigator.GoTo(Destination, Arrived);
-    }
-
-    protected void Arrived(bool success)
-    {
-        if(!success)
-        {
-            OnActionEnd(false);
-            return;
-        }
-
-        arrived = true;
-    }
-
-    public Transform Destination;
-
     public float TimeToComplete;
+    public bool Hide;
 
     protected Navigator navigator;
     private SkinnedMeshRenderer _renderer;
     private CapsuleCollider _collider;
     private float timeElapsed;
     private bool arrived;
-    private bool eating;
 
     // Start is called before the first frame update
     void Start()
@@ -41,27 +23,54 @@ public class GoToAction : BasicAction
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(arrived)
         {
-            //_renderer.enabled = false;
-            //_collider.enabled = false;
-            arrived = false;
-            timeElapsed = 0;
-            eating = true;
-        }
-
-        if(eating)
-        {
             timeElapsed += Time.deltaTime;
+
             if (timeElapsed >= TimeToComplete)
             {
-                eating = false;
-                //_renderer.enabled = true;
-                //_collider.enabled = true;
-                OnActionEnd(true);
+                arrived = false;
+
+                if (Hide)
+                {
+                    _renderer.enabled = true;
+                    _collider.enabled = true;
+                }
+
+                Complete();
             }
         }
     }
+
+    protected void OnWalkEnd(bool success)
+    {
+        if(success)
+        {
+            timeElapsed = 0;
+            arrived = true;
+
+            if (Hide)
+            {
+                _renderer.enabled = false;
+                _collider.enabled = false;
+            }
+
+            OnArrive();
+        }
+        else
+        {
+            Cancel();
+        }
+    }
+
+    protected override void OnCancel()
+    {
+        base.OnCancel();
+        navigator.Stop();
+    }
+
+    //Start animation etc.
+    protected virtual void OnArrive() { }
 }

@@ -11,18 +11,6 @@ public class Work : BasicAction
 
     public BoolVariable Works;
 
-    protected override void OnActionEnd(bool success)
-    {
-        if (success)
-        {
-            
-        }
-        else
-        {
-            base.OnActionEnd(success);
-        }
-    }
-
     public override bool IsIdle => true;
 
     protected override void SetupAction(Action action)

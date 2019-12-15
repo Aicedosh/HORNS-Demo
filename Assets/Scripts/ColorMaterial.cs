@@ -8,13 +8,13 @@ public class ColorMaterial : MonoBehaviour
 {
     public Color Color;
 
-    private Renderer renderer;
+    private Renderer _renderer;
     private MaterialPropertyBlock propBlock;
 
     void Awake()
     {
         propBlock = new MaterialPropertyBlock();
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
     }
 
     void Update()
@@ -23,8 +23,8 @@ public class ColorMaterial : MonoBehaviour
         {
             return;
         }
-        renderer.GetPropertyBlock(propBlock);
+        _renderer.GetPropertyBlock(propBlock);
         propBlock.SetColor("_Color", Color);
-        renderer.SetPropertyBlock(propBlock);
+        _renderer.SetPropertyBlock(propBlock);
     }
 }

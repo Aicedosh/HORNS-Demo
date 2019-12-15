@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public abstract class DemoVariable<T> : DemoVariable, IDisplayable
 {
     public abstract Variable<T> LibVariable { get; }
-    public override Variable Variable => LibVariable;
+    public override Variable AbstractVariable => LibVariable;
 
     public string Name;
 

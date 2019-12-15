@@ -8,9 +8,29 @@ public class UIController : MonoBehaviour
     public Canvas AgentCanvasGroup;
     private AgentUI agentUI;
 
+    public float TimeChange = 0.1f;
+
     // Start is called before the first frame update
     void Update()
     {
+        if(Input.GetKey(KeyCode.Period))
+        {
+            Time.timeScale += TimeChange;
+        }
+
+        if(Input.GetKey(KeyCode.Comma))
+        {
+            if(Time.timeScale > 0.1f)
+            {
+                Time.timeScale -= TimeChange;
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Slash))
+        {
+            Time.timeScale = 1;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject() == false)

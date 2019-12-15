@@ -12,7 +12,7 @@ public class UnconditionalReactor : MonoBehaviour, HORNS.IVariableObserver
     {
         if(!agentAI.PerformedActionThisFrame)
         {
-            agentAI.CancelAction();
+            agentAI.RecalculatePlan();
         }
     }
 
@@ -22,7 +22,7 @@ public class UnconditionalReactor : MonoBehaviour, HORNS.IVariableObserver
         agentAI = GetComponent<AgentAI>();
         foreach(DemoVariable var in Variables)
         {
-            var.Variable.Observe(this);
+            var.AbstractVariable.Observe(this);
         }
     }
 

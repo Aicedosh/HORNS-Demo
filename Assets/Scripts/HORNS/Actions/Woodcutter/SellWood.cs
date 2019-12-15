@@ -12,7 +12,12 @@ public class SellWood : GoToAction
     public int WoodSold;
     public int MoneyGained;
 
-    private Transform target;
+    public Transform target;
+
+    protected override void Perform()
+    {
+        navigator.GoTo(target, OnWalkEnd);
+    }
 
     protected override void SetupAction(Action action)
     {

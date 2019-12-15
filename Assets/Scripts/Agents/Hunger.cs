@@ -23,7 +23,6 @@ public class Hunger : MonoBehaviour
         {
             timeElapsed -= TimeToChange;
             HungerVariable.Variable.Value += Amount;
-            Debug.Log(HungerVariable.Variable.Value);
         }
     }
 }
