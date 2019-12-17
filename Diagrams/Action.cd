@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="ChopTree">
+    <Position X="4.75" Y="9.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAVAICAAAIQAAgAAIAAEAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\Woodcutter\ChopTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoToWork">
+    <Position X="8" Y="9.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAgAAAAAAAAAAAAAAAAAEAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\Merchant\GoToWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoToAction">
+    <Position X="6.5" Y="6.5" Width="2.5" />
+    <Members>
+      <Field Name="_collider" Hidden="true" />
+      <Field Name="_nav" Hidden="true" />
+      <Field Name="_renderer" Hidden="true" />
+      <Field Name="arrived" Hidden="true" />
+      <Field Name="Hide" Hidden="true" />
+      <Field Name="prevRadius" Hidden="true" />
+      <Method Name="SetAgentVisibility" Hidden="true" />
+      <Field Name="timeElapsed" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AASEgCAABCQgAAAAGAAAAAAAECAAAAEAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\General\GoToAction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="navigator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BasicAction">
+    <Position X="8" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="agentAI" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="BasicAction.Action">
+        <Members>
+          <Method Name="Action" Hidden="true" />
+          <Field Name="basicAction" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABCAAQIAAggIEAAAAAAAAAAAABAAAAAAAAAAAIgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Work">
+    <Position X="11.25" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAgAAAAAAAAAAAAAABAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\Merchant\Work.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Navigator">
+    <Position X="0.5" Y="3.75" Width="6.25" />
+    <Members>
+      <Field Name="anim" Hidden="true" />
+      <Method Name="ChangeSpeed" Hidden="true" />
+      <Field Name="changingTime" Hidden="true" />
+      <Field Name="currentSpeed" Hidden="true" />
+      <Field Name="currentTarget" Hidden="true" />
+      <Field Name="finishCallback" Hidden="true" />
+      <Method Name="GetDistanceTo" Hidden="true" />
+      <Field Name="GoalDistance" Hidden="true" />
+      <Field Name="isFollowing" Hidden="true" />
+      <Field Name="isWalking" Hidden="true" />
+      <Field Name="nav" Hidden="true" />
+      <Field Name="Speed" Hidden="true" />
+      <Field Name="speedDelta" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Stop" Hidden="true" />
+      <Field Name="timeSinceChange" Hidden="true" />
+      <Field Name="timeToChange" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+      <Field Name="WalkAnimationTreshold" Hidden="true" />
+      <Field Name="WalkSpeedChangeIntervalMaxSec" Hidden="true" />
+      <Field Name="WalkSpeedChangeIntervalMinSec" Hidden="true" />
+      <Field Name="WalkSpeedChangeTimeMaxSec" Hidden="true" />
+      <Field Name="WalkSpeedChangeTimeMinSec" Hidden="true" />
+      <Field Name="WalkSpeedDeltaPerc" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAACAAQgCACABAAIAxEBAAABOBIQEABAAAAYE=</HashCode>
+      <FileName>Assets\Scripts\Agents\Navigator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
