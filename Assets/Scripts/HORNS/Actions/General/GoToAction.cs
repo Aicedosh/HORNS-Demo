@@ -27,6 +27,21 @@ public abstract class GoToAction : BasicAction
         _nav = GetComponent<NavMeshAgent>();
     }
 
+    private void SetAgentVisibility(bool visible)
+    {
+        //_renderer.enabled = visible;
+        _collider.enabled = visible;
+        if(!visible)
+        {
+            prevRadius = _nav.radius;
+            _nav.radius = 0;
+        }
+        else
+        {
+            _nav.radius = prevRadius;
+        }
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
@@ -40,7 +55,7 @@ public abstract class GoToAction : BasicAction
 
                 if (Hide)
                 {
-                    transform.Translate(new Vector3(0, 100, 0), Space.World);
+                    SetAgentVisibility(true);
                 }
 
                 Complete();
@@ -57,7 +72,7 @@ public abstract class GoToAction : BasicAction
 
             if (Hide)
             {
-                transform.Translate(new Vector3(0, -100, 0), Space.World);
+                SetAgentVisibility(false);
             }
 
             OnArrive();

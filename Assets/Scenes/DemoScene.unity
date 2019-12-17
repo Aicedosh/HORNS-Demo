@@ -278,12 +278,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 554d1051249f1f0448a485927bd1e3ce, type: 3}
---- !u!4 &106523171 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7701260752912861525, guid: 554d1051249f1f0448a485927bd1e3ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 510912019}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &148234100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AgentCanvasGroup: {fileID: 1989324506}
-  TimeChange: 0.1
+  TimeChange: 5
 --- !u!114 &198162917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,7 +1002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 2.8200073, y: 0}
+  m_AnchoredPosition: {x: 2.8203125, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &751151405
@@ -1244,7 +1238,7 @@ MonoBehaviour:
   NumberOfTreesLenght: 10
   NumberOfTreesWidth: 7
   Padding: 0.5
-  RespawnTime: 25
+  RespawnTime: 12
   Prefabs:
   - {fileID: 191266, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
 --- !u!4 &934863411
@@ -1362,7 +1356,7 @@ MonoBehaviour:
   MoveSpeed: 15
   RotateSpeed: 60
   ZeroLevel: 1
-  Followed: {fileID: 106523171}
+  Followed: {fileID: 0}
 --- !u!1001 &966642932
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -100,9 +100,12 @@ public class Navigator : MonoBehaviour
             return false;
         }
 
+        if(!nav.SetDestination(transform.position))
+        {
+            return false;
+        }
         this.finishCallback = finishCallback;
         this.currentTarget = transform.gameObject;
-        nav.SetDestination(transform.position);
         isWalking = true;
         
         return true;
@@ -145,6 +148,11 @@ public class Navigator : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         nav.CalculatePath(transform.position, path);
         float dist = 0f;
+
+        if(path.corners.Length == 0)
+        {
+            return float.PositiveInfinity;
+        }
 
         if ((path.status != NavMeshPathStatus.PathInvalid))
         {

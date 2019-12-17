@@ -110,16 +110,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodcutter
       objectReference: {fileID: 0}
-    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: TimeToChange
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Amount
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -155,6 +145,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToChange
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Amount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461147, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: AgentCanvasGroup
@@ -179,6 +179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Hide
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918895519971602040, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: DesiredValue
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6107084943520132223, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}

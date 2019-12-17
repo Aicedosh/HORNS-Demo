@@ -98,22 +98,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PT_Medieval_Peasant_01_d
       objectReference: {fileID: 0}
-    - target: {fileID: 4538290013930110, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.02369865
-      objectReference: {fileID: 0}
-    - target: {fileID: 4538290013930110, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.04798789
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737107810264108, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.02369865
-      objectReference: {fileID: 0}
-    - target: {fileID: 4737107810264108, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.04798789
-      objectReference: {fileID: 0}
     - target: {fileID: 4757896815158176, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -168,6 +152,22 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4538290013930110, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.02369865
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538290013930110, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.04798789
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737107810264108, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.02369865
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737107810264108, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.04798789
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8957e6e3e3964849811f1c043bf0474, type: 3}
 --- !u!1001 &5699436134436822008
@@ -181,41 +181,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Merchant
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Tavern
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Works
-      value: 
-      objectReference: {fileID: 5508492655109454691}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Destination
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: TimeToComplete
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: HungerSatisfied
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: MoneyRequired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Money
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
@@ -272,16 +237,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4247288941157461147, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: AgentCanvasGroup
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4258553868756177325, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: TimeToChange
@@ -291,6 +246,56 @@ PrefabInstance:
         type: 3}
       propertyPath: Amount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247288941157461147, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: AgentCanvasGroup
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Tavern
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Works
+      value: 
+      objectReference: {fileID: 5508492655109454691}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Destination
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: MoneyRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Money
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917381519074726369, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Hide
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258553868756177325, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659b700cb1e20a34f9e47202509ee9fb, type: 3}

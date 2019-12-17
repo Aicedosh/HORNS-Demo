@@ -12,8 +12,7 @@ public class AgentAI : MonoBehaviour
 
     private CancellationTokenSource source;
     private bool shouldRecalculate;
-    private bool computing;
-    private Task aiTask;
+    private Task<HORNS.Action> aiTask;
 
     private string objectName;
 
@@ -46,14 +45,16 @@ public class AgentAI : MonoBehaviour
         });
     }
 
-    private async void Update()
+    private void Update()
     {
-        if (computing == false)
+        if(aiTask != null && aiTask.IsCompleted)
         {
-            computing = true; //necessary, as Update will be called again before we finish calculations
-            HORNS.Action action = await HandleAI(source.Token);
-            action?.Perform();
-            computing = false; //This is actually called from the same thread as the original 
+            aiTask.Result?.Perform();
+        }
+
+        if (aiTask == null || aiTask.IsCanceled || aiTask.IsCompleted || aiTask.IsFaulted)
+        {
+            aiTask = HandleAI(source.Token);
         }
     }
 

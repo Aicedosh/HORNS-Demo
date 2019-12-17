@@ -36,52 +36,52 @@ public class CameraMovement : MonoBehaviour
 
         Vector3 forward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
 
-        transform.RotateAround(pivot, transform.right, -Input.mouseScrollDelta.y * AngularSpeed * Time.deltaTime);
-        transform.Translate(forward * Input.mouseScrollDelta.y * TowardsSpeed * Time.deltaTime);
+        transform.RotateAround(pivot, transform.right, -Input.mouseScrollDelta.y * AngularSpeed * Time.deltaTime / Time.timeScale);
+        transform.Translate(forward * Input.mouseScrollDelta.y * TowardsSpeed * Time.deltaTime / Time.timeScale);
 
         Vector3 forward2d = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
         Vector3 right2d = new Vector3(transform.right.x, 0, transform.right.z).normalized;
 
         if(Input.GetKey(KeyCode.W))
         {
-            transform.Translate(forward2d * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(-forward2d * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(-forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(right2d * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-right2d * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(-right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.RotateAround(pivot, Vector3.up, RotateSpeed * Time.deltaTime);
+            transform.RotateAround(pivot, Vector3.up, RotateSpeed * Time.deltaTime / Time.timeScale);
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            transform.RotateAround(pivot, Vector3.up, -RotateSpeed * Time.deltaTime);
+            transform.RotateAround(pivot, Vector3.up, -RotateSpeed * Time.deltaTime / Time.timeScale);
         }
 
         if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
         {
-            transform.RotateAround(pivot, transform.right, -AngularSpeed * Time.deltaTime);
-            transform.Translate(forward * TowardsSpeed * Time.deltaTime);
+            transform.RotateAround(pivot, transform.right, -AngularSpeed * Time.deltaTime / Time.timeScale);
+            transform.Translate(forward * TowardsSpeed * Time.deltaTime / Time.timeScale);
         }
 
         if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
         {
-            transform.RotateAround(pivot, transform.right, AngularSpeed * Time.deltaTime);
-            transform.Translate(forward * -TowardsSpeed * Time.deltaTime);
+            transform.RotateAround(pivot, transform.right, AngularSpeed * Time.deltaTime / Time.timeScale);
+            transform.Translate(forward * -TowardsSpeed * Time.deltaTime / Time.timeScale);
         }
     }
 }
