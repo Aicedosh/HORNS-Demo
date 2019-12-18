@@ -15,6 +15,7 @@ public class GoToWork : GoToAction
 
     protected override void SetupAction(Action action)
     {
+        base.SetupAction(action);
         action.AddResult(Works.Variable, new BooleanResult(true));
         action.AddCost(.3f);
     }

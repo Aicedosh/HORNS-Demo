@@ -18,6 +18,18 @@ public abstract class GoToAction : BasicAction
 
     private float prevRadius;
 
+    public BoolVariable[] IsInTavern;
+
+    protected override void SetupAction(Action action)
+    {
+        base.SetupAction(action);
+
+        foreach(var v in IsInTavern)
+        {
+            action.AddPrecondition(v.Variable, new BooleanPrecondition(false));
+        }
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {

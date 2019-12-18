@@ -17,6 +17,7 @@ public class ChopTree : GoToAction
 
     protected override void SetupAction(Action action)
     {
+        base.SetupAction(action);
         action.AddResult(Wood.Variable, new IntegerAddResult(WoodGained));
         action.AddResult(Energy.Variable, new IntegerAddResult(-EnergyLost));
     }
@@ -42,7 +43,7 @@ public class ChopTree : GoToAction
         base.Update();
         if(agentAI.CurrentAction == this)
         {
-            if (target == null || target.gameObject.GetComponent<Tree>().Chopper != agentAI)
+            if (target == null || (target.gameObject.GetComponent<Tree>().Chopper != null && target.gameObject.GetComponent<Tree>().Chopper != agentAI))
             {
                 //Someone else is either chopping our tree, or already chopped. Abort
                 Cancel();

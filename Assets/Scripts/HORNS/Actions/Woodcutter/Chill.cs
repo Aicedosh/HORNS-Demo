@@ -19,10 +19,11 @@ public class Chill : GoToAction
         Energy.Variable.Value = 200;
     }
 
-    public override bool IsIdle => true;
+    public override bool IsIdle => false;
 
     protected override void SetupAction(Action action)
     {
+        base.SetupAction(action);
         action.AddCost(5);
         action.AddResult(Energy.Variable, new IntegerAddResult(5));
     }

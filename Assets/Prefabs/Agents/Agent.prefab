@@ -21,6 +21,14 @@ GameObject:
   - component: {fileID: 9075821928463090309}
   - component: {fileID: 6349468011752379757}
   - component: {fileID: 2917381519074726369}
+  - component: {fileID: 3816324391289463606}
+  - component: {fileID: -4726490423780495005}
+  - component: {fileID: -6433145738901513451}
+  - component: {fileID: 8365934120738337565}
+  - component: {fileID: 7995775678038464188}
+  - component: {fileID: -1939698875690688532}
+  - component: {fileID: -2491370202761505483}
+  - component: {fileID: -6044448588018837349}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -220,11 +228,144 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbce9683be2725543922f562a42acddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToComplete: 0.1
-  Hide: 0
   Hunger: {fileID: 648988850388729098}
   Money: {fileID: 9075821928463090309}
+  NumberOfCustomers: {fileID: 0}
   Works: {fileID: 0}
+  IsInTavern: {fileID: 3816324391289463606}
+  CrowdFactor: 0.5
   MoneyRequired: 1
   HungerSatisfied: 1
+  TimeToEat: 20
+--- !u!114 &3816324391289463606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Is in cheap tavern
+--- !u!114 &-4726490423780495005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Is in expensive tavern
+--- !u!114 &-6433145738901513451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9f9a83cfd7ff04eaaaa7fd970ad4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variable: {fileID: 3816324391289463606}
+  EndValue: 0
+  Cost: 0
+  NumberOfCustomers: {fileID: 0}
+--- !u!114 &8365934120738337565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27513e23172f4214d911cb69e5193777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToComplete: 0
+  Hide: 0
+  IsInTavern:
+  - {fileID: 3816324391289463606}
+  - {fileID: -4726490423780495005}
   target: {fileID: 0}
+  NumberOfCustomers: {fileID: 0}
+  IsInDestTavern: {fileID: 3816324391289463606}
+--- !u!114 &7995775678038464188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27513e23172f4214d911cb69e5193777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToComplete: 0
+  Hide: 1
+  IsInTavern:
+  - {fileID: 3816324391289463606}
+  - {fileID: -4726490423780495005}
+  target: {fileID: 0}
+  NumberOfCustomers: {fileID: 0}
+  IsInDestTavern: {fileID: -4726490423780495005}
+--- !u!114 &-1939698875690688532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9f9a83cfd7ff04eaaaa7fd970ad4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variable: {fileID: -4726490423780495005}
+  EndValue: 0
+  Cost: 0
+  NumberOfCustomers: {fileID: 0}
+--- !u!114 &-2491370202761505483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbce9683be2725543922f562a42acddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hunger: {fileID: 648988850388729098}
+  Money: {fileID: 0}
+  NumberOfCustomers: {fileID: 0}
+  Works: {fileID: 0}
+  IsInTavern: {fileID: -4726490423780495005}
+  CrowdFactor: 0
+  MoneyRequired: 0
+  HungerSatisfied: 0
+  TimeToEat: 10
+--- !u!114 &-6044448588018837349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variables: []

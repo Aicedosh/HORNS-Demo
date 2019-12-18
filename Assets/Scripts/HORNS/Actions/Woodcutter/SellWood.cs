@@ -21,6 +21,7 @@ public class SellWood : GoToAction
 
     protected override void SetupAction(Action action)
     {
+        base.SetupAction(action);
         action.AddPrecondition(SellerWorks.Variable, new BooleanPrecondition(true));
         action.AddPrecondition(Wood.Variable, new IntegerPrecondition(WoodSold, IntegerPrecondition.Condition.AtLeast));
         action.AddResult(Wood.Variable, new IntegerAddResult(-WoodSold));

@@ -21,10 +21,10 @@ public abstract class BasicAction : MonoBehaviour
                 return;
             }
 
-            Debug.Log($"Performing action: {basicAction.GetType().Name}");
+            Debug.Log($"[{basicAction.agentAI.gameObject.name}] Performing action: {basicAction.GetType().Name}");
             if(basicAction.agentAI.CurrentAction != null)
             {
-                Debug.Log($"Cancelling previous action: {basicAction.agentAI.CurrentAction.GetType().Name}");
+                Debug.Log($"[{basicAction.agentAI.gameObject.name}] Cancelling previous action: {basicAction.agentAI.CurrentAction.GetType().Name}");
                 basicAction.agentAI.CurrentAction.OnActionEnd();
                 basicAction.agentAI.CurrentAction.OnCancel();
             }
@@ -61,19 +61,19 @@ public abstract class BasicAction : MonoBehaviour
     //Call this method in subclass to begin the uninterruptible part of action
     protected void Complete()
     {
-        Debug.Log("Completed action");
+        Debug.Log($"[{agentAI.gameObject.name}] Completed action {GetType().Name}");
         EndAction(true);
     }
 
     public void Cancel()
     {
-        Debug.Log("Cancelled action");
+        Debug.Log($"[{agentAI.gameObject.name}] Cancelled action {GetType().Name}");
         EndAction(false);
     }
 
     protected virtual void EndAction(bool success)
     {
-        Debug.Log($"Action ends with {(success ? "success" : "failure")}");
+        Debug.Log($"[{agentAI.gameObject.name}] Action ends with {(success ? "success" : "failure")}");
         OnActionEnd();
         agentAI.CurrentAction = null;
         agentAI.PerformedActionThisFrame = true;

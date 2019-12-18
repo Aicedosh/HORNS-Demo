@@ -3,20 +3,39 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class EatAction : GoToAction
+public class EatAction : BasicAction
 {
     public IntVariable Hunger;
     public IntVariable Money;
+    public IntVariable NumberOfCustomers;
     public BoolVariable Works;
+    public BoolVariable IsInTavern;
+    public float CrowdFactor;
 
     public int MoneyRequired;
     public int HungerSatisfied;
+    public float TimeToEat;
 
-    public Transform target;
+    private float timeElapsed = 0;
+    private bool eating = false;
 
     protected override void Perform()
     {
-        navigator.GoTo(target, OnWalkEnd);
+        eating = true;
+    }
+
+    private void Update()
+    {
+        if (eating)
+        {
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed >= TimeToEat)
+            {
+                eating = false;
+                timeElapsed = 0;
+                Complete();
+            }
+        }
     }
 
     protected override void SetupAction(Action action)
@@ -32,6 +51,10 @@ public class EatAction : GoToAction
             action.AddResult(Money.Variable, new IntegerAddResult(-MoneyRequired));
         }
 
+        action.AddPrecondition(IsInTavern.Variable, new BooleanPrecondition(true));
+
         action.AddResult(Hunger.Variable, new IntegerAddResult(-HungerSatisfied));
+
+        action.AddCost(NumberOfCustomers.Variable, n => (n - (IsInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
     }
 }

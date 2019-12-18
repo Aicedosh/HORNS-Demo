@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5926928466529779933}
   - component: {fileID: 4022674999765006744}
   - component: {fileID: 836526356255935826}
+  - component: {fileID: 6649342596143418555}
   m_Layer: 0
   m_Name: Tavern
   m_TagString: Untagged
@@ -196,6 +197,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.24, y: 3.68, z: 3.53}
   m_Center: {x: 0.12, y: 1.49, z: -0.02}
+--- !u!114 &6649342596143418555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282126483210735445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Number of customers
 --- !u!1 &2072892699703280998
 GameObject:
   m_ObjectHideFlags: 0
