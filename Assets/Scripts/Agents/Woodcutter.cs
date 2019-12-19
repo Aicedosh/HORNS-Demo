@@ -23,6 +23,8 @@ public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>
     {
         _anim = GetComponentInChildren<Animator>();
         HasWood.Variable.Observe(this);
+        Log.SetActive(false);
+        HandAxe.SetActive(false);
     }
 
     void Update()
@@ -37,7 +39,5 @@ public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>
             HandAxe.SetActive(false);
             HipAxe.SetActive(true);
         }
-
-        Log.SetActive(_anim.GetBool("Carry"));
     }
 }

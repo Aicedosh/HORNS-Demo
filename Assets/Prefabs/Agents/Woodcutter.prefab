@@ -135,6 +135,18 @@ MonoBehaviour:
   - {fileID: 7960423587194786991}
   Energy: {fileID: 7147547205001256763}
   Home: {fileID: 0}
+--- !u!114 &6953461190084891811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265280622658862405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098cfa8517b174a48aac85704fa99910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5336845936187413300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,7 +156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1164328234615206, guid: e048a401410aa9f4791cdd97e15735ca, type: 3}
       propertyPath: m_Name
-      value: axe
+      value: axe - hand
       objectReference: {fileID: 0}
     - target: {fileID: 4045817768345548, guid: e048a401410aa9f4791cdd97e15735ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -376,7 +388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1164328234615206, guid: e048a401410aa9f4791cdd97e15735ca, type: 3}
       propertyPath: m_Name
-      value: axe
+      value: axe - hip
       objectReference: {fileID: 0}
     - target: {fileID: 4045817768345548, guid: e048a401410aa9f4791cdd97e15735ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -588,6 +600,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fffcfe153453e644b78633b71669399, type: 3}
+--- !u!1 &8265280622658862405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780424665802740, guid: 7fffcfe153453e644b78633b71669399,
+    type: 3}
+  m_PrefabInstance: {fileID: 8264808617945930417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8260264519438370539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4544792635776090, guid: 7fffcfe153453e644b78633b71669399,
