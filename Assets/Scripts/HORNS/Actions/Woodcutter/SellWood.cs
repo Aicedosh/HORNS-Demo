@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SellWood : GoToAction
 {
-    public IntVariable Wood;
+    public BoolVariable Wood;
     public IntVariable Money;
     public BoolVariable SellerWorks;
 
@@ -16,6 +16,11 @@ public class SellWood : GoToAction
 
     protected override void Perform()
     {
+        if(SellerWorks.Variable.Value == false)
+        {
+            Cancel();
+            return;
+        }
         navigator.GoTo(target, OnWalkEnd);
     }
 
@@ -23,8 +28,8 @@ public class SellWood : GoToAction
     {
         base.SetupAction(action);
         action.AddPrecondition(SellerWorks.Variable, new BooleanPrecondition(true));
-        action.AddPrecondition(Wood.Variable, new IntegerPrecondition(WoodSold, IntegerPrecondition.Condition.AtLeast));
-        action.AddResult(Wood.Variable, new IntegerAddResult(-WoodSold));
+        action.AddPrecondition(Wood.Variable, new BooleanPrecondition(true));
+        action.AddResult(Wood.Variable, new BooleanResult(false));
         action.AddResult(Money.Variable, new IntegerAddResult(MoneyGained));
     }
 
@@ -32,6 +37,12 @@ public class SellWood : GoToAction
     {
         base.OnArrive();
         GetComponentInChildren<Animator>().SetBool("Interact", true); //TODO: Make it right
+    }
+
+    protected override void OnComplete()
+    {
+        base.OnComplete();
+        GetComponentInChildren<Animator>().SetBool("Carry", false);
     }
 
     protected override void OnActionEnd()

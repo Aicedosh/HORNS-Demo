@@ -8,17 +8,21 @@ public class ChopTree : GoToAction
     public Forest Forest;
 
     public IntVariable Energy;
-    public IntVariable Wood;
+    public BoolVariable Wood;
 
     public int EnergyLost;
-    public int WoodGained;
+
+    public float TimeToPickup;
 
     private Transform target;
+    private bool isPickingUp;
+    private float chopTimeElapsed;
 
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddResult(Wood.Variable, new IntegerAddResult(WoodGained));
+        action.AddPrecondition(Wood.Variable, new BooleanPrecondition(false));
+        action.AddResult(Wood.Variable, new BooleanResult(true));
         action.AddResult(Energy.Variable, new IntegerAddResult(-EnergyLost));
     }
 
@@ -49,6 +53,16 @@ public class ChopTree : GoToAction
                 Cancel();
             }
         }
+
+        if(isPickingUp)
+        {
+            chopTimeElapsed += Time.deltaTime;
+            if(chopTimeElapsed >= TimeToPickup)
+            {
+                Complete();
+                isPickingUp = false;
+            }
+        }
     }
 
     protected override void OnArrive()
@@ -56,10 +70,18 @@ public class ChopTree : GoToAction
         Tree tree = target.gameObject.GetComponent<Tree>();
         if (tree.Chopper != null && tree.Chopper != agentAI)
         {
+            Cancel();
             return;
         }
         base.OnArrive();
         GetComponentInChildren<Animator>().SetBool("Chop", true);
         tree.Chopper = agentAI;
+    }
+
+    protected override void FinishWork()
+    {
+        GetComponentInChildren<Animator>().SetBool("Carry", true);
+        isPickingUp = true;
+        chopTimeElapsed = 0;
     }
 }

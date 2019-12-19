@@ -70,7 +70,7 @@ public abstract class GoToAction : BasicAction
                     SetAgentVisibility(true);
                 }
 
-                Complete();
+                FinishWork();
             }
         }
     }
@@ -103,4 +103,6 @@ public abstract class GoToAction : BasicAction
 
     //Start animation etc.
     protected virtual void OnArrive() { }
+
+    protected virtual void FinishWork() { Complete(); }
 }
