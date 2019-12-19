@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 7995775678038464188}
   - component: {fileID: -1939698875690688532}
   - component: {fileID: -2491370202761505483}
-  - component: {fileID: -6044448588018837349}
+  - component: {fileID: 3933908279516436619}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -233,7 +233,7 @@ MonoBehaviour:
   NumberOfCustomers: {fileID: 0}
   Works: {fileID: 0}
   IsInTavern: {fileID: 3816324391289463606}
-  CrowdFactor: 0.5
+  CrowdFactor: 1
   MoneyRequired: 1
   HungerSatisfied: 1
   TimeToEat: 20
@@ -352,11 +352,11 @@ MonoBehaviour:
   NumberOfCustomers: {fileID: 0}
   Works: {fileID: 0}
   IsInTavern: {fileID: -4726490423780495005}
-  CrowdFactor: 0
+  CrowdFactor: 1
   MoneyRequired: 0
   HungerSatisfied: 0
   TimeToEat: 10
---- !u!114 &-6044448588018837349
+--- !u!114 &3933908279516436619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

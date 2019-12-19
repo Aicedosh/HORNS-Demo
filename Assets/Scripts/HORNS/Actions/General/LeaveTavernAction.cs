@@ -11,5 +11,6 @@ public class LeaveTavernAction : SetBoolAction
     {
         base.SetupAction(action);
         action.AddResult(NumberOfCustomers.Variable, new IntegerAddResult(-1));
+        action.AddCost(2);
     }
 }

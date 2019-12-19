@@ -20,8 +20,8 @@ MonoBehaviour:
   Wood: {fileID: 2236544626625796585}
   Money: {fileID: 3306472149096310601}
   SellerWorks: {fileID: 0}
-  WoodSold: 3
-  MoneyGained: 3
+  WoodSold: 1
+  MoneyGained: 1
   target: {fileID: 0}
 --- !u!114 &2097183600395854998
 MonoBehaviour:
@@ -35,9 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Variables:
-  - {fileID: 0}
-  - {fileID: 6417791063838038214}
+  Variables: []
 --- !u!114 &2236544626625796585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +64,20 @@ MonoBehaviour:
   DesiredValue: 1000000
   Multiplier: 10
   Variable: {fileID: 3306472149096310601}
+--- !u!114 &4082938761958731967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701260752912861610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d3fafe8f2c78b43b96def7106116e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MerchantWorks: {fileID: 0}
+  Wood: {fileID: 2236544626625796585}
 --- !u!114 &4729172102466286460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +126,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4247288941157461094, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Woodcutter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToChange
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Amount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: -2491370202761505483, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: Money
@@ -128,11 +155,6 @@ PrefabInstance:
         type: 3}
       propertyPath: MoneyRequired
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4247288941157461094, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Woodcutter
       objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
@@ -168,16 +190,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: TimeToChange
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
-        type: 3}
-      propertyPath: Amount
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461147, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
@@ -228,18 +240,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5769455355568711116}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6417791063838038214 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 648988850388729098, guid: 659b700cb1e20a34f9e47202509ee9fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 5769455355568711116}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7701260752912861610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4156727389b5f4c938343b9ff8558e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7147547205001256763 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3683954681530972919, guid: 659b700cb1e20a34f9e47202509ee9fb,

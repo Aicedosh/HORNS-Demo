@@ -78,8 +78,17 @@ public abstract class BasicAction : MonoBehaviour
         agentAI.CurrentAction = null;
         agentAI.PerformedActionThisFrame = true;
 
-        if (success && action.Apply())
+        if(success && !action.CanExecute)
         {
+            int i = 0;
+        }
+
+        if (success)
+        {
+            if(!action.Apply())
+            {
+                int i = 0;
+            }
             OnComplete();
         }
         else
