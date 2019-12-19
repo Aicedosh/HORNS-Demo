@@ -5,13 +5,15 @@ using UnityEngine;
 
 public abstract class BasicAction : MonoBehaviour
 {
-    private class Action : HORNS.Action
+    public class LibAction : HORNS.Action
     {
         private BasicAction basicAction;
-        public Action(BasicAction basicAction)
+        public LibAction(BasicAction basicAction)
         {
             this.basicAction = basicAction;
         }
+
+        public string Name => basicAction.GetType().Name;
 
         public override void Perform()
         {
@@ -37,7 +39,7 @@ public abstract class BasicAction : MonoBehaviour
     public HORNS.Action CreateAction(AgentAI agentAI)
     {
         this.agentAI = agentAI;
-        action = new Action(this);
+        action = new LibAction(this);
         SetupAction(action);
 
         return action;

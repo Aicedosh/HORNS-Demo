@@ -12,4 +12,6 @@ public class UIProvider : MonoBehaviour
 
     public LayoutGroup BoolVariablePrefab;
     public LayoutGroup BoolNeedPrefab;
+
+    public LayoutGroup AgentPrefab;
 }

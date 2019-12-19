@@ -166,11 +166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: MerchantWorks
-      value: 
-      objectReference: {fileID: 173660394}
     - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: m_Name
@@ -181,6 +176,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: MerchantWorks
+      value: 
+      objectReference: {fileID: 173660394}
     - target: {fileID: 1964019805448322309, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: target
@@ -370,11 +370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: MerchantWorks
-      value: 
-      objectReference: {fileID: 173660394}
     - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: m_Name
@@ -385,6 +380,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: MerchantWorks
+      value: 
+      objectReference: {fileID: 173660394}
     - target: {fileID: 1964019805448322309, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: target
@@ -716,6 +716,8 @@ MonoBehaviour:
     type: 3}
   BoolNeedPrefab: {fileID: 5944994940131602181, guid: ea936fe963edb614a91090fc3e29748e,
     type: 3}
+  AgentPrefab: {fileID: 8863367798265971898, guid: b2c8fd13a1bf2374ca638cadc9530f55,
+    type: 3}
 --- !u!222 &198162918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -761,11 +763,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: MerchantWorks
-      value: 
-      objectReference: {fileID: 173660394}
     - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: m_Name
@@ -776,6 +773,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: MerchantWorks
+      value: 
+      objectReference: {fileID: 173660394}
     - target: {fileID: 1964019805448322309, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: target
@@ -971,16 +973,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
-        type: 3}
-      propertyPath: MerchantWorks
-      value: 
-      objectReference: {fileID: 173660394}
     - target: {fileID: 7701260752912861610, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4082938761958731967, guid: 554d1051249f1f0448a485927bd1e3ce,
+        type: 3}
+      propertyPath: MerchantWorks
+      value: 
+      objectReference: {fileID: 173660394}
     - target: {fileID: 1964019805448322309, guid: 554d1051249f1f0448a485927bd1e3ce,
         type: 3}
       propertyPath: target
@@ -2251,10 +2253,10 @@ RectTransform:
   m_Father: {fileID: 1989324503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 227.79, y: 369}
+  m_SizeDelta: {x: 227.79, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1412427534
 MonoBehaviour:
@@ -2516,7 +2518,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1989324503}
   - component: {fileID: 1989324506}
-  - component: {fileID: 1989324505}
   - component: {fileID: 1989324504}
   - component: {fileID: 1989324507}
   m_Layer: 5
@@ -2541,10 +2542,10 @@ RectTransform:
   m_Father: {fileID: 198162915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: 0, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1989324504
 MonoBehaviour:
@@ -2563,28 +2564,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1989324505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989324502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!223 &1989324506
 Canvas:
   m_ObjectHideFlags: 0

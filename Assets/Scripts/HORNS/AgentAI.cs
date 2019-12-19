@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class AgentAI : MonoBehaviour
+public class AgentAI : MonoBehaviour, IDisplayable
 {
     private HORNS.Agent agent = new HORNS.Agent();
     public BasicAction CurrentAction { get; set; }
@@ -15,6 +17,7 @@ public class AgentAI : MonoBehaviour
     private Task<HORNS.Action> aiTask;
 
     private string objectName;
+    private AgentDisplay display;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,7 @@ public class AgentAI : MonoBehaviour
 
         agent.SetRecalculateCallback((a) =>
         {
-            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions} action{(a.PlannedActions > 1 ? "s" : "")} ({a.LastPlanTime.Milliseconds}ms)");
+            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions} action{(a.PlannedActions.Count() > 1 ? "s" : "")} ({a.LastPlanTime.Milliseconds}ms)");
         });
     }
 
@@ -50,6 +53,17 @@ public class AgentAI : MonoBehaviour
         if(aiTask != null && aiTask.IsCompleted)
         {
             aiTask.Result?.Perform();
+            if(display != null)
+            {
+                if (display.transform == null)
+                {
+                    display = null;
+                }
+                else
+                {
+                    display.SetContent(agent.PlannedActions, agent.CurrentAction);
+                }
+            }
         }
 
         if (aiTask == null || aiTask.IsCanceled || aiTask.IsCompleted || aiTask.IsFaulted)
@@ -110,5 +124,14 @@ public class AgentAI : MonoBehaviour
     public void CancelAction()
     {
         CurrentAction?.Cancel();
+    }
+
+    public LayoutGroup GetComponent()
+    {
+        LayoutGroup canvas = FindObjectOfType<UIProvider>().AgentPrefab;
+        var go = Instantiate(canvas);
+        display = go.GetComponent<AgentDisplay>();
+        display.AgentAI = this;
+        return go;
     }
 }
