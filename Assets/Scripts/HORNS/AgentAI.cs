@@ -19,11 +19,15 @@ public class AgentAI : MonoBehaviour, IDisplayable
     private string objectName;
     private AgentDisplay display;
 
+    private PlanTimeStats timeStats;
+
     // Start is called before the first frame update
     void Start()
     {
         source = new CancellationTokenSource();
         objectName = name;
+
+        timeStats = FindObjectOfType<PlanTimeStats>();
 
         foreach (BasicAction action in gameObject.GetComponents<BasicAction>())
         {
@@ -44,7 +48,8 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
         agent.SetRecalculateCallback((a) =>
         {
-            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions} action{(a.PlannedActions.Count() > 1 ? "s" : "")} ({a.LastPlanTime.Milliseconds}ms)");
+            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions.Count()} action{(a.PlannedActions.Count() > 1 ? "s" : "")}, Cost: {a.PlannedActions.Sum(ac=>ac.CachedCost)} ({a.LastPlanTime.TotalMilliseconds}ms)");
+            timeStats.AddTime(a.LastPlanTime.TotalMilliseconds, objectName);
         });
     }
 
