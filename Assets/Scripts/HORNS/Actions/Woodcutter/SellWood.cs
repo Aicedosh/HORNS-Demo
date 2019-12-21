@@ -8,6 +8,7 @@ public class SellWood : GoToAction
     public BoolVariable Wood;
     public IntVariable Money;
     public BoolVariable SellerWorks;
+    public IntVariable WoodCount;
 
     public int WoodSold;
     public int MoneyGained;
@@ -31,6 +32,7 @@ public class SellWood : GoToAction
         action.AddPrecondition(Wood.Variable, new BooleanPrecondition(true));
         action.AddResult(Wood.Variable, new BooleanResult(false));
         action.AddResult(Money.Variable, new IntegerAddResult(MoneyGained));
+        action.AddResult(WoodCount.Variable, new IntegerAddResult(1));
     }
 
     protected override void OnArrive()

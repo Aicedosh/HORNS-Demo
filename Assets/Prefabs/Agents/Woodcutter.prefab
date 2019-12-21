@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DesiredValue: 1000000
-  Multiplier: 10
+  Multiplier: 30
   Variable: {fileID: 3306472149096310601}
 --- !u!114 &4082938761958731967
 MonoBehaviour:
@@ -225,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: TimeToChange
-      value: 110
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}

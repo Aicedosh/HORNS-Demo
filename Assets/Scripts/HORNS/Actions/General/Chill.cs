@@ -25,6 +25,6 @@ public class Chill : GoToAction
     {
         base.SetupAction(action);
         action.AddCost(5);
-        action.AddResult(Energy.Variable, new IntegerAddResult(5));
+        action.AddResult(Energy.Variable, new IntegerAddResult(15));
     }
 }

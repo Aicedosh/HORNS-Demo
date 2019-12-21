@@ -9,6 +9,7 @@ public class HangOutAction : GoToAction
     public Transform[] Places;
     public int DesiredCrowdSize;
     public float Factor;
+    public float BaseCost;
 
     public BoolVariable Rains;
 
@@ -32,6 +33,7 @@ public class HangOutAction : GoToAction
         }
 
         action.AddCost(CrowdSize.Variable, n => Factor * (n - DesiredCrowdSize) * (n - DesiredCrowdSize));
+        action.AddCost(BaseCost);
     }
 
     protected override void OnArrive()
