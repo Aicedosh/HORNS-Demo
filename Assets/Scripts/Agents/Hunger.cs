@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Hunger : MonoBehaviour
 {
-    public IntVariable HungerVariable;
     public float TimeToChange;
     public int Amount;
 
     private float timeElapsed;
+    private IntVariable hunger;
 
     private void Start()
     {
-        HungerVariable.Variable.Value = 0;
+        hunger = GetComponent<BasicAgent>().Hunger;
+        hunger.Variable.Value = 0;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Hunger : MonoBehaviour
         if(timeElapsed >= TimeToChange)
         {
             timeElapsed -= TimeToChange;
-            HungerVariable.Variable.Value += Amount;
+            hunger.Variable.Value += Amount;
         }
     }
 }

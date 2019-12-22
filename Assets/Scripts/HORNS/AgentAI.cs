@@ -29,7 +29,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
         timeStats = FindObjectOfType<PlanTimeStats>();
 
-        foreach (BasicAction action in gameObject.GetComponents<BasicAction>())
+        foreach (BasicAction action in gameObject.GetComponentsInChildren<BasicAction>())
         {
             if (action.IsIdle)
             {
@@ -41,7 +41,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
             }
         }
 
-        foreach (IDemoNeed need in gameObject.GetComponents<IDemoNeed>())
+        foreach (IDemoNeed need in gameObject.GetComponentsInChildren<IDemoNeed>())
         {
             need.AddTo(agent);
         }

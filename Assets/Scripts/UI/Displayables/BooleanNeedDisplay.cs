@@ -9,7 +9,7 @@ public class BooleanNeedDisplay : MonoBehaviour
 
     void Start()
     {
-        Text.text = Need.Variable.Name + " Need";
+        Text.text = Need.GenericVariable.Name + " Need";
         GoalText.text = Need.DesiredValue.ToString();
     }
     

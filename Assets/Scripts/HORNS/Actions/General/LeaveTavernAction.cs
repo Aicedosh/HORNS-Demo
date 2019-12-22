@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class LeaveTavernAction : SetBoolAction
 {
-    public IntVariable NumberOfCustomers;
+    private IntVariable numberOfCustomers;
+
+    protected virtual void Start()
+    {
+        numberOfCustomers = GetComponentInParent<TavernClient>().Tavern.NumberOfCustomers;
+        Variable = GetComponentInParent<TavernClient>().IsInTavern;
+    }
 
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddResult(NumberOfCustomers.Variable, new IntegerAddResult(-1));
-        action.AddCost(2);
+        action.AddResult(numberOfCustomers.Variable, new IntegerAddResult(-1));
+        action.AddCost(Cost);
     }
 }

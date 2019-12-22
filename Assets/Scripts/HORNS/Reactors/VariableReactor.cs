@@ -18,7 +18,7 @@ public abstract class VariableReactor<T> : MonoBehaviour, HORNS.IVariableObserve
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        agentAI = GetComponent<AgentAI>();
+        agentAI = GetComponentInParent<AgentAI>();
     }
 
     // Update is called once per frame

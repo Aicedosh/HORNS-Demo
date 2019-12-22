@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class GoToTavernAction : GoToAction
 {
-    public Transform target;
-    public IntVariable NumberOfCustomers;
+    private Transform target;
+    private IntVariable numberOfCustomers;
 
-    public BoolVariable IsInDestTavern;
+    private BoolVariable isInDestTavern;
 
     protected override void Perform()
     {
@@ -18,14 +18,23 @@ public class GoToTavernAction : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddResult(IsInDestTavern.Variable, new BooleanResult(true));
-        action.AddResult(NumberOfCustomers.Variable, new IntegerAddResult(1));
+        action.AddResult(isInDestTavern.Variable, new BooleanResult(true));
+        action.AddResult(numberOfCustomers.Variable, new IntegerAddResult(1));
     }
 
     protected override void OnArrive()
     {
         base.OnArrive();
         Complete();
-        Debug.Log($"There are {NumberOfCustomers.Variable.Value} clients right now");
+        Debug.Log($"There are {numberOfCustomers.Variable.Value} clients right now");
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        TavernClient tc = GetComponentInParent<TavernClient>();
+        target = tc.Tavern.CustomerSpot;
+        numberOfCustomers = tc.Tavern.NumberOfCustomers;
+        isInDestTavern = tc.IsInTavern;
     }
 }

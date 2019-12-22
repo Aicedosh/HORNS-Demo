@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class EatAction : BasicAction
+public abstract class EatAction : BasicAction
 {
-    public IntVariable Hunger;
-    public IntVariable Money;
-    public IntVariable NumberOfCustomers;
-    public BoolVariable Works;
-    public BoolVariable IsInTavern;
+    private IntVariable hunger;
+    private IntVariable numberOfCustomers;
+    private BoolVariable isInTavern;
+
     public float CrowdFactor;
 
-    public int MoneyRequired;
     public int HungerSatisfied;
     public float TimeToEat;
 
@@ -40,21 +38,23 @@ public class EatAction : BasicAction
 
     protected override void SetupAction(Action action)
     {
-        if(Works != null)
-        {
-            action.AddPrecondition(Works.Variable, new BooleanPrecondition(false));
-        }
+        //if (money != null)
+        //{
+        //    action.AddPrecondition(money.Variable, new IntegerPrecondition(MoneyRequired, IntegerPrecondition.Condition.AtLeast));
+        //    action.AddResult(money.Variable, new IntegerAddResult(-MoneyRequired));
+        //}
 
-        if (Money != null)
-        {
-            action.AddPrecondition(Money.Variable, new IntegerPrecondition(MoneyRequired, IntegerPrecondition.Condition.AtLeast));
-            action.AddResult(Money.Variable, new IntegerAddResult(-MoneyRequired));
-        }
+        action.AddPrecondition(isInTavern.Variable, new BooleanPrecondition(true));
 
-        action.AddPrecondition(IsInTavern.Variable, new BooleanPrecondition(true));
+        action.AddResult(hunger.Variable, new IntegerAddResult(-HungerSatisfied));
 
-        action.AddResult(Hunger.Variable, new IntegerAddResult(-HungerSatisfied));
+        action.AddCost(numberOfCustomers.Variable, n => (n - (isInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
+    }
 
-        action.AddCost(NumberOfCustomers.Variable, n => (n - (IsInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
+    protected virtual void Start()
+    {
+        hunger = GetComponentInParent<BasicAgent>().Hunger;
+        numberOfCustomers = GetComponentInParent<TavernClient>().Tavern.NumberOfCustomers;
+        isInTavern = GetComponentInParent<TavernClient>().IsInTavern;
     }
 }

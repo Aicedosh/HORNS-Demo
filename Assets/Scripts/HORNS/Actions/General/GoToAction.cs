@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using HORNS;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,7 +11,6 @@ public abstract class GoToAction : BasicAction
     public bool Hide;
 
     protected Navigator navigator;
-    private SkinnedMeshRenderer _renderer;
     private CapsuleCollider _collider;
     private NavMeshAgent _nav;
     private float timeElapsed;
@@ -18,13 +18,13 @@ public abstract class GoToAction : BasicAction
 
     private float prevRadius;
 
-    public BoolVariable[] IsInTavern;
+    private BoolVariable[] isInTavernVariables;
 
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
 
-        foreach(var v in IsInTavern)
+        foreach(var v in isInTavernVariables)
         {
             action.AddPrecondition(v.Variable, new BooleanPrecondition(false));
         }
@@ -33,10 +33,11 @@ public abstract class GoToAction : BasicAction
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        navigator = GetComponent<Navigator>();
-        _renderer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _collider = GetComponent<CapsuleCollider>();
-        _nav = GetComponent<NavMeshAgent>();
+        navigator = GetComponentInParent<Navigator>();
+        _collider = GetComponentInParent<CapsuleCollider>();
+        _nav = GetComponentInParent<NavMeshAgent>();
+
+        isInTavernVariables = GetComponentInParent<BasicAgent>().IsInTavernVariables.ToArray();
     }
 
     private void SetAgentVisibility(bool visible)

@@ -60,7 +60,7 @@ public class UIController : MonoBehaviour
 
     private void DeselectAgent()
     {
-        AgentCanvasGroup.gameObject.SetActive(false);
+        AgentCanvasGroup.enabled = false;
         agentUI.SelectAgent(null);
     }
 

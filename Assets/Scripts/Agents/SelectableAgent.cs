@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SelectableAgent : Clickable
 {
-
-    public Canvas AgentCanvasGroup;
+    private Canvas agentCanvas;
     private AgentUI agentUI;
 
     public override void OnClick(Vector3 position)
@@ -13,13 +12,14 @@ public class SelectableAgent : Clickable
         AgentAI agentAI = GetComponentInParent<AgentAI>();
         if (agentAI != null)
         {
-            AgentCanvasGroup.gameObject.SetActive(true);
+            agentCanvas.enabled = true;
             agentUI.SelectAgent(agentAI);
         }
     }
 
     private void Start()
     {
-        agentUI = AgentCanvasGroup.GetComponent<AgentUI>();
+        agentUI = FindObjectOfType<AgentUI>();
+        agentCanvas = agentUI.GetComponent<Canvas>();
     }
 }

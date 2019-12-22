@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class MerchantHungerReactor : VariableReactor<int>
 {
-    public BoolVariable Works;
-    public IntVariable Hunger;
+    private BoolVariable isShopOpen;
+    private IntVariable hunger;
 
     protected override bool ShouldRecalculate(int value)
     {
-        return Works.LibVariable.Value;
+        return isShopOpen.LibVariable.Value;
     }
 
     protected override void Start()
     {
         base.Start();
-        Hunger.Variable.Observe(this);
+
+        hunger = GetComponentInParent<BasicAgent>().Hunger;
+        isShopOpen = GetComponentInParent<Merchant>().Shop.IsOpen;
+
+        hunger.Variable.Observe(this);
     }
 }
