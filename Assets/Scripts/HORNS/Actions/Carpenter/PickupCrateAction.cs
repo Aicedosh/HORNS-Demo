@@ -9,9 +9,12 @@ public class PickupCrateAction : GoToAction
     public BoolVariable Crate;
     public BoolVariable HasCrate;
 
+    public GameObject CrateGo;
+
     protected override void Perform()
     {
         navigator.GoTo(Workshop, OnWalkEnd);
+        GetComponentInChildren<Carrier>().SetCarriedObject(CrateGo);
     }
 
     protected override void SetupAction(Action action)
@@ -21,5 +24,11 @@ public class PickupCrateAction : GoToAction
         action.AddPrecondition(HasCrate.Variable, new BooleanPrecondition(false));
         action.AddResult(HasCrate.Variable, new BooleanResult(true));
         action.AddResult(Crate.Variable, new BooleanResult(false));
+    }
+
+    protected override void OnArrive()
+    {
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Carry", true);
     }
 }

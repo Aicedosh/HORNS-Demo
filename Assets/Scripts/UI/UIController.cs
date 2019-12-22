@@ -13,7 +13,10 @@ public class UIController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Period))
         {
-            Time.timeScale *= 2;
+            if(Time.timeScale <= 25)
+            {
+                Time.timeScale *= 2;
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.Comma))

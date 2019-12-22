@@ -14,6 +14,11 @@ public class SellCrateAction : GoToAction
 
     protected override void Perform()
     {
+        if (MerchantWorks.Variable.Value == false)
+        {
+            Cancel();
+            return;
+        }
         navigator.GoTo(Merchant, OnWalkEnd);
     }
 
@@ -24,5 +29,23 @@ public class SellCrateAction : GoToAction
         action.AddPrecondition(HasCrate.Variable, new BooleanPrecondition(true));
         action.AddResult(HasCrate.Variable, new BooleanResult(false));
         action.AddResult(Money.Variable, new IntegerAddResult(MoneyGained));
+    }
+
+    protected override void OnArrive()
+    {
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Interact", true);
+    }
+
+    protected override void OnComplete()
+    {
+        base.OnComplete();
+        GetComponentInChildren<Animator>().SetBool("Carry", false);
+    }
+
+    protected override void OnActionEnd()
+    {
+        base.OnActionEnd();
+        GetComponentInChildren<Animator>().SetBool("Interact", false);
     }
 }

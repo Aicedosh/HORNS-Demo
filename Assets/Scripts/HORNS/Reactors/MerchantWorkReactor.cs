@@ -5,11 +5,11 @@ using UnityEngine;
 public class MerchantWorkReactor : VariableReactor<bool>
 {
     public BoolVariable MerchantWorks;
-    public BoolVariable Wood;
+    public BoolVariable ObjectToSell;
 
     protected override bool ShouldRecalculate(bool value)
     {
-        return Wood.Variable.Value;
+        return ObjectToSell.Variable.Value;
     }
 
     protected override void Start()

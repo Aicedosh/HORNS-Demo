@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Assertions;
 
 public class Forest : MonoBehaviour
 {
@@ -49,9 +50,17 @@ public class Forest : MonoBehaviour
         {
             for (float z = -Width/2 + Padding; z < Width/2; z += _dz)
             {
-                SpawnAt(x, z);
+                if (IsInElipse(x, z, Length/2, Width/2))
+                {
+                    SpawnAt(x, z);
+                }
             }
         }
+    }
+
+    private bool IsInElipse(float x, float y, float rx, float ry)
+    {
+        return (x * x) / (rx * rx) + (y * y) / (ry * ry) <= 1;
     }
 
     private void Update()
@@ -91,7 +100,7 @@ public class Forest : MonoBehaviour
         List<(float, float, GameObject)> newList = new List<(float, float, GameObject)>();
         foreach(var t in trees)
         {
-            if(t.Item3 != null)
+            if(t.Item3 != null && tree != null)
             {
                 if (t.Item3.transform == tree.transform)
                 {
@@ -102,7 +111,12 @@ public class Forest : MonoBehaviour
                     newList.Add(t);
                 }
             }
+            else
+            {
+                int i = 0;
+            }
         }
+        Assert.AreEqual(trees.Count - 1, newList.Count);
         trees = newList;
     }
 }

@@ -22,4 +22,10 @@ public class CarryWoodAction : GoToAction
         action.AddResult(WorkshopHasWood.Variable, new BooleanResult(true));
         action.AddResult(HasWood.Variable, new BooleanResult(false));
     }
+
+    protected override void OnArrive()
+    {
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Carry", false);
+    }
 }

@@ -11,6 +11,8 @@ public class CreateAction : GoToAction
     public IntVariable Energy;
     public int EnergyConsumed;
 
+    public GameObject Hammer;
+
     protected override void Perform()
     {
         navigator.GoTo(Workshop, OnWalkEnd);
@@ -24,5 +26,19 @@ public class CreateAction : GoToAction
         action.AddResult(Crate.Variable, new BooleanResult(true));
         action.AddResult(Wood.Variable, new BooleanResult(false));
         action.AddResult(Energy.Variable, new IntegerAddResult(-EnergyConsumed));
+    }
+
+    protected override void OnArrive()
+    {
+        base.OnArrive();
+        GetComponentInChildren<Animator>().SetBool("Craft", true);
+        Hammer.SetActive(true);
+    }
+
+    protected override void OnActionEnd()
+    {
+        base.OnActionEnd();
+        GetComponentInChildren<Animator>().SetBool("Craft", false);
+        Hammer.SetActive(false);
     }
 }

@@ -33,6 +33,7 @@ MonoBehaviour:
   Wood: {fileID: -539172596801688055}
   Money: {fileID: 3306472149096310601}
   SellerWorks: {fileID: 0}
+  WoodCount: {fileID: 0}
   WoodSold: 1
   MoneyGained: 2
   target: {fileID: 0}
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MerchantWorks: {fileID: 0}
-  Wood: {fileID: -539172596801688055}
+  ObjectToSell: {fileID: -539172596801688055}
 --- !u!114 &4729172102466286460
 MonoBehaviour:
   m_ObjectHideFlags: 0

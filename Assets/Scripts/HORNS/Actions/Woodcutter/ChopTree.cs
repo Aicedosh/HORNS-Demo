@@ -41,6 +41,7 @@ public class ChopTree : GoToAction
     protected override void OnActionEnd()
     {
         GetComponentInChildren<Animator>().SetBool("Chop", false);
+        isPickingUp = false;
     }
 
     protected override void Update()

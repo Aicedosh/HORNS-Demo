@@ -99,6 +99,7 @@ public abstract class GoToAction : BasicAction
     {
         base.OnCancel();
         navigator.Stop();
+        arrived = false;
     }
 
     //Start animation etc.

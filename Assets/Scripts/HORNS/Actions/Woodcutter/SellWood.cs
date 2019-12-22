@@ -38,7 +38,7 @@ public class SellWood : GoToAction
     protected override void OnArrive()
     {
         base.OnArrive();
-        GetComponentInChildren<Animator>().SetBool("Interact", true); //TODO: Make it right
+        GetComponentInChildren<Animator>().SetBool("Interact", true);
     }
 
     protected override void OnComplete()
