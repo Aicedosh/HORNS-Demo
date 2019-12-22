@@ -333,10 +333,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216243940}
     m_Modifications:
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: TimeToEat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: CrowdFactor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2408879738005708695, guid: 79310719e2c7e524ba6f6dbd99abed5d,
         type: 3}
       propertyPath: m_Name
       value: MerchantTavernClient - Expensive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613904612329471331, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: Cost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6902768408411788604, guid: 79310719e2c7e524ba6f6dbd99abed5d,
         type: 3}
@@ -1377,6 +1397,11 @@ PrefabInstance:
       propertyPath: NumberOfCustomers
       value: 
       objectReference: {fileID: 1616334259}
+    - target: {fileID: 1785142967513986406, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2445108706834189636, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
       propertyPath: target
@@ -1422,6 +1447,11 @@ PrefabInstance:
       propertyPath: NumberOfCustomers
       value: 
       objectReference: {fileID: 1103209951}
+    - target: {fileID: 6024875620164050542, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6250213762955663117, guid: fc261bdfdc2c8fd44b4e6ea3a368a1ef,
         type: 3}
       propertyPath: Variables.Array.size
@@ -1953,10 +1983,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216243940}
     m_Modifications:
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: TimeToEat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: CrowdFactor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2408879738005708695, guid: 79310719e2c7e524ba6f6dbd99abed5d,
         type: 3}
       propertyPath: m_Name
       value: MerchantTavernClient - Cheap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613904612329471331, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: Cost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6902768408411788604, guid: 79310719e2c7e524ba6f6dbd99abed5d,
         type: 3}

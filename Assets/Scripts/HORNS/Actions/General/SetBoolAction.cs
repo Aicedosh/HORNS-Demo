@@ -22,4 +22,6 @@ public class SetBoolAction : BasicAction
         action.AddResult(Variable.Variable, new BooleanResult(EndValue));
         action.AddCost(Cost);
     }
+
+    protected virtual void Start() {}
 }
