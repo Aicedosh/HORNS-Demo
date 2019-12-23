@@ -9,6 +9,8 @@ public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>
     public GameObject HipAxe;
     public GameObject Log;
 
+    public Forest Forest;
+
     private Animator _anim;
 
     public void ValueChanged(bool value)

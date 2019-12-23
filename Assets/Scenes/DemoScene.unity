@@ -418,6 +418,11 @@ PrefabInstance:
       propertyPath: Tavern
       value: 
       objectReference: {fileID: 7127766819909881617}
+    - target: {fileID: 9067611159462799512, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: Name
+      value: Is in tavern (e)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79310719e2c7e524ba6f6dbd99abed5d, type: 3}
 --- !u!1 &445888429
@@ -2068,6 +2073,11 @@ PrefabInstance:
       propertyPath: Tavern
       value: 
       objectReference: {fileID: 1103209952}
+    - target: {fileID: 9067611159462799512, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+        type: 3}
+      propertyPath: Name
+      value: Is in tavern (c)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79310719e2c7e524ba6f6dbd99abed5d, type: 3}
 --- !u!1 &1952309543
