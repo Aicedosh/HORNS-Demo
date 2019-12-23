@@ -5,47 +5,59 @@ using UnityEngine;
 
 public class SellCrateAction : GoToAction
 {
-    public Transform Merchant;
-    public BoolVariable MerchantWorks;
-    public BoolVariable HasCrate;
-    public IntVariable Money;
+    private Transform shopspot;
+    private BoolVariable isShopOpen;
+    private BoolVariable hasCrate;
+    private IntVariable money;
+    private BasicAgent basicAgent;
 
     public int MoneyGained;
 
+    protected override void Start()
+    {
+        base.Start();
+        ObjectSeller objectSeller = GetComponentInParent<ObjectSeller>();
+        shopspot = objectSeller.Shop.ClientSpot;
+        isShopOpen = objectSeller.Shop.IsOpen;
+        hasCrate = GetComponentInParent<Carpenter>().HasCrate;
+        money = GetComponentInParent<Worker>().Money;
+        basicAgent = GetComponentInParent<BasicAgent>();
+    }
+
     protected override void Perform()
     {
-        if (MerchantWorks.Variable.Value == false)
+        if (isShopOpen.Variable.Value == false)
         {
             Cancel();
             return;
         }
-        navigator.GoTo(Merchant, OnWalkEnd);
+        navigator.GoTo(shopspot, OnWalkEnd);
     }
 
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition(MerchantWorks.Variable, new BooleanPrecondition(true));
-        action.AddPrecondition(HasCrate.Variable, new BooleanPrecondition(true));
-        action.AddResult(HasCrate.Variable, new BooleanResult(false));
-        action.AddResult(Money.Variable, new IntegerAddResult(MoneyGained));
+        action.AddPrecondition(isShopOpen.Variable, new BooleanPrecondition(true));
+        action.AddPrecondition(hasCrate.Variable, new BooleanPrecondition(true));
+        action.AddResult(hasCrate.Variable, new BooleanResult(false));
+        action.AddResult(money.Variable, new IntegerAddResult(MoneyGained));
     }
 
     protected override void OnArrive()
     {
         base.OnArrive();
-        GetComponentInChildren<Animator>().SetBool("Interact", true);
+        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", true);
     }
 
     protected override void OnComplete()
     {
         base.OnComplete();
-        GetComponentInChildren<Animator>().SetBool("Carry", false);
+        basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", false);
     }
 
     protected override void OnActionEnd()
     {
         base.OnActionEnd();
-        GetComponentInChildren<Animator>().SetBool("Interact", false);
+        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", false);
     }
 }

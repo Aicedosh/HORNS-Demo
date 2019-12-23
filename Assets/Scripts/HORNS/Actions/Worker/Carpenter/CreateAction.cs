@@ -5,40 +5,53 @@ using UnityEngine;
 
 public class CreateAction : GoToAction
 {
-    public Transform Workshop;
-    public BoolVariable Wood;
-    public BoolVariable Crate;
-    public IntVariable Energy;
+    private Transform workspot;
+    private BoolVariable workshopHasWood;
+    private BoolVariable workshopHasCrate;
+    private IntVariable energy;
     public int EnergyConsumed;
 
-    public GameObject Hammer;
+    private GameObject hammer;
+    private Carpenter carpenter;
+
+    protected override void Start()
+    {
+        base.Start();
+        carpenter = GetComponentInParent<Carpenter>();
+
+        workspot = carpenter.Workshop.Spot;
+        workshopHasWood = carpenter.Workshop.HasWood;
+        workshopHasCrate = carpenter.Workshop.HasCrate;
+        energy = GetComponentInParent<Worker>().Energy;
+        hammer = carpenter.Hammer;
+    }
 
     protected override void Perform()
     {
-        navigator.GoTo(Workshop, OnWalkEnd);
+        navigator.GoTo(workspot, OnWalkEnd);
     }
 
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition(Wood.Variable, new BooleanPrecondition(true));
-        action.AddPrecondition(Crate.Variable, new BooleanPrecondition(false));
-        action.AddResult(Crate.Variable, new BooleanResult(true));
-        action.AddResult(Wood.Variable, new BooleanResult(false));
-        action.AddResult(Energy.Variable, new IntegerAddResult(-EnergyConsumed));
+        action.AddPrecondition(workshopHasWood.Variable, new BooleanPrecondition(true));
+        action.AddPrecondition(workshopHasCrate.Variable, new BooleanPrecondition(false));
+        action.AddResult(workshopHasCrate.Variable, new BooleanResult(true));
+        action.AddResult(workshopHasWood.Variable, new BooleanResult(false));
+        action.AddResult(energy.Variable, new IntegerAddResult(-EnergyConsumed));
     }
 
     protected override void OnArrive()
     {
         base.OnArrive();
-        GetComponentInChildren<Animator>().SetBool("Craft", true);
-        Hammer.SetActive(true);
+        carpenter.GetComponentInChildren<Animator>().SetBool("Craft", true);
+        hammer.SetActive(true);
     }
 
     protected override void OnActionEnd()
     {
         base.OnActionEnd();
-        GetComponentInChildren<Animator>().SetBool("Craft", false);
-        Hammer.SetActive(false);
+        carpenter.GetComponentInChildren<Animator>().SetBool("Craft", false);
+        hammer.SetActive(false);
     }
 }

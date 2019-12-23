@@ -10,7 +10,6 @@ public class SellWood : GoToAction
     private BoolVariable isShopOpen;
     private IntVariable woodCount;
 
-    public int WoodSold;
     public int MoneyGained;
 
     private BasicAgent basicAgent;
