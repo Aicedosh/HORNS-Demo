@@ -360,21 +360,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1216243940}
     m_Modifications:
-    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
-        type: 3}
-      propertyPath: HungerSatisfied
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
-        type: 3}
-      propertyPath: TimeToEat
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347391640493684930, guid: 79310719e2c7e524ba6f6dbd99abed5d,
-        type: 3}
-      propertyPath: CrowdFactor
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2408879738005708695, guid: 79310719e2c7e524ba6f6dbd99abed5d,
         type: 3}
       propertyPath: m_Name
@@ -1783,11 +1768,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4c058fc48ad754f8b85ac232c0c530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToComplete: 0
+  TimeToComplete: 30
   Hide: 0
-  DesiredCrowdSize: 0
-  Factor: 0
-  BaseCost: 0
+  DesiredCrowdSize: 1
+  Factor: 0.5
+  BaseCost: 1.6
   RestSpot: {fileID: 447681952}
   Rains: {fileID: 0}
 --- !u!1 &1348382928

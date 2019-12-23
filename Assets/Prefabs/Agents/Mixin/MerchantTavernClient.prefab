@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6218d4a51606f2143a4825ef5b1097f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrowdFactor: 0
-  HungerSatisfied: 0
-  TimeToEat: 0
+  CrowdFactor: 1
+  TimeToEat: 1
+  HungerSatisfied: 1
 --- !u!1001 &21388759452080549
 PrefabInstance:
   m_ObjectHideFlags: 0

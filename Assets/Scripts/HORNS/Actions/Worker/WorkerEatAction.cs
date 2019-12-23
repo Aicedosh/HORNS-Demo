@@ -19,5 +19,6 @@ public class WorkerEatAction : EatAction
 
         action.AddPrecondition(worker.Money.Variable, new IntegerPrecondition(tavern.Price, IntegerPrecondition.Condition.AtLeast));
         action.AddResult(worker.Money.Variable, new IntegerAddResult(-tavern.Price));
+        action.AddResult(hunger.Variable, new IntegerAddResult(-tavern.HungerSatisfied));
     }
 }

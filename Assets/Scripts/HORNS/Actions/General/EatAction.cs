@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class EatAction : BasicAction
 {
-    private IntVariable hunger;
+    protected IntVariable hunger;
     private IntVariable numberOfCustomers;
     private BoolVariable isInTavern;
 
@@ -40,8 +40,6 @@ public abstract class EatAction : BasicAction
     protected override void SetupAction(Action action)
     {
         action.AddPrecondition(isInTavern.Variable, new BooleanPrecondition(true));
-
-        action.AddResult(hunger.Variable, new IntegerAddResult(-tavern.HungerSatisfied));
 
         action.AddCost(numberOfCustomers.Variable, n => (n - (isInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
     }
