@@ -10,11 +10,12 @@ public class PickupCrateAction : GoToAction
     private BoolVariable carpenterHasCrate;
 
     private GameObject crateGo;
+    private Carpenter carpenter;
 
     protected override void Start()
     {
         base.Start();
-        Carpenter carpenter = GetComponentInParent<Carpenter>();
+        carpenter = GetComponentInParent<Carpenter>();
         workspot = carpenter.Workshop.Spot;
         workshopHasCrate = carpenter.Workshop.HasCrate;
         carpenterHasCrate = carpenter.HasCrate;
@@ -24,7 +25,7 @@ public class PickupCrateAction : GoToAction
     protected override void Perform()
     {
         navigator.GoTo(workspot, OnWalkEnd);
-        GetComponentInChildren<Carrier>().SetCarriedObject(crateGo);
+        carpenter.GetComponentInChildren<Carrier>().SetCarriedObject(crateGo);
     }
 
     protected override void SetupAction(Action action)
@@ -39,6 +40,6 @@ public class PickupCrateAction : GoToAction
     protected override void OnArrive()
     {
         base.OnArrive();
-        GetComponentInChildren<Animator>().SetBool("Carry", true);
+        carpenter.GetComponentInChildren<Animator>().SetBool("Carry", true);
     }
 }

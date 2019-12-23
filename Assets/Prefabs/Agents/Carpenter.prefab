@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &281303737724149691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732724530125158716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca346cb7fcc6c04196e35b09ba2a46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToComplete: 1.2
+  Hide: 0
+--- !u!114 &2200618822532381219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732724530125158716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887658aee00c5e8409a487eee3c972aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToComplete: 1.2
+  Hide: 0
+--- !u!114 &7311958711223217105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732724530125158716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9125f8d5e92bd0f4caa6f0bc83a4e594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToComplete: 25
+  Hide: 0
+  EnergyConsumed: 15
 --- !u!114 &4342055120844970154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,6 +55,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098cfa8517b174a48aac85704fa99910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4118600569219808321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689000276369871673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Has wood
+--- !u!114 &5544028284184003071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689000276369871673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Has crate
 --- !u!1 &4182988075955216250
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,75 +381,6 @@ MonoBehaviour:
   Log: {fileID: 8238517680199523548}
   Crate: {fileID: 9160400671846004080}
   Hammer: {fileID: 4182988075955216250}
---- !u!114 &4118600569219808321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3689000276369871673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Has wood
---- !u!114 &5544028284184003071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3689000276369871673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Has crate
---- !u!114 &281303737724149691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca346cb7fcc6c04196e35b09ba2a46f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeToComplete: 0
-  Hide: 0
---- !u!114 &2200618822532381219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887658aee00c5e8409a487eee3c972aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeToComplete: 1.2
-  Hide: 0
---- !u!114 &7311958711223217105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9125f8d5e92bd0f4caa6f0bc83a4e594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeToComplete: 25
-  Hide: 0
-  EnergyConsumed: 15
 --- !u!1 &9160400671846004080
 GameObject:
   m_ObjectHideFlags: 0
