@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Carpenter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public BoolVariable HasWood;
+    public BoolVariable HasCrate;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Log;
+    public GameObject Crate;
 }
