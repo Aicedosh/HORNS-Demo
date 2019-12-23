@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeToComplete: 0
   Hide: 0
-  StartValue: 0
+  StartValue: 200
   EnergyRestored: 5
 --- !u!114 &1152051814568709217
 MonoBehaviour:
@@ -153,6 +153,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: TimeToChange
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: Amount
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659b700cb1e20a34f9e47202509ee9fb, type: 3}

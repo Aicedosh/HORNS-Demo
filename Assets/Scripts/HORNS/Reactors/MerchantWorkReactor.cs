@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class MerchantWorkReactor : VariableReactor<bool>
 {
-    public BoolVariable MerchantWorks;
-    public BoolVariable ObjectToSell;
+    [HideInInspector]
+    public BoolVariable HasObjectToSell;
 
     protected override bool ShouldRecalculate(bool value)
     {
-        return ObjectToSell.Variable.Value;
+        return HasObjectToSell.Variable.Value;
     }
 
     protected override void Start()
     {
         base.Start();
-        MerchantWorks.Variable.Observe(this);
+        GetComponentInParent<ObjectSeller>().Shop.IsOpen.Variable.Observe(this);
     }
 }

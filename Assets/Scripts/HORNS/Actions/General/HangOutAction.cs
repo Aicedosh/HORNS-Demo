@@ -1,25 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using HORNS;
 using UnityEngine;
 
 public class HangOutAction : GoToAction
 {
-    public IntVariable CrowdSize;
-    public Transform[] Places;
     public int DesiredCrowdSize;
     public float Factor;
     public float BaseCost;
+    public RestSpot RestSpot;
 
     public BoolVariable Rains;
 
     public override bool IsIdle => true;
 
+    private Transform[] places;
+    private IntVariable crowdSize;
     private bool isAtDest;
+
+    protected override void Start()
+    {
+        base.Start();
+        places = RestSpot.Spots.ToArray();
+        crowdSize = RestSpot.CrowdSize;
+    }
 
     protected override void Perform()
     {
-        Transform target = Places[Random.Range(0, Places.Length)];
+        Transform target = places[Random.Range(0, places.Length)];
         navigator.GoTo(target, OnWalkEnd);
     }
 
@@ -32,14 +41,14 @@ public class HangOutAction : GoToAction
             action.AddCost(Rains.Variable, r => r ? 3f : -0.3f);
         }
 
-        action.AddCost(CrowdSize.Variable, n => Factor * (n - DesiredCrowdSize) * (n - DesiredCrowdSize));
+        action.AddCost(crowdSize.Variable, n => Factor * (n - DesiredCrowdSize) * (n - DesiredCrowdSize));
         action.AddCost(BaseCost);
     }
 
     protected override void OnArrive()
     {
         base.OnArrive();
-        CrowdSize.Variable.Value++;
+        crowdSize.Variable.Value++;
         isAtDest = true;
     }
 
@@ -48,7 +57,7 @@ public class HangOutAction : GoToAction
         base.OnActionEnd();
         if(isAtDest)
         {
-            CrowdSize.Variable.Value--;
+            crowdSize.Variable.Value--;
         }
         isAtDest = false;
     }

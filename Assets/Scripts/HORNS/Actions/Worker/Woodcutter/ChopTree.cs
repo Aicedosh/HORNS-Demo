@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class ChopTree : GoToAction
 {
-    public Forest Forest;
+    private Forest forest;
 
-    public IntVariable Energy;
-    public BoolVariable Wood;
+    private IntVariable energy;
+    private BoolVariable wood;
 
     public int EnergyLost;
 
@@ -18,29 +18,41 @@ public class ChopTree : GoToAction
     private bool isPickingUp;
     private float chopTimeElapsed;
 
+    private Woodcutter woodcutter;
+
+    protected override void Start()
+    {
+        base.Start();
+        forest = GetComponentInParent<Woodcutter>().Forest;
+        energy = GetComponentInParent<Worker>().Energy;
+        woodcutter = GetComponentInParent<Woodcutter>();
+        wood = woodcutter.HasWood;
+    }
+
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition(Wood.Variable, new BooleanPrecondition(false));
-        action.AddResult(Wood.Variable, new BooleanResult(true));
-        action.AddResult(Energy.Variable, new IntegerAddResult(-EnergyLost));
+        action.AddPrecondition(wood.Variable, new BooleanPrecondition(false));
+        action.AddResult(wood.Variable, new BooleanResult(true));
+        action.AddResult(energy.Variable, new IntegerAddResult(-EnergyLost));
     }
 
     protected override void Perform()
     {
-        target = navigator.GoToNearest(Forest.GetTreesLocations(), OnWalkEnd);
-        GetComponentInChildren<Carrier>().SetCarriedObject(GetComponent<Woodcutter>().Log);
+        target = navigator.GoToNearest(forest.GetTreesLocations(), OnWalkEnd);
+
+        woodcutter.GetComponentInChildren<Carrier>().SetCarriedObject(woodcutter.Log);
     }
 
     protected override void OnComplete()
     {
-        Forest.Remove(target);
+        forest.Remove(target);
         Destroy(target.gameObject);
     }
 
     protected override void OnActionEnd()
     {
-        GetComponentInChildren<Animator>().SetBool("Chop", false);
+        woodcutter.GetComponentInChildren<Animator>().SetBool("Chop", false);
         isPickingUp = false;
     }
 
@@ -76,13 +88,13 @@ public class ChopTree : GoToAction
             return;
         }
         base.OnArrive();
-        GetComponentInChildren<Animator>().SetBool("Chop", true);
+        woodcutter.GetComponentInChildren<Animator>().SetBool("Chop", true);
         tree.Chopper = agentAI;
     }
 
     protected override void FinishWork()
     {
-        GetComponentInChildren<Animator>().SetBool("Carry", true);
+        woodcutter.GetComponentInChildren<Animator>().SetBool("Carry", true);
         isPickingUp = true;
         chopTimeElapsed = 0;
     }

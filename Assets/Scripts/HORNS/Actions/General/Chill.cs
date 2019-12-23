@@ -19,10 +19,11 @@ public class Chill : GoToAction
     protected override void Start()
     {
         base.Start();
-        energy.Variable.Value = StartValue;
 
         energy = GetComponentInParent<Worker>().Energy;
         home = GetComponentInParent<Worker>().Home.Spot;
+
+        energy.Variable.Value = StartValue;
     }
 
     public override bool IsIdle => false;
