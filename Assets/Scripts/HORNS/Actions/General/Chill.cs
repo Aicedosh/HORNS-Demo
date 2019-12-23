@@ -5,18 +5,24 @@ using UnityEngine;
 
 public class Chill : GoToAction
 {
-    public IntVariable Energy;
-    public Transform Home;
+    private IntVariable energy;
+    private Transform home;
+
+    public int StartValue;
+    public int EnergyRestored;
 
     protected override void Perform()
     {
-        navigator.GoTo(Home, OnWalkEnd);
+        navigator.GoTo(home, OnWalkEnd);
     }
 
     protected override void Start()
     {
         base.Start();
-        Energy.Variable.Value = 200;
+        energy.Variable.Value = StartValue;
+
+        energy = GetComponentInParent<Worker>().Energy;
+        home = GetComponentInParent<Worker>().Home.Spot;
     }
 
     public override bool IsIdle => false;
@@ -24,7 +30,7 @@ public class Chill : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddCost(5);
-        action.AddResult(Energy.Variable, new IntegerAddResult(15));
+        action.AddCost(EnergyRestored);
+        action.AddResult(energy.Variable, new IntegerAddResult(15));
     }
 }

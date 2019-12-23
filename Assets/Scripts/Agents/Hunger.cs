@@ -6,6 +6,7 @@ public class Hunger : MonoBehaviour
 {
     public float TimeToChange;
     public int Amount;
+    public int StartValue;
 
     private float timeElapsed;
     private IntVariable hunger;
@@ -13,7 +14,7 @@ public class Hunger : MonoBehaviour
     private void Start()
     {
         hunger = GetComponent<BasicAgent>().Hunger;
-        hunger.Variable.Value = 0;
+        hunger.Variable.Value = StartValue;
     }
 
     // Update is called once per frame

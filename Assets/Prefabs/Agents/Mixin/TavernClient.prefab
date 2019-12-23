@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tavern: {fileID: 0}
-  IsInTavern: {fileID: 0}
+  IsInTavern: {fileID: 9051492771570266429}
 --- !u!1 &4277877342989150567
 GameObject:
   m_ObjectHideFlags: 0

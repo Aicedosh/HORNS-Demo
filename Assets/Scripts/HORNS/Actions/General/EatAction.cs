@@ -9,9 +9,10 @@ public abstract class EatAction : BasicAction
     private IntVariable numberOfCustomers;
     private BoolVariable isInTavern;
 
+    protected Tavern tavern;
+
     public float CrowdFactor;
 
-    public int HungerSatisfied;
     public float TimeToEat;
 
     private float timeElapsed = 0;
@@ -38,15 +39,9 @@ public abstract class EatAction : BasicAction
 
     protected override void SetupAction(Action action)
     {
-        //if (money != null)
-        //{
-        //    action.AddPrecondition(money.Variable, new IntegerPrecondition(MoneyRequired, IntegerPrecondition.Condition.AtLeast));
-        //    action.AddResult(money.Variable, new IntegerAddResult(-MoneyRequired));
-        //}
-
         action.AddPrecondition(isInTavern.Variable, new BooleanPrecondition(true));
 
-        action.AddResult(hunger.Variable, new IntegerAddResult(-HungerSatisfied));
+        action.AddResult(hunger.Variable, new IntegerAddResult(-tavern.HungerSatisfied));
 
         action.AddCost(numberOfCustomers.Variable, n => (n - (isInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
     }
@@ -56,5 +51,6 @@ public abstract class EatAction : BasicAction
         hunger = GetComponentInParent<BasicAgent>().Hunger;
         numberOfCustomers = GetComponentInParent<TavernClient>().Tavern.NumberOfCustomers;
         isInTavern = GetComponentInParent<TavernClient>().IsInTavern;
+        tavern = GetComponentInParent<TavernClient>().Tavern;
     }
 }
