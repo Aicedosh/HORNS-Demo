@@ -13,6 +13,13 @@ public class Navigator : MonoBehaviour
     private bool isWalking = false;
     private bool isFollowing = false;
 
+    private bool isRotating = false;
+    private Transform lookingAt;
+    private Quaternion startRot;
+    private Quaternion endRot;
+    private float rotTimeElapsed;
+    private float timeToRotate;
+
     public float GoalDistance;
     public float WalkAnimationTreshold;
 
@@ -22,6 +29,7 @@ public class Navigator : MonoBehaviour
     public float WalkSpeedChangeTimeMinSec = 1.5f;
     public float WalkSpeedChangeTimeMaxSec = 2f;
     public float WalkSpeedDeltaPerc = 0.05f;
+    public float RotationSpeed;
 
     private float timeToChange = 0f;
     private float changingTime;
@@ -69,31 +77,54 @@ public class Navigator : MonoBehaviour
         {
             if(currentTarget == null)
             {
-                Stop(false);
+                Stop();
             }
             else if(nav.pathPending == false && nav.remainingDistance <= GoalDistance)
             {
-                Stop(true);
+                if(lookingAt == null)
+                {
+                    finishCallback?.Invoke(true);
+                    Stop();
+                }
+                else
+                {
+                    Vector3 towards = (lookingAt.position - transform.position).normalized;
+                    endRot = Quaternion.LookRotation(towards);
+                    startRot = transform.rotation;
+                    timeToRotate = Vector3.Angle(transform.forward, towards) / RotationSpeed;
+                    Debug.Log($"TTR: {timeToRotate}");
+                    rotTimeElapsed = 0f;
+                    isRotating = true;
+                }
+                isWalking = false;
+                isFollowing = false;
             }
         }
 
-        anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold);
-    }
+        if(isRotating)
+        {
+            rotTimeElapsed += Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(startRot, endRot, rotTimeElapsed / timeToRotate);
 
-    private void Stop(bool success)
-    {
-        Stop();
-        finishCallback?.Invoke(success);
+            if(rotTimeElapsed >= timeToRotate)
+            {
+                finishCallback?.Invoke(true);
+                Stop();
+            }
+        }
+
+        anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold || isRotating);
     }
 
     public void Stop()
     {
+        isRotating = false;
         isWalking = false;
         isFollowing = false;
         nav.isStopped = false;
     }
 
-    public bool GoTo(Transform transform, System.Action<bool> finishCallback = null)
+    public bool GoTo(Transform transform, System.Action<bool> finishCallback = null, Transform lookAt = null)
     {
         if (isWalking)
         {
@@ -104,6 +135,7 @@ public class Navigator : MonoBehaviour
         {
             return false;
         }
+        this.lookingAt = lookAt;
         this.finishCallback = finishCallback;
         this.currentTarget = transform.gameObject;
         isWalking = true;

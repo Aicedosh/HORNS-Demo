@@ -10,6 +10,7 @@ public class SellCrateAction : GoToAction
     private BoolVariable hasCrate;
     private IntVariable money;
     private BasicAgent basicAgent;
+    private Transform merchantSpot;
 
     public int MoneyGained;
 
@@ -22,6 +23,7 @@ public class SellCrateAction : GoToAction
         hasCrate = GetComponentInParent<Carpenter>().HasCrate;
         money = GetComponentInParent<Worker>().Money;
         basicAgent = GetComponentInParent<BasicAgent>();
+        merchantSpot = objectSeller.Shop.MerchantSpot;
     }
 
     protected override void Perform()
@@ -31,7 +33,7 @@ public class SellCrateAction : GoToAction
             Cancel();
             return;
         }
-        navigator.GoTo(shopspot, OnWalkEnd);
+        navigator.GoTo(shopspot, OnWalkEnd, merchantSpot);
     }
 
     protected override void SetupAction(Action action)

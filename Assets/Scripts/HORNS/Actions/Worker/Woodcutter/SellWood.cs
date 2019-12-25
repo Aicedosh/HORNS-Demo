@@ -14,6 +14,7 @@ public class SellWood : GoToAction
 
     private BasicAgent basicAgent;
     private Transform target;
+    private Transform merchantSpot;
 
     protected override void Start()
     {
@@ -24,6 +25,7 @@ public class SellWood : GoToAction
         woodCount = GetComponentInParent<ObjectSeller>().Shop.WoodCount;
         target = GetComponentInParent<ObjectSeller>().Shop.ClientSpot;
         basicAgent = GetComponentInParent<BasicAgent>();
+        merchantSpot = GetComponentInParent<ObjectSeller>().Shop.MerchantSpot;
     }
 
     protected override void Perform()
@@ -33,7 +35,7 @@ public class SellWood : GoToAction
             Cancel();
             return;
         }
-        navigator.GoTo(target, OnWalkEnd);
+        navigator.GoTo(target, OnWalkEnd, merchantSpot);
     }
 
     protected override void SetupAction(Action action)

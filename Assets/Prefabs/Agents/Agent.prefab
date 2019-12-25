@@ -92,6 +92,7 @@ MonoBehaviour:
   WalkSpeedChangeTimeMinSec: 0.3
   WalkSpeedChangeTimeMaxSec: 1
   WalkSpeedDeltaPerc: 0.15
+  RotationSpeed: 90
 --- !u!114 &4247288941157461147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeToChange: 3
   Amount: 1
+  StartValue: 0
 --- !u!114 &4417658017279842572
 MonoBehaviour:
   m_ObjectHideFlags: 0
