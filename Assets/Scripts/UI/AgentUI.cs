@@ -38,12 +38,23 @@ public class AgentUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        if(selectedAgent != null)
+        foreach (var outline in FindObjectsOfType<Outline>())
+        {
+            outline.enabled = false;
+        }
+
+        if (selectedAgent != null)
         {
             foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
             {
                 var go = displayable.GetComponent();
                 go.transform.SetParent(DisplayCanvas.transform);
+            }
+
+            Outline outline = selectedAgent.GetComponent<Outline>();
+            if (outline != null)
+            {
+                outline.enabled = true;
             }
         }
     }
