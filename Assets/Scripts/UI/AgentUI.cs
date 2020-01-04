@@ -29,21 +29,36 @@ public class AgentUI : MonoBehaviour
         if (selectedAgent == agent)
             return;
 
+        if (selectedAgent != null)
+        {
+            Outline outline = selectedAgent.GetComponent<Outline>();
+            if (outline != null)
+            {
+                outline.enabled = false;
+            }
+        }
+
         selectedAgent = agent;
 
-        while(DisplayCanvas.transform.childCount > 0)
+        while (DisplayCanvas.transform.childCount > 0)
         {
             Transform child = DisplayCanvas.transform.GetChild(0);
             child.SetParent(null); //Become Batman!
             Destroy(child.gameObject);
         }
 
-        if(selectedAgent != null)
+        if (selectedAgent != null)
         {
             foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
             {
                 var go = displayable.GetComponent();
                 go.transform.SetParent(DisplayCanvas.transform);
+            }
+
+            Outline outline = selectedAgent.GetComponent<Outline>();
+            if (outline != null)
+            {
+                outline.enabled = true;
             }
         }
     }
