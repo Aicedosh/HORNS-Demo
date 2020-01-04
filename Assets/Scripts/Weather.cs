@@ -26,7 +26,9 @@ public class Weather : MonoBehaviour
         rain = GetComponent<RainScript>();
         Rains = GetComponent<BoolVariable>();
         sun = GameObject.FindGameObjectWithTag("Sun").GetComponent<Light>();
-        baseIntensity = sun.intensity;
+        baseIntensity = 1;
+
+        SetRainPerc(0);
     }
 
     // Update is called once per frame
@@ -44,11 +46,7 @@ public class Weather : MonoBehaviour
             timeElapsed = Mathf.Clamp(timeElapsed, 0, TimeToChange);
             float frac = timeElapsed / TimeToChange;
 
-            rain.RainIntensity = frac;
-            //sun.intensity = Mathf.Lerp(baseIntensity, baseIntensity * SunMultiplier, frac);
-
-            Camera.main.GetComponent<Skybox>().material.SetFloat("_Exposure", Mathf.Lerp(MaxExp, MinExp, frac));
-            Camera.main.GetComponent<Skybox>().material.SetFloat("_SunSize", Mathf.Lerp(SunSize, 0, frac));
+            SetRainPerc(frac);
 
             if (timeElapsed == 0 || timeElapsed == TimeToChange)
             {
@@ -56,6 +54,14 @@ public class Weather : MonoBehaviour
                 changes = false;
             }
         }
+    }
 
+    private void SetRainPerc(float frac)
+    {
+        rain.RainIntensity = frac;
+        sun.intensity = Mathf.Lerp(baseIntensity, baseIntensity * SunMultiplier, frac);
+
+        Camera.main.GetComponent<Skybox>().material.SetFloat("_Exposure", Mathf.Lerp(MaxExp, MinExp, frac));
+        Camera.main.GetComponent<Skybox>().material.SetFloat("_SunSize", Mathf.Lerp(SunSize, 0, frac));
     }
 }

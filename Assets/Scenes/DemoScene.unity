@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToChange: 3
-  SunMultiplier: 0.5
+  SunMultiplier: 0.7
   Rains: {fileID: 0}
   MinExp: 0.3
   MaxExp: 1.3
