@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class BoolVariable : DemoVariable<bool>
 {
-    public HORNS.BoolVariable Variable { get; } = new HORNS.BoolVariable();
+    public HORNS.BooleanVariable Variable { get; } = new HORNS.BooleanVariable();
     public override Variable<bool> LibVariable => Variable;
 
     public override LayoutGroup GetComponent()

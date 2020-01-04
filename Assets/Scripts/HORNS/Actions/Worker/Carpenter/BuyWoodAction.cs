@@ -36,7 +36,7 @@ public class BuyWoodAction : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddPrecondition(shopWoodCount.Variable, new IntegerPrecondition(1, IntegerPrecondition.Condition.AtLeast));
+        action.AddPrecondition(shopWoodCount.Variable, new IntegerConsumePrecondition(1));
         action.AddPrecondition(isShopOpen.Variable, new BooleanPrecondition(true));
         action.AddResult(hasWood.Variable, new BooleanResult(true));
         action.AddResult(shopWoodCount.Variable, new IntegerAddResult(-1));
