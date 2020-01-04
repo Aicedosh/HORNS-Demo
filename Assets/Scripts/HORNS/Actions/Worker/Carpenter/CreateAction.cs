@@ -53,5 +53,7 @@ public class CreateAction : GoToAction
         base.OnActionEnd();
         carpenter.GetComponentInChildren<Animator>().SetBool("Craft", false);
         hammer.SetActive(false);
+
+        carpenter.Workshop.SetObject(Workshop.WorkshopObject.Crate);
     }
 }

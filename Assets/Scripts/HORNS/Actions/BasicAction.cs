@@ -100,4 +100,7 @@ public abstract class BasicAction : MonoBehaviour
         }
         agentAI.PerformedActionThisFrame = false;
     }
+
+    public virtual void OnPickup() { }
+    public virtual void OnPutdown() { }
 }

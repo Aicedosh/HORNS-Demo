@@ -42,4 +42,10 @@ public class PickupCrateAction : GoToAction
         base.OnArrive();
         carpenter.GetComponentInChildren<Animator>().SetBool("Carry", true);
     }
+
+    public override void OnPickup()
+    {
+        base.OnPickup();
+        carpenter.Workshop.SetObject(Workshop.WorkshopObject.None);
+    }
 }
