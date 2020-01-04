@@ -8,13 +8,14 @@ public class CarryWoodAction : GoToAction
     private BoolVariable hasWood;
     private BoolVariable workshopHasWood;
     private Transform workspot;
+    private Carpenter carpenter;
 
     private BasicAgent basicAgent;
 
     protected override void Start()
     {
         base.Start();
-        Carpenter carpenter = GetComponentInParent<Carpenter>();
+        carpenter = GetComponentInParent<Carpenter>();
         hasWood = carpenter.HasWood;
         workshopHasWood = carpenter.Workshop.HasWood;
         workspot = carpenter.Workshop.Spot;
@@ -40,5 +41,11 @@ public class CarryWoodAction : GoToAction
     {
         base.OnArrive();
         basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", false);
+    }
+
+    public override void OnPutdown()
+    {
+        base.OnPutdown();
+        carpenter.Workshop.SetObject(Workshop.WorkshopObject.Wood);
     }
 }

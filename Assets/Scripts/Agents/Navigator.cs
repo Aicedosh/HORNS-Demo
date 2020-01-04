@@ -92,7 +92,6 @@ public class Navigator : MonoBehaviour
                     endRot = Quaternion.LookRotation(towards);
                     startRot = transform.rotation;
                     timeToRotate = Vector3.Angle(transform.forward, towards) / RotationSpeed;
-                    Debug.Log($"TTR: {timeToRotate}");
                     rotTimeElapsed = 0f;
                     isRotating = true;
                 }
