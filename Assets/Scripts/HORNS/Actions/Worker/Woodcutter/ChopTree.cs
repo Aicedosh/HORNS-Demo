@@ -46,12 +46,14 @@ public class ChopTree : GoToAction
 
     protected override void OnComplete()
     {
+        base.OnComplete();
         forest.Remove(target);
         Destroy(target.gameObject);
     }
 
     protected override void OnActionEnd()
     {
+        base.OnActionEnd();
         woodcutter.GetComponentInChildren<Animator>().SetBool("Chop", false);
         isPickingUp = false;
     }
