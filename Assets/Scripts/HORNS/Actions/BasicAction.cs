@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class BasicAction : MonoBehaviour
 {
+    public float RainCost = 0f;
+    public float BaseCost = 0f;
+
     public class LibAction : HORNS.Action
     {
         private BasicAction basicAction;
@@ -52,7 +55,11 @@ public abstract class BasicAction : MonoBehaviour
 
     public virtual bool IsIdle => false;
 
-    protected virtual void SetupAction(HORNS.Action action) { }
+    protected virtual void SetupAction(HORNS.Action action)
+    {
+        action.AddCost(FindObjectOfType<Weather>().Rains.Variable, v => v ? RainCost : 0f);
+        action.AddCost(BaseCost);
+    }
 
     //Override this method to specify the uninterruptible part of action
     protected virtual void OnComplete() { }

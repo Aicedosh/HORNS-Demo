@@ -8,10 +8,7 @@ public class HangOutAction : GoToAction
 {
     public int DesiredCrowdSize;
     public float Factor;
-    public float BaseCost;
     public RestSpot RestSpot;
-
-    public BoolVariable Rains;
 
     public override bool IsIdle => true;
 
@@ -36,13 +33,7 @@ public class HangOutAction : GoToAction
     {
         base.SetupAction(action);
 
-        if(Rains != null)
-        {
-            action.AddCost(Rains.Variable, r => r ? 3f : -0.3f);
-        }
-
         action.AddCost(crowdSize.Variable, n => Factor * (n - DesiredCrowdSize) * (n - DesiredCrowdSize));
-        action.AddCost(BaseCost);
     }
 
     protected override void OnArrive()

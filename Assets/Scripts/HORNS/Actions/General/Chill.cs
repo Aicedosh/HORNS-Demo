@@ -31,7 +31,6 @@ public class Chill : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddCost(EnergyRestored);
-        action.AddResult(energy.Variable, new IntegerAddResult(15));
+        action.AddResult(energy.Variable, new IntegerAddResult(EnergyRestored));
     }
 }

@@ -39,8 +39,8 @@ public abstract class EatAction : BasicAction
 
     protected override void SetupAction(Action action)
     {
+        base.SetupAction(action);
         action.AddPrecondition(isInTavern.Variable, new BooleanPrecondition(true));
-
         action.AddCost(numberOfCustomers.Variable, n => (n - (isInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
     }
 

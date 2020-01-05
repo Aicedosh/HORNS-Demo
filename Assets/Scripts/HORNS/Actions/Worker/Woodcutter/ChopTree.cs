@@ -56,6 +56,12 @@ public class ChopTree : GoToAction
         isPickingUp = false;
     }
 
+    protected override void OnCancel()
+    {
+        base.OnCancel();
+        target.gameObject.GetComponent<Tree>().Chopper = null;
+    }
+
     protected override void Update()
     {
         base.Update();

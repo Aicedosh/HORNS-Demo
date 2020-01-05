@@ -53,10 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ecc2ff295ec8848a575acaa1285c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
   TimeToComplete: 0
   Hide: 0
   StartValue: 200
-  EnergyRestored: 5
+  EnergyRestored: 15
 --- !u!114 &1152051814568709217
 MonoBehaviour:
   m_ObjectHideFlags: 0

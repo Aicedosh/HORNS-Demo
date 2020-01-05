@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055011985131292054}
+  - component: {fileID: 4079276334853881616}
   m_Layer: 0
   m_Name: Reactors
   m_TagString: Untagged
@@ -30,6 +31,18 @@ Transform:
   m_Father: {fileID: 4247288941157461145}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4079276334853881616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538794739264360255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ff9cc362a2cdf4f83904a9218890be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4247288941157461094
 GameObject:
   m_ObjectHideFlags: 0
