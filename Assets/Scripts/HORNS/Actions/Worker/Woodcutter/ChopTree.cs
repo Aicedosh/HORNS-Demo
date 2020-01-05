@@ -61,7 +61,10 @@ public class ChopTree : GoToAction
     protected override void OnCancel()
     {
         base.OnCancel();
-        target.gameObject.GetComponent<Tree>().Chopper = null;
+        if(target != null)
+        {
+            target.gameObject.GetComponent<Tree>().Chopper = null;
+        }
     }
 
     protected override void Update()
