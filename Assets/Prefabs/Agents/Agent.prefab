@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 6349468011752379757}
   - component: {fileID: 4417658017279842572}
   - component: {fileID: 9114203173581995111}
+  - component: {fileID: -2501247058451025670}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -213,6 +214,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &-2501247058451025670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247288941157461094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e608bbfbb641cf84fbb270af0e581bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Outline: {fileID: 9114203173581995111}
 --- !u!1 &5496683940218649921
 GameObject:
   m_ObjectHideFlags: 0
