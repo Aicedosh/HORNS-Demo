@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class OutlineController : MonoBehaviour
 {
     private bool _selected;
@@ -24,33 +25,36 @@ public class OutlineController : MonoBehaviour
         }
     }
 
-    public Outline Outline;
+    private Outline _outline;
 
     private void UpdateOutline()
     {
         if (_selected)
         {
-            Outline.enabled = true;
-            Color color = Outline.OutlineColor;
+            _outline.enabled = true;
+            Color color = _outline.OutlineColor;
             color.a = 1f;
-            Outline.OutlineColor = color;
+            _outline.OutlineColor = color;
         }
         else if (_hovered)
         {
-            Outline.enabled = true;
-            Color color = Outline.OutlineColor;
+            _outline.enabled = true;
+            Color color = _outline.OutlineColor;
             color.a = 0.3f;
-            Outline.OutlineColor = color;
+            _outline.OutlineColor = color;
         }
         else
         {
-            Outline.enabled = false;
+            _outline.enabled = false;
         }
     }
 
     void OnMouseOver()
     {
-        Hovered = true;
+        if (!_hovered)
+        {
+            Hovered = true;
+        }
     }
 
     void OnMouseExit()
@@ -61,7 +65,8 @@ public class OutlineController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _outline = GetComponentInParent<Outline>();
+        _outline.enabled = false;
     }
 
     // Update is called once per frame
