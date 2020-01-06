@@ -20,6 +20,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
     private AgentDisplay display;
 
     private PlanTimeStats timeStats;
+    private bool skippedFirstTime;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,15 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
         agent.SetRecalculateCallback((a) =>
         {
-            Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions.Count()} action{(a.PlannedActions.Count() > 1 ? "s" : "")}, Cost: {a.PlannedActions.Sum(ac=>ac.CachedCost)} ({a.LastPlanTime.TotalMilliseconds}ms)");
-            timeStats.AddTime(a.LastPlanTime.TotalMilliseconds, objectName);
+            if(skippedFirstTime)
+            {
+                Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions.Count()} action{(a.PlannedActions.Count() > 1 ? "s" : "")}, Cost: {a.PlannedActions.Sum(ac => ac.CachedCost)} ({a.LastPlanTime.TotalMilliseconds}ms)");
+                timeStats.AddTime(a.LastPlanTime.TotalMilliseconds, objectName);
+            }
+            else
+            {
+                skippedFirstTime = true;
+            }
         });
     }
 
