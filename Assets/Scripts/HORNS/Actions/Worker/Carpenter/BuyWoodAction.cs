@@ -9,6 +9,7 @@ public class BuyWoodAction : GoToAction
     private Transform shopspot;
     private BoolVariable isShopOpen;
     private BoolVariable hasWood;
+    private BoolVariable hasCrate;
     private GameObject logGo;
 
     private BasicAgent basicAgent;
@@ -22,6 +23,7 @@ public class BuyWoodAction : GoToAction
         shopspot = objectSeller.Shop.ClientSpot;
         isShopOpen = objectSeller.Shop.IsOpen;
         hasWood = GetComponentInParent<Carpenter>().HasWood;
+        hasCrate = GetComponentInParent<Carpenter>().HasCrate;
         logGo = GetComponentInParent<Carpenter>().Log;
 
         basicAgent = GetComponentInParent<BasicAgent>();
@@ -36,6 +38,8 @@ public class BuyWoodAction : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
+        action.AddPrecondition(hasWood.Variable, new BooleanPrecondition(false));
+        action.AddPrecondition(hasCrate.Variable, new BooleanPrecondition(false));
         action.AddPrecondition(shopWoodCount.Variable, new IntegerConsumePrecondition(1));
         action.AddPrecondition(isShopOpen.Variable, new BooleanPrecondition(true));
         action.AddResult(hasWood.Variable, new BooleanResult(true));

@@ -180,11 +180,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1.71, y: 1.84, z: 1.43}
+  m_Extents: {x: 1.6043835, y: 1.84, z: 1.2782235}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.13, y: 1.49, z: -0.02}
+  m_Center: {x: -0.2945822, y: 1.49, z: -0.004529059}
   m_TimeToStationary: 0.5
 --- !u!65 &836526356255935826
 BoxCollider:
@@ -197,8 +197,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.24, y: 3.68, z: 3.53}
-  m_Center: {x: 0.12, y: 1.49, z: -0.02}
+  m_Size: {x: 3.2087672, y: 3.6799998, z: 2.5564468}
+  m_Center: {x: -0.29458213, y: 1.49, z: -0.004529059}
 --- !u!114 &6649342596143418555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfCustomers: {fileID: 6649342596143418555}
   CustomerSpot: {fileID: 4491594055606413028}
+  Price: 0
+  HungerSatisfied: 0
 --- !u!1 &2072892699703280998
 GameObject:
   m_ObjectHideFlags: 0
