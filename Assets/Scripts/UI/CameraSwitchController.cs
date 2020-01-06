@@ -5,14 +5,16 @@ using UnityEngine.Playables;
 [RequireComponent(typeof(CinemachineBrain))]
 public class CameraSwitchController : MonoBehaviour
 {
-    CinemachineBrain brain;
-    public PlayableDirector DollyDirector;
+    PlayableDirector townDirector;
+    public CinemachineVirtualCamera TownCam;
+
+    public CinemachineVirtualCamera FollowCam;
 
     // Start is called before the first frame update
     void Start()
     {
-        brain = GetComponent<CinemachineBrain>();
-        DollyDirector.Stop();
+        townDirector = TownCam.GetComponent<PlayableDirector>();
+        townDirector.Stop();
     }
 
     // Update is called once per frame
@@ -20,13 +22,17 @@ public class CameraSwitchController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            brain.enabled = true;
-            DollyDirector.Play();
+            TownCam.Priority = 20;
+            townDirector.Play();
+
+            FollowCam.Priority = 10;
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
-            brain.enabled = false;
-            DollyDirector.Stop();
+            TownCam.Priority = 10;
+            townDirector.Stop();
+
+            FollowCam.Priority = 20;
         }
     }
 }
