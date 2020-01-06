@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
-  TimeToComplete: 0
+  TimeToComplete: 30
   Hide: 0
   StartValue: 200
   EnergyRestored: 15
@@ -159,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: TimeToChange
-      value: 240
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}

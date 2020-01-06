@@ -61,7 +61,7 @@ public class ChopTree : GoToAction
     protected override void OnCancel()
     {
         base.OnCancel();
-        if(target != null)
+        if(target != null && (target.gameObject.GetComponent<Tree>().Chopper != null && target.gameObject.GetComponent<Tree>().Chopper == agentAI))
         {
             target.gameObject.GetComponent<Tree>().Chopper = null;
         }
