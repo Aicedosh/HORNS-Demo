@@ -1,16 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
 public class UIController : MonoBehaviour
 {
     public Canvas AgentCanvasGroup;
+    public CinemachineVirtualCamera FollowCamera;
     private AgentUI agentUI;
 
     // Start is called before the first frame update
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            var agent = agentUI.GetSelectedAgent();
+            if (agent != null)
+            {
+                FollowCamera.enabled = true;
+                FollowCamera.Follow = agent;
+                FollowCamera.LookAt = agent;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            FollowCamera.enabled = false;
+        }
+
         if(Input.GetKeyDown(KeyCode.Period))
         {
             if(Time.timeScale <= 25)

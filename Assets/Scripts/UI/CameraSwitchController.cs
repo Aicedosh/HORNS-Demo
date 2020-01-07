@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-[RequireComponent(typeof(CinemachineBrain))]
+// not used for now
 public class CameraSwitchController : MonoBehaviour
 {
     PlayableDirector townDirector;

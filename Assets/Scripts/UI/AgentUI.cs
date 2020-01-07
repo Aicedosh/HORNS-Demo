@@ -31,11 +31,6 @@ public class AgentUI : MonoBehaviour
 
         if (selectedAgent != null)
         {
-            //Outline outline = selectedAgent.GetComponent<Outline>();
-            //if (outline != null)
-            //{
-            //    outline.enabled = false;
-            //}
             var oc = selectedAgent.GetComponent<OutlineController>();
             if (oc != null)
             {
@@ -66,5 +61,14 @@ public class AgentUI : MonoBehaviour
                 oc.Selected = true;
             }
         }
+    }
+
+    public Transform GetSelectedAgent()
+    {
+        if (selectedAgent == null)
+        {
+            return null;
+        }
+        return selectedAgent.GetComponent<Transform>();
     }
 }
