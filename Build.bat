@@ -11,7 +11,13 @@
 @SET DEMO_LIB_DIR=%DEMO_PROJ_DIR%Assets\Libraries\
 @SET INSTALLER_DIR=%DEMO_PROJ_DIR%/Installer
 
+@CALL :test_program Unity, Unity || @EXIT
+
+@CALL :test_program iscc, "Inno Setup" || @EXIT
+
 @IF EXIST %HORNS_CSPROJ% (
+	@CALL :test_program dotnet, "dotnet runtime" || @EXIT
+
 	@ECHO Found HORNS library project file: "%HORNS_CSPROJ%"
 	@ECHO Building library from source...
 	dotnet publish "%HORNS_CSPROJ%" -o "%HORNS_LIB_DIR%"
@@ -34,3 +40,13 @@
 @iscc /DInstallerDir="%INSTALLER_DIR%" /DOutputDir="%BUILD_DIR%" /DExeDir="%WIN64_BUILD_DIR%" "%INSTALLER_DIR%\Windows.iss"
 
 @PAUSE
+@EXIT
+
+:test_program
+@where /q %~1
+@IF ERRORLEVEL 1 (
+	@ECHO Could not find %~1 in PATH. Please make sure the %~2 is installed and available
+	@PAUSE
+	@EXIT /B 1
+)
+@EXIT /B 0
