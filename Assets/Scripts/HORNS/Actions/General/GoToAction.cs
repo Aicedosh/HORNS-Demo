@@ -24,7 +24,7 @@ public abstract class GoToAction : BasicAction
     {
         base.SetupAction(action);
 
-        foreach(var v in isInTavernVariables)
+        foreach (var v in isInTavernVariables)
         {
             action.AddPrecondition(v.Variable, new BooleanPrecondition(false));
         }
@@ -37,7 +37,9 @@ public abstract class GoToAction : BasicAction
         _collider = GetComponentInParent<CapsuleCollider>();
         _nav = GetComponentInParent<NavMeshAgent>();
 
+        var ag = GetComponentInParent<BasicAgent>();
         isInTavernVariables = GetComponentInParent<BasicAgent>().IsInTavernVariables.ToArray();
+        int i = 0;
     }
 
     private void SetAgentVisibility(bool visible)

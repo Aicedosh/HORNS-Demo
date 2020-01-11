@@ -2,25 +2,33 @@
 using UnityEngine;
 using System.Linq;
 
-public class RadishField : SpawnOnClick
+public class RadishField : MonoBehaviour
 {
-    private List<GameObject> radishes = new List<GameObject>();
+    public int MinRadishCount;
+    public int MaxRadishCount;
 
-    public IntVariable RadishCount;
+    public float MinRange;
+    public float MaxRange;
 
-    public override void OnClick(Vector3 position)
+    public GameObject RadishPrefab;
+
+    public IEnumerable<Transform> Spots => Enumerable.Range(0, transform.childCount).Select(i => transform.GetChild(i));
+
+    private void Start()
     {
-        radishes.Add(SpawnWithRandomRotation(position));
-        RadishCount.LibVariable.Value++;
-    }
+        foreach (var s in Spots)
+        {
+            float r = Random.Range(MinRange, MaxRange);
+            int c = Random.Range(MinRadishCount, MaxRadishCount);
 
-    public IEnumerable<Transform> GetAllRadishPositions()
-    {
-        return radishes.Select(r => r.transform);
-    }
-
-    public void Remove(Transform transform)
-    {
-        radishes.Remove(transform.gameObject);
+            for (int i = 0; i < c; i++)
+            {
+                Vector2 offset = Random.insideUnitCircle * r;
+                var go = Instantiate(RadishPrefab, Vector3.zero,
+                    Quaternion.Euler(RadishPrefab.transform.rotation.eulerAngles.x, Random.Range(0f, 360f), RadishPrefab.transform.rotation.eulerAngles.z));
+                go.transform.parent = s;
+                go.transform.localPosition = new Vector3(offset.x, 0, offset.y);
+            }
+        }
     }
 }

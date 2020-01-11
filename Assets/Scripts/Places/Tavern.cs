@@ -6,6 +6,7 @@ public class Tavern : MonoBehaviour
 {
     public IntVariable NumberOfCustomers;
     public Transform CustomerSpot;
+    public Transform KitchenSpot;
 
     public int Price;
     public int HungerSatisfied;

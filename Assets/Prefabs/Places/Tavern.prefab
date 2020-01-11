@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfCustomers: {fileID: 6649342596143418555}
   CustomerSpot: {fileID: 4491594055606413028}
+  KitchenSpot: {fileID: 4491594055606413028}
   Price: 0
   HungerSatisfied: 0
 --- !u!1001 &5553432910501111429
