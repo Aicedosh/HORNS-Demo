@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3117945944098218969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259025895489150654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33e76c10c9c2d4f86eed2d2fde2a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RadishField: {fileID: 0}
+  Tavern: {fileID: 0}
+  HasRadish: {fileID: 6257028706056013015}
+  Radish: {fileID: 0}
+--- !u!114 &6257028706056013015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835171640752219548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Has Radish
+--- !u!114 &659614038838299406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476458357635092377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4571d628da6927b4fa89ccaa331b26d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  TimeToComplete: 1.2
+  Hide: 0
+  MoneyGained: 1
+--- !u!114 &5049375785918030912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476458357635092377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd92b6210d5071446bbc2278f7695505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 10
+  BaseCost: 0
+  TimeToComplete: 10
+  Hide: 0
+  EnergyLost: 5
+--- !u!1001 &1617157957515179384
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941369, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 507140915320941510, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_Name
+      value: Farmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236038184655081700, guid: 587377fe8bb3cfe409d145199d49e217,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 587377fe8bb3cfe409d145199d49e217, type: 3}
+--- !u!1 &1259025895489150654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 507140915320941510, guid: 587377fe8bb3cfe409d145199d49e217,
+    type: 3}
+  m_PrefabInstance: {fileID: 1617157957515179384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6835171640752219548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5236038184655081700, guid: 587377fe8bb3cfe409d145199d49e217,
+    type: 3}
+  m_PrefabInstance: {fileID: 1617157957515179384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7476458357635092377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8192324642547202785, guid: 587377fe8bb3cfe409d145199d49e217,
+    type: 3}
+  m_PrefabInstance: {fileID: 1617157957515179384}
+  m_PrefabAsset: {fileID: 0}
