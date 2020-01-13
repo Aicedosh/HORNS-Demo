@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.21342164, g: 0.23698288, b: 0.2742585, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12417,6 +12417,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tavern - Workshops
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513834178695041894, guid: 9c0a0f8939d330144837925c6b6f16f6,
+        type: 3}
+      propertyPath: Price
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513834178695041894, guid: 9c0a0f8939d330144837925c6b6f16f6,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2850882909205921094, guid: 9c0a0f8939d330144837925c6b6f16f6,
         type: 3}

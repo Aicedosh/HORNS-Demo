@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class SellCrateAction : GoToAction
+public class SellCrateAction : SellAction
 {
     private Transform shopspot;
     private BoolVariable isShopOpen;
@@ -22,7 +22,6 @@ public class SellCrateAction : GoToAction
         isShopOpen = objectSeller.Shop.IsOpen;
         hasCrate = GetComponentInParent<Carpenter>().HasCrate;
         money = GetComponentInParent<Worker>().Money;
-        basicAgent = GetComponentInParent<BasicAgent>();
         merchantSpot = objectSeller.Shop.MerchantSpot;
     }
 
@@ -43,23 +42,5 @@ public class SellCrateAction : GoToAction
         action.AddPrecondition(hasCrate.Variable, new BooleanPrecondition(true));
         action.AddResult(hasCrate.Variable, new BooleanResult(false));
         action.AddResult(money.Variable, new IntegerAddResult(MoneyGained));
-    }
-
-    protected override void OnArrive()
-    {
-        base.OnArrive();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", true);
-    }
-
-    protected override void OnComplete()
-    {
-        base.OnComplete();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", false);
-    }
-
-    protected override void OnActionEnd()
-    {
-        base.OnActionEnd();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", false);
     }
 }
