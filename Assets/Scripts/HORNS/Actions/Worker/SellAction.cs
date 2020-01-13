@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class SellAction : GoToAction
 {
-    private BasicAgent basicAgent;
+    protected BasicAgent basicAgent;
 
     protected override void Start()
     {

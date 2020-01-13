@@ -26,7 +26,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 7
   BaseCost: 0
-  TimeToComplete: 1.2
+  TimeToComplete: 2
   Hide: 0
 --- !u!114 &4283165463956938287
 MonoBehaviour:
