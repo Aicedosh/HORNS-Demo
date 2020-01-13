@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="BasicAction">
+    <Position X="3.25" Y="1.25" Width="2.75" />
+    <Members>
+      <Field Name="agentAI" Hidden="true" />
+      <Method Name="OnPickup" Hidden="true" />
+      <Method Name="OnPutdown" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="BasicAction.LibAction">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEBCAAQIAAgwIEAAAAAAAAAQAABgAAAAAAAAAAIgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EatAction" Collapsed="true">
+    <Position X="1.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAKAAAgAAAEAAABAggCAAAAAAIAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\General\EatAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoToAction">
+    <Position X="4.75" Y="8.5" Width="2" />
+    <Members>
+      <Field Name="_collider" Hidden="true" />
+      <Field Name="_nav" Hidden="true" />
+      <Field Name="arrived" Hidden="true" />
+      <Method Name="FinishWork" Hidden="true" />
+      <Field Name="Hide" Hidden="true" />
+      <Field Name="isInTavernVariables" Hidden="true" />
+      <Field Name="navigator" Hidden="true" />
+      <Method Name="OnArrive" Hidden="true" />
+      <Method Name="OnCancel" Hidden="true" />
+      <Method Name="OnWalkEnd" Hidden="true" />
+      <Field Name="prevRadius" Hidden="true" />
+      <Method Name="SetAgentVisibility" Hidden="true" />
+      <Method Name="SetupAction" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Field Name="timeElapsed" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AASEgCAABKQgAAAAGAAAAAAAACAAAAEAAAAAAEAQAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\General\GoToAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SellCrateAction">
+    <Position X="3.5" Y="10.5" Width="2.25" />
+    <Members>
+      <Method Name="OnActionEnd" Hidden="true" />
+      <Method Name="OnArrive" Hidden="true" />
+      <Method Name="OnComplete" Hidden="true" />
+      <Method Name="Perform" Hidden="true" />
+      <Method Name="SetupAction" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAACAAAKQAAgAAABAAAAAABAIAAAAAAAAACgAAEgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\Worker\Carpenter\SellCrateAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickRadish">
+    <Position X="6.5" Y="10.5" Width="1.75" />
+    <Members>
+      <Method Name="OnActionEnd" Hidden="true" />
+      <Method Name="OnArrive" Hidden="true" />
+      <Method Name="Perform" Hidden="true" />
+      <Method Name="SetupAction" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAKQQAgAAAAAAAgAAAAAAIAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\Worker\Farmer\PickRadish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
