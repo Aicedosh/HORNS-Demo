@@ -42,6 +42,7 @@ public class ChopTree : GoToAction
         target = navigator.GoToNearest(forest.GetTreesLocations(), OnWalkEnd);
 
         woodcutter.GetComponentInChildren<Carrier>().SetCarriedObject(woodcutter.Log);
+        GetComponentInParent<BasicAgent>().GetComponentInChildren<Carrier>().SetAction(this);
     }
 
     protected override void OnComplete()

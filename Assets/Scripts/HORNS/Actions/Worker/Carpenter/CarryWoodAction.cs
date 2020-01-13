@@ -25,6 +25,7 @@ public class CarryWoodAction : GoToAction
 
     protected override void Perform()
     {
+        basicAgent.GetComponentInChildren<Carrier>().SetAction(this);
         navigator.GoTo(workspot, OnWalkEnd);
     }
 

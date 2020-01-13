@@ -12587,6 +12587,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tavern - Workshops
       objectReference: {fileID: 0}
+    - target: {fileID: 1513834178695041894, guid: 9c0a0f8939d330144837925c6b6f16f6,
+        type: 3}
+      propertyPath: Price
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513834178695041894, guid: 9c0a0f8939d330144837925c6b6f16f6,
+        type: 3}
+      propertyPath: HungerSatisfied
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2850882909205921094, guid: 9c0a0f8939d330144837925c6b6f16f6,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class SellWood : GoToAction
+public class SellWood : SellAction
 {
     private BoolVariable hasWood;
     private IntVariable money;
@@ -35,6 +35,7 @@ public class SellWood : GoToAction
             Cancel();
             return;
         }
+        basicAgent.GetComponentInChildren<Carrier>().SetAction(this);
         navigator.GoTo(target, OnWalkEnd, merchantSpot);
     }
 
@@ -46,23 +47,5 @@ public class SellWood : GoToAction
         action.AddResult(hasWood.Variable, new BooleanResult(false));
         action.AddResult(money.Variable, new IntegerAddResult(MoneyGained));
         action.AddResult(woodCount.Variable, new IntegerAddResult(1));
-    }
-
-    protected override void OnArrive()
-    {
-        base.OnArrive();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", true);
-    }
-
-    protected override void OnComplete()
-    {
-        base.OnComplete();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", false);
-    }
-
-    protected override void OnActionEnd()
-    {
-        base.OnActionEnd();
-        basicAgent.GetComponentInChildren<Animator>().SetBool("Interact", false);
     }
 }

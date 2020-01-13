@@ -32,6 +32,7 @@ public class BuyWoodAction : GoToAction
     protected override void Perform()
     {
         navigator.GoTo(shopspot, OnWalkEnd);
+        basicAgent.GetComponentInChildren<Carrier>().SetAction(this);
         basicAgent.GetComponentInChildren<Carrier>().SetCarriedObject(logGo);
     }
 
