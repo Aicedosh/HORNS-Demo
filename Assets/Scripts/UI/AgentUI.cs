@@ -31,10 +31,15 @@ public class AgentUI : MonoBehaviour
 
         if (selectedAgent != null)
         {
-            Outline outline = selectedAgent.GetComponent<Outline>();
-            if (outline != null)
+            //Outline outline = selectedAgent.GetComponent<Outline>();
+            //if (outline != null)
+            //{
+            //    outline.enabled = false;
+            //}
+            var oc = selectedAgent.GetComponent<OutlineController>();
+            if (oc != null)
             {
-                outline.enabled = false;
+                oc.Selected = false;
             }
         }
 
@@ -55,10 +60,10 @@ public class AgentUI : MonoBehaviour
                 go.transform.SetParent(DisplayCanvas.transform);
             }
 
-            Outline outline = selectedAgent.GetComponent<Outline>();
-            if (outline != null)
+            var oc = selectedAgent.GetComponent<OutlineController>();
+            if (oc != null)
             {
-                outline.enabled = true;
+                oc.Selected = true;
             }
         }
     }
