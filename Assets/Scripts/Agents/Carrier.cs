@@ -5,6 +5,7 @@ using UnityEngine;
 public class Carrier : MonoBehaviour
 {
     private GameObject carried = null;
+    private BasicAction action = null;
 
     private AgentAI agentAI;
 
@@ -18,17 +19,22 @@ public class Carrier : MonoBehaviour
         carried = go;
     }
 
+    public void SetAction(BasicAction action)
+    {
+        this.action = action;
+    }
+
     public void PickupEvent()
     {
         carried.SetActive(true);
 
-        agentAI.CurrentAction?.OnPickup();
+        action.OnPickup();
     }
 
     public void PutdownEvent()
     {
         carried.SetActive(false);
 
-        agentAI.CurrentAction?.OnPutdown();
+        action.OnPutdown();
     }
 }

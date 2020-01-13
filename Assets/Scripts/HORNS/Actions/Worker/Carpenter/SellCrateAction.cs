@@ -9,7 +9,6 @@ public class SellCrateAction : SellAction
     private BoolVariable isShopOpen;
     private BoolVariable hasCrate;
     private IntVariable money;
-    private BasicAgent basicAgent;
     private Transform merchantSpot;
 
     public int MoneyGained;
@@ -32,6 +31,7 @@ public class SellCrateAction : SellAction
             Cancel();
             return;
         }
+        basicAgent.GetComponentInChildren<Carrier>().SetAction(this);
         navigator.GoTo(shopspot, OnWalkEnd, merchantSpot);
     }
 

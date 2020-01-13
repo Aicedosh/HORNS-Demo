@@ -25,6 +25,7 @@ public class PickupCrateAction : GoToAction
     protected override void Perform()
     {
         navigator.GoTo(workspot, OnWalkEnd);
+        GetComponentInParent<BasicAgent>().GetComponentInChildren<Carrier>().SetAction(this);
         carpenter.GetComponentInChildren<Carrier>().SetCarriedObject(crateGo);
     }
 

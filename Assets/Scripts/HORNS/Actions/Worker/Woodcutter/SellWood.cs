@@ -35,6 +35,7 @@ public class SellWood : SellAction
             Cancel();
             return;
         }
+        basicAgent.GetComponentInChildren<Carrier>().SetAction(this);
         navigator.GoTo(target, OnWalkEnd, merchantSpot);
     }
 
