@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class UIController : MonoBehaviour
@@ -11,6 +12,11 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             var agent = agentUI.GetSelectedAgent();
