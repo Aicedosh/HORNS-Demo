@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    static string[] scenes = { "Assets/Scenes/DemoScene.unity" };
+    static string[] scenes = { "Assets/Scenes/MenuScene.unity", "Assets/Scenes/DemoScene.unity" };
     static string outPath = System.Environment.GetCommandLineArgs()[1];
 
     static void BuildWin64()
