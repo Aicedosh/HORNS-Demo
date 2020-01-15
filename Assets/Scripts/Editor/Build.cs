@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    static string[] scenes = { "Assets/Scenes/MenuScene.unity", "Assets/Scenes/DemoScene.unity" };
+    static string[] scenes => EditorBuildSettings.scenes.Select(s => s.path).ToArray();
     static string outPath = System.Environment.GetCommandLineArgs()[1];
 
     static void BuildWin64()
