@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4a72f56d9f90b42a12a7d9a12d93bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClassName: Generic
 --- !u!136 &5146045458170000041
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -226,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e608bbfbb641cf84fbb270af0e581bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Outline: {fileID: 9114203173581995111}
 --- !u!1 &5496683940218649921
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2741785590195457738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8496340031844349854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d9616ea0388fc04f8d12880153f469f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shop: {fileID: 0}
 --- !u!114 &219265054451036121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +63,19 @@ MonoBehaviour:
   Variable: {fileID: 0}
   TrueValue: 1
   FalseValue: 0
+--- !u!114 &2741785590195457738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496340031844349854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9616ea0388fc04f8d12880153f469f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shop: {fileID: 0}
 --- !u!114 &3722841425850530513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691741099352731390, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: ClassName
+      value: Merchant
       objectReference: {fileID: 0}
     - target: {fileID: 6130611809293703399, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}

@@ -12,7 +12,6 @@ public class SellWood : SellAction
 
     public int MoneyGained;
 
-    private BasicAgent basicAgent;
     private Transform target;
     private Transform merchantSpot;
 
