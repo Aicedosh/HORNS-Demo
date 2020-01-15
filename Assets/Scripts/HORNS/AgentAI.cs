@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class AgentAI : MonoBehaviour, IDisplayable
 {
+    public string ClassName;
     private HORNS.Agent agent = new HORNS.Agent();
     public BasicAction CurrentAction { get; set; }
     public bool PerformedActionThisFrame { get; set; }

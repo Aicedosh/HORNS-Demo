@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class IntVariable : DemoVariable<int>
 {
-    public HORNS.IntegerConsumeVariable Variable { get; } = new HORNS.IntegerConsumeVariable();
+    public HORNS.IntegerVariable Variable { get; } = new HORNS.IntegerVariable();
     public override Variable<int> LibVariable => Variable;
 
     public override LayoutGroup GetComponent()
