@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6218d4a51606f2143a4825ef5b1097f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
   CrowdFactor: 1
   TimeToEat: 1
   HungerSatisfied: 1

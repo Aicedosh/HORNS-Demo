@@ -22,7 +22,6 @@ public class WorkAction : BasicAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
-        action.AddCost(isShopOpen.Variable, v => v ? 0.9f : 1000); //TODO: DIRTY HACK
         action.AddPrecondition(isShopOpen.Variable, new BooleanPrecondition(true));
     }
 }

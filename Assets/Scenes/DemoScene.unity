@@ -1066,7 +1066,6 @@ MonoBehaviour:
   AgentPrefabs:
   - {fileID: 488071192242049996, guid: aef1fa99408c332468cca380aadbaf2c, type: 3}
   - {fileID: 889082699320729243, guid: e5f068dfe75375547b274dcb446f6ed8, type: 3}
-  Count: 3
 --- !u!1001 &281576375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1263,6 +1262,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 300118223}
+  - component: {fileID: 300118224}
+  - component: {fileID: 300118225}
   m_Layer: 0
   m_Name: Agents
   m_TagString: Untagged
@@ -1288,6 +1289,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300118224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300118222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25147584a1ab1834ea47a2a2e732532a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &300118225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300118222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e268e28367c88e44885f5820acab91be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &394217311
 GameObject:
   m_ObjectHideFlags: 3
@@ -3965,7 +3990,6 @@ MonoBehaviour:
   AgentPrefabs:
   - {fileID: 2824857632901057100, guid: 70e68685beafc7145b49e40694d54ce7, type: 3}
   - {fileID: 6044791107155338491, guid: 8fee7bc138fe47145b85ea95b3de2929, type: 3}
-  Count: 15
 --- !u!1 &1219333600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4279,6 @@ MonoBehaviour:
   AgentPrefabs:
   - {fileID: 5043031729679616755, guid: f4097d84b0a23174e9db281735d5811b, type: 3}
   - {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582, type: 3}
-  Count: 10
 --- !u!1 &1366786114
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4325,6 @@ MonoBehaviour:
   AgentPrefabs:
   - {fileID: 6880132287804083896, guid: c07f13289e30948478a14e4d4904585c, type: 3}
   - {fileID: 1317753675956184072, guid: c815716e5bdc58f42883b2dbef3cf96c, type: 3}
-  Count: 5
 --- !u!1 &1412427532
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,19 +5,12 @@ using UnityEngine;
 public class AgentSpawner : MonoBehaviour
 {
     public GameObject[] AgentPrefabs;
-    public int Count;
 
     private SimplePriorityQueue<Home> homes;
 
     void Start()
     {
         homes = new SimplePriorityQueue<Home>();
-        foreach(Home h in FindObjectsOfType<Home>())
-        {
-            homes.Enqueue(h, h.NumberOfResidents);
-        }
-
-        Spawn(Count);
     }
 
     private GameObject GetPrefab()
@@ -38,6 +31,11 @@ public class AgentSpawner : MonoBehaviour
 
     public void Spawn(int count)
     {
+        foreach (Home h in FindObjectsOfType<Home>())
+        {
+            homes.Enqueue(h, h.NumberOfResidents);
+        }
+
         for (int i = 0; i < count; i++)
         {
             Home h = homes.First;

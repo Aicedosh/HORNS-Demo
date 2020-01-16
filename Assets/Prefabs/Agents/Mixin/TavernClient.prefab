@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27513e23172f4214d911cb69e5193777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
   TimeToComplete: 0
   Hide: 1
 --- !u!114 &4633110251673806022
@@ -149,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9f9a83cfd7ff04eaaaa7fd970ad4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
   Variable: {fileID: 0}
   EndValue: 0
   Cost: 0
