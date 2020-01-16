@@ -47,6 +47,10 @@ MonoBehaviour:
   HandAxe: {fileID: 0}
   HipAxe: {fileID: 0}
   Log: {fileID: 0}
+  WoodSellerPrefab: {fileID: 2670923354822006952, guid: ee8fc5adc1417ea41a896b6b4e75570b,
+    type: 3}
+  MinShops: 1
+  MaxShops: 3
   Forest: {fileID: 0}
 --- !u!1001 &6426860252054755947
 PrefabInstance:

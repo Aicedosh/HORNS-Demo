@@ -75,6 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9616ea0388fc04f8d12880153f469f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MinTaverns: 1
+  MaxTaverns: 2
+  TavernClientPrefab: {fileID: 2408879738005708695, guid: 79310719e2c7e524ba6f6dbd99abed5d,
+    type: 3}
   Shop: {fileID: 0}
 --- !u!114 &3722841425850530513
 MonoBehaviour:

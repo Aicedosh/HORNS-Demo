@@ -15,6 +15,42 @@ MonoBehaviour:
   Home: {fileID: 0}
   Energy: {fileID: 5627307569823585817}
   Money: {fileID: 7536048164810836811}
+  TavernClientPrefab: {fileID: 8806561864708766489, guid: 139d1d66d17133142bbde717a3bc472a,
+    type: 3}
+  MinTaverns: 1
+  MaxTaverns: 3
+  MinRestSpots: 2
+  MaxRestSpots: 3
+--- !u!114 &1152051814568709217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623911521678766308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6672b97fd061dfb449e3b8fa850f0d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DesiredValue: 100
+  Multiplier: 30
+  Variable: {fileID: 7536048164810836811}
+--- !u!114 &8326484292264044581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623911521678766308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6672b97fd061dfb449e3b8fa850f0d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DesiredValue: 200
+  Multiplier: 167
+  Variable: {fileID: 5627307569823585817}
 --- !u!114 &5627307569823585817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,36 +95,6 @@ MonoBehaviour:
   Hide: 0
   StartValue: 200
   EnergyRestored: 15
---- !u!114 &1152051814568709217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623911521678766308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6672b97fd061dfb449e3b8fa850f0d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DesiredValue: 100
-  Multiplier: 30
-  Variable: {fileID: 7536048164810836811}
---- !u!114 &8326484292264044581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623911521678766308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6672b97fd061dfb449e3b8fa850f0d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DesiredValue: 200
-  Multiplier: 167
-  Variable: {fileID: 5627307569823585817}
 --- !u!1001 &4465564429012420512
 PrefabInstance:
   m_ObjectHideFlags: 0

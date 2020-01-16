@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class WorkAction : BasicAction
 {
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         isShopOpen = GetComponentInParent<Merchant>().Shop.IsOpen;
     }
 

@@ -9,6 +9,7 @@ public class LeaveTavernAction : SetBoolAction
 
     protected override void Start()
     {
+        base.Start();
         numberOfCustomers = GetComponentInParent<TavernClient>().Tavern.NumberOfCustomers;
         Variable = GetComponentInParent<TavernClient>().IsInTavern;
     }

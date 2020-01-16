@@ -22,6 +22,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
     private PlanTimeStats timeStats;
     private bool skippedFirstTime;
+    private bool initializedActions;
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +31,6 @@ public class AgentAI : MonoBehaviour, IDisplayable
         objectName = name;
 
         timeStats = FindObjectOfType<PlanTimeStats>();
-
-        foreach (BasicAction action in gameObject.GetComponentsInChildren<BasicAction>())
-        {
-            if (action.IsIdle)
-            {
-                agent.AddIdleAction(action.CreateAction(this));
-            }
-            else
-            {
-                agent.AddAction(action.CreateAction(this));
-            }
-        }
 
         foreach (IDemoNeed need in gameObject.GetComponentsInChildren<IDemoNeed>())
         {
@@ -64,6 +53,22 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
     private void Update()
     {
+        if(!initializedActions)
+        {
+            foreach (BasicAction action in gameObject.GetComponentsInChildren<BasicAction>())
+            {
+                if (action.IsIdle)
+                {
+                    agent.AddIdleAction(action.CreateAction());
+                }
+                else
+                {
+                    agent.AddAction(action.CreateAction());
+                }
+            }
+            initializedActions = true;
+        }
+
         if(aiTask != null && aiTask.IsCompleted)
         {
             aiTask.Result?.Perform();

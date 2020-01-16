@@ -11,6 +11,8 @@ public class Workshop : MonoBehaviour
     public GameObject WoodGo;
     public GameObject CrateGo;
 
+    public bool Occupied { get; set; }
+
     private void Start()
     {
         SetObject(WorkshopObject.None);

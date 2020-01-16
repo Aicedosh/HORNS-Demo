@@ -44,8 +44,9 @@ public abstract class EatAction : BasicAction
         action.AddCost(numberOfCustomers.Variable, n => (n - (isInTavern.Variable.Value ? 1 : 0)) * CrowdFactor);
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         hunger = GetComponentInParent<BasicAgent>().Hunger;
         numberOfCustomers = GetComponentInParent<TavernClient>().Tavern.NumberOfCustomers;
         isInTavern = GetComponentInParent<TavernClient>().IsInTavern;
