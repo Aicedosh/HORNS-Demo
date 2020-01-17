@@ -12,6 +12,12 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            System.IO.Directory.CreateDirectory("Screenshots");
+            ScreenCapture.CaptureScreenshot($"Screenshots/Screenshot-{System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ff")}.png");
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
