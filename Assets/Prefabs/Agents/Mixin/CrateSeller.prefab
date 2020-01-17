@@ -45,6 +45,18 @@ MonoBehaviour:
   TimeToComplete: 5
   Hide: 0
   MoneyGained: 7
+--- !u!114 &3006689911709855140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7327257569660178700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f10c0f288111184a90e80c9b7a1b0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8214537470069219142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,6 +135,12 @@ GameObject:
 --- !u!1 &4301221481151290247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5354468157582066881, guid: f683ef578905c0a4c9d732cc934b52e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8214537470069219142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7327257569660178700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1463744363577183818, guid: f683ef578905c0a4c9d732cc934b52e8,
     type: 3}
   m_PrefabInstance: {fileID: 8214537470069219142}
   m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,7 @@ public class MerchantWorkReactor : VariableReactor<bool>
 
     protected override bool ShouldRecalculate(bool value)
     {
-        return HasObjectToSell.Variable.Value;
+        return true;
     }
 
     protected override void Start()

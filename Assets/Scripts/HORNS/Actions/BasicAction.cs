@@ -89,15 +89,13 @@ public abstract class BasicAction : MonoBehaviour
 
         if(success && !action.CanExecute)
         {
-            int i = 0;
+            agentAI.RecalculatePlan();
+            return;
         }
 
         if (success)
         {
-            if(!action.Apply())
-            {
-                int i = 0;
-            }
+            action.Apply();
             OnComplete();
         }
         else

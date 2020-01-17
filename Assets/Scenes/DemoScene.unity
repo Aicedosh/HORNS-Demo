@@ -3183,6 +3183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodcutter 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3330,6 +3335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
@@ -4879,6 +4889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
@@ -9384,6 +9399,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodcutter 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11893,6 +11913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodcutter 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12760,6 +12785,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
@@ -13726,6 +13756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woodcutter 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5043031729679616755, guid: f4097d84b0a23174e9db281735d5811b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8375682778689941937, guid: f4097d84b0a23174e9db281735d5811b,
         type: 3}
       propertyPath: Forest
@@ -14071,6 +14106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
@@ -14765,6 +14805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodcutter 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339214910064065804, guid: 26da35c2ceeb31144bb2180be5d51582,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1339214910064066035, guid: 26da35c2ceeb31144bb2180be5d51582,
         type: 3}
