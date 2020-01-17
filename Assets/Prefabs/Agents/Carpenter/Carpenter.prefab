@@ -93,6 +93,10 @@ MonoBehaviour:
   Log: {fileID: 0}
   Crate: {fileID: 0}
   Hammer: {fileID: 0}
+  CrateSellerPrefab: {fileID: 8597788008767391766, guid: 09015cd75af7fd440a46745f7a493152,
+    type: 3}
+  MinShops: 2
+  MaxShops: 2
 --- !u!1001 &8906944446435115997
 PrefabInstance:
   m_ObjectHideFlags: 0

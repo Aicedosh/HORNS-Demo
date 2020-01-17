@@ -26,7 +26,6 @@ public class GoToTavernAction : GoToAction
     {
         base.OnArrive();
         Complete();
-        Debug.Log($"There are {numberOfCustomers.Variable.Value} clients right now");
     }
 
     protected override void Start()

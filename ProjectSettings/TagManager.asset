@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Selectable
   - Sun
+  - RainRestSpot
   layers:
   - Default
   - TransparentFX

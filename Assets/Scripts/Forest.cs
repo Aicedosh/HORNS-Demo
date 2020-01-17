@@ -111,12 +111,7 @@ public class Forest : MonoBehaviour
                     newList.Add(t);
                 }
             }
-            else
-            {
-                int i = 0;
-            }
         }
-        Assert.AreEqual(trees.Count - 1, newList.Count);
         trees = newList;
     }
 }

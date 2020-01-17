@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>
+public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>, IAgentConfigure
 {
     public BoolVariable HasWood;
     public GameObject HandAxe;
     public GameObject HipAxe;
     public GameObject Log;
 
+    public GameObject WoodSellerPrefab;
+    public int MinShops;
+    public int MaxShops;
+
     public Forest Forest;
 
     private Animator _anim;
+
+    public void Configure(Home home)
+    {
+        Forest = home.GetClosest<Forest>();
+
+        MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
+        mixinConfigure.Add<ObjectSeller, Shop>(WoodSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t, s => s.Occupied);
+    }
 
     public void ValueChanged(bool value)
     {

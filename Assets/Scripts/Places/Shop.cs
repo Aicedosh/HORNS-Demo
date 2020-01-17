@@ -9,6 +9,8 @@ public class Shop : MonoBehaviour
     public BoolVariable IsOpen;
     public IntVariable WoodCount;
 
+    public bool Occupied { get; set; }
+
     public GameObject[] WoodGos;
 
     private void Update()

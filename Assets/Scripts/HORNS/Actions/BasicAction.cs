@@ -39,13 +39,17 @@ public abstract class BasicAction : MonoBehaviour
         }
     }
 
-    public HORNS.Action CreateAction(AgentAI agentAI)
+    public HORNS.Action CreateAction()
     {
-        this.agentAI = agentAI;
         action = new LibAction(this);
         SetupAction(action);
 
         return action;
+    }
+
+    protected virtual void Start()
+    {
+        this.agentAI = GetComponentInParent<AgentAI>();
     }
 
     protected AgentAI agentAI;

@@ -18,7 +18,7 @@ public abstract class GoToAction : BasicAction
 
     private float prevRadius;
 
-    private BoolVariable[] isInTavernVariables;
+    private BoolVariable[] isInTavernVariables => GetComponentInParent<BasicAgent>().IsInTavernVariables.ToArray();
 
     protected override void SetupAction(Action action)
     {
@@ -31,15 +31,14 @@ public abstract class GoToAction : BasicAction
     }
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         navigator = GetComponentInParent<Navigator>();
         _collider = GetComponentInParent<CapsuleCollider>();
         _nav = GetComponentInParent<NavMeshAgent>();
 
         var ag = GetComponentInParent<BasicAgent>();
-        isInTavernVariables = GetComponentInParent<BasicAgent>().IsInTavernVariables.ToArray();
-        int i = 0;
     }
 
     private void SetAgentVisibility(bool visible)
