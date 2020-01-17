@@ -14,15 +14,15 @@ public class MixinConfigure
         this.home = home;
     }
 
-    public void Add<ComponentT, BindingT>(GameObject prefab, int min, int max, Action<ComponentT, BindingT> bindAction)
+    public void Add<ComponentT, BindingT>(GameObject prefab, int min, int max, Action<ComponentT, BindingT> bindAction, Func<BindingT, bool> predicate = null)
         where ComponentT : MonoBehaviour
         where BindingT : MonoBehaviour
     {
         int numOfComponents = UnityEngine.Random.Range(min, max + 1);
 
-        BindingT[] values = home.GetClosest<BindingT>(numOfComponents);
+        BindingT[] values = home.GetClosest<BindingT>(numOfComponents, predicate);
 
-        for (int i = 0; i < numOfComponents; i++)
+        for (int i = 0; i < Math.Min(numOfComponents, values.Length); i++)
         {
             GameObject go = UnityEngine.Object.Instantiate(prefab, parent);
             ComponentT component = go.GetComponent<ComponentT>();

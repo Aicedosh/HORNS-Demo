@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnAgents : MonoBehaviour
@@ -37,5 +38,10 @@ public class SpawnAgents : MonoBehaviour
         transform.Find("Woodcutters").GetComponent<AgentSpawner>().Spawn(Params.WoodcutterCount);
         transform.Find("Carpenters").GetComponent<AgentSpawner>().Spawn(Params.CarpenterCount);
         transform.Find("Farmers").GetComponent<AgentSpawner>().Spawn(Params.FarmerCount);
+
+        foreach(Shop s in FindObjectsOfType<Shop>().Where(s => s.Occupied == false))
+        {
+            Destroy(s.gameObject);
+        }
     }
 }

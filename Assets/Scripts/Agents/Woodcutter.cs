@@ -22,7 +22,7 @@ public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>, IAgentCo
         Forest = home.GetClosest<Forest>();
 
         MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
-        mixinConfigure.Add<ObjectSeller, Shop>(WoodSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t);
+        mixinConfigure.Add<ObjectSeller, Shop>(WoodSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t, s => s.Occupied);
     }
 
     public void ValueChanged(bool value)

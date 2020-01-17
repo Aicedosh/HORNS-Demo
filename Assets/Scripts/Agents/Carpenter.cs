@@ -23,6 +23,6 @@ public class Carpenter : MonoBehaviour, IAgentConfigure
         Workshop.Occupied = true;
 
         MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
-        mixinConfigure.Add<ObjectSeller, Shop>(CrateSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t);
+        mixinConfigure.Add<ObjectSeller, Shop>(CrateSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t, s => s.Occupied);
     }
 }
