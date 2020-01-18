@@ -11,14 +11,17 @@ public abstract class GoToAction : BasicAction
     public bool Hide;
 
     protected Navigator navigator;
-    private CapsuleCollider _collider;
-    private NavMeshAgent _nav;
     private float timeElapsed;
+    private bool started;
     private bool arrived;
-
-    private float prevRadius;
+    private HideAgent hide;
 
     private BoolVariable[] isInTavernVariables => GetComponentInParent<BasicAgent>().IsInTavernVariables.ToArray();
+
+    protected override void Perform()
+    {
+        hide.SetAgentVisibility(true);
+    }
 
     protected override void SetupAction(Action action)
     {
@@ -35,42 +38,21 @@ public abstract class GoToAction : BasicAction
     {
         base.Start();
         navigator = GetComponentInParent<Navigator>();
-        _collider = GetComponentInParent<CapsuleCollider>();
-        _nav = GetComponentInParent<NavMeshAgent>();
+        hide = GetComponentInParent<HideAgent>();
 
         var ag = GetComponentInParent<BasicAgent>();
-    }
-
-    private void SetAgentVisibility(bool visible)
-    {
-        //_renderer.enabled = visible;
-        _collider.enabled = visible;
-        if(!visible)
-        {
-            prevRadius = _nav.radius;
-            _nav.radius = 0;
-        }
-        else
-        {
-            _nav.radius = prevRadius;
-        }
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(arrived)
+        if (arrived)
         {
             timeElapsed += Time.deltaTime;
 
             if (timeElapsed >= TimeToComplete)
             {
                 arrived = false;
-
-                if (Hide)
-                {
-                    SetAgentVisibility(true);
-                }
 
                 FinishWork();
             }
@@ -79,14 +61,14 @@ public abstract class GoToAction : BasicAction
 
     protected void OnWalkEnd(bool success)
     {
-        if(success)
+        if (success)
         {
             timeElapsed = 0;
             arrived = true;
 
             if (Hide)
             {
-                SetAgentVisibility(false);
+                hide.SetAgentVisibility(false);
             }
 
             OnArrive();
@@ -102,6 +84,10 @@ public abstract class GoToAction : BasicAction
         base.OnCancel();
         navigator.Stop();
         arrived = false;
+        if (Hide)
+        {
+            hide.SetAgentVisibility(true);
+        }
     }
 
     //Start animation etc.

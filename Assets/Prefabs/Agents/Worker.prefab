@@ -165,12 +165,17 @@ PrefabInstance:
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: TimeToChange
-      value: 400
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: Amount
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349468011752379757, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: StartValue
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659b700cb1e20a34f9e47202509ee9fb, type: 3}
