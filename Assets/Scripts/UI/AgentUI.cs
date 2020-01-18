@@ -36,6 +36,12 @@ public class AgentUI : MonoBehaviour
             {
                 oc.Selected = false;
             }
+
+            var hc = selectedAgent.GetComponent<Worker>()?.Home?.GetComponent<OutlineController>();
+            if (hc != null)
+            {
+                hc.Selected = false;
+            }
         }
 
         selectedAgent = agent;
@@ -59,6 +65,12 @@ public class AgentUI : MonoBehaviour
             if (oc != null)
             {
                 oc.Selected = true;
+            }
+
+            var hc = selectedAgent.GetComponent<Worker>()?.Home?.GetComponent<OutlineController>();
+            if (hc != null)
+            {
+                hc.Selected = true;
             }
         }
     }
