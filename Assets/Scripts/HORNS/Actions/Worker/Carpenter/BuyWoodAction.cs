@@ -52,4 +52,10 @@ public class BuyWoodAction : GoToAction
         base.OnArrive();
         basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", true);
     }
+
+    protected override void OnCancel()
+    {
+        base.OnCancel();
+        basicAgent.GetComponentInChildren<Animator>().SetBool("Carry", false);
+    }
 }
