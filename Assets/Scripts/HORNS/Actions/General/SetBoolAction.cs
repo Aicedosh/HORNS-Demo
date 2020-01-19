@@ -10,8 +10,21 @@ public class SetBoolAction : BasicAction
 
     public float Cost;
 
+    public bool Show;
+    private HideAgent hide;
+
+    protected override void Start()
+    {
+        base.Start();
+        hide = GetComponentInParent<HideAgent>();
+    }
+
     protected override void Perform()
     {
+        if (Show)
+        {
+            hide.SetAgentVisibility(true);
+        }
         Complete();
     }
 
