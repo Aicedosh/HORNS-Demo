@@ -4,9 +4,13 @@
     <Position X="0.5" Y="0.5" Width="4.25" />
     <Members>
       <Field Name="aiTask" Hidden="true" />
+      <Method Name="CancelAction" Hidden="true" />
+      <Field Name="ClassName" Hidden="true" />
       <Field Name="display" Hidden="true" />
       <Method Name="GetComponent" Hidden="true" />
       <Method Name="HandleAI" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+      <Property Name="InitializedActions" Hidden="true" />
       <Field Name="objectName" Hidden="true" />
       <Property Name="PerformedActionThisFrame" Hidden="true" />
       <Field Name="shouldRecalculate" Hidden="true" />
@@ -17,10 +21,10 @@
       <Method Name="Update" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AQwAAAAAACAABwIIAAAIBAAIAAEAABIAAAAAIABAAAA=</HashCode>
+      <HashCode>AQwAAAAAACCABwIIAAAIBAAIAAEAABIAAAACIEBAAAA=</HashCode>
       <FileName>Assets\Scripts\HORNS\AgentAI.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

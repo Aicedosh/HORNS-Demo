@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="LogNeed">
+    <Position X="3.75" Y="5.5" Width="2" />
+    <Members>
+      <Property Name="GenericVariable" Hidden="true" />
+      <Method Name="GetComponent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABgBAAAAAAAAAAAQAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\LogNeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DemoNeed&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="5.25" />
+    <Members>
+      <Property Name="GenericVariable" Hidden="true" />
+      <Method Name="GetComponent" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="DemoNeed&lt;T&gt;.LibNeed">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\HORNS\Variables\Need.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAABgAAAAACAAAAAAQAAAAAAgI=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\Need.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BoolNeed">
+    <Position X="0.75" Y="5.5" Width="2.25" />
+    <Members>
+      <Property Name="GenericVariable" Hidden="true" />
+      <Method Name="GetComponent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABgAAAAAQAAAAAAQgAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\BoolNeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReverseLogNeed">
+    <Position X="3.75" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\ReverseLogNeed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

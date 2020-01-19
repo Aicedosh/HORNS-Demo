@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="BoolVariable">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="GetComponent" Hidden="true" />
+      <Property Name="Variable" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\BoolVariable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntVariable">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Method Name="GetComponent" Hidden="true" />
+      <Property Name="Variable" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\IntVariable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
