@@ -107,6 +107,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker
       objectReference: {fileID: 0}
+    - target: {fileID: 4247288941157461144, guid: 659b700cb1e20a34f9e47202509ee9fb,
+        type: 3}
+      propertyPath: m_WalkableMask
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4247288941157461145, guid: 659b700cb1e20a34f9e47202509ee9fb,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -2277,6 +2277,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop - Forest
       objectReference: {fileID: 0}
+    - target: {fileID: 1326086348579815207, guid: d8bbf716d1aa4a4439fcab7174a34f84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1326086349685543662, guid: d8bbf716d1aa4a4439fcab7174a34f84,
         type: 3}
       propertyPath: m_LocalPosition.x
