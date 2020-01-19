@@ -42,6 +42,12 @@ public class AgentUI : MonoBehaviour
             {
                 hc.Selected = false;
             }
+
+            var sc = selectedAgent.GetComponent<Merchant>()?.Shop?.transform?.Find("Models")?.GetComponent<OutlineController>();
+            if (sc != null)
+            {
+                sc.Selected = false;
+            }
         }
 
         selectedAgent = agent;
@@ -71,6 +77,12 @@ public class AgentUI : MonoBehaviour
             if (hc != null)
             {
                 hc.Selected = true;
+            }
+
+            var sc = selectedAgent.GetComponent<Merchant>()?.Shop?.transform?.Find("Models")?.GetComponent<OutlineController>();
+            if (sc != null)
+            {
+                sc.Selected = true;
             }
         }
     }

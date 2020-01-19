@@ -19,4 +19,14 @@ public class Merchant : MonoBehaviour, IAgentConfigure
         MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
         mixinConfigure.Add<TavernClient, Tavern>(TavernClientPrefab, MinTaverns, MaxTaverns, (c, t) => c.Tavern = t);
     }
+
+    private void OnMouseEnter()
+    {
+        Shop.transform.Find("Models").GetComponent<OutlineController>().Hovered = true;
+    }
+
+    private void OnMouseExit()
+    {
+        Shop.transform.Find("Models").GetComponent<OutlineController>().Hovered = false;
+    }
 }
