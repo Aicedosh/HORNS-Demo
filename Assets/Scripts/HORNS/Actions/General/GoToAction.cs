@@ -9,6 +9,7 @@ public abstract class GoToAction : BasicAction
 {
     public float TimeToComplete;
     public bool Hide;
+    public bool Show;
 
     protected Navigator navigator;
     private float timeElapsed;
@@ -84,7 +85,16 @@ public abstract class GoToAction : BasicAction
         base.OnCancel();
         navigator.Stop();
         arrived = false;
-        if (Hide)
+        if(Hide)
+        {
+            hide.SetAgentVisibility(true);
+        }
+    }
+
+    protected override void OnActionEnd()
+    {
+        base.OnActionEnd();
+        if (Show)
         {
             hide.SetAgentVisibility(true);
         }
