@@ -15,6 +15,8 @@ public class OutlineController : MonoBehaviour
         }
     }
 
+    public bool Hoverable = true;
+
     private bool _hovered;
     public bool Hovered
     {
@@ -51,7 +53,7 @@ public class OutlineController : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (!_hovered)
+        if (Hoverable && !_hovered)
         {
             Hovered = true;
         }
@@ -59,7 +61,10 @@ public class OutlineController : MonoBehaviour
 
     void OnMouseExit()
     {
-        Hovered = false;
+        if(Hoverable)
+        {
+            Hovered = false;
+        }
     }
 
     // Start is called before the first frame update

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HORNS;
 using UnityEngine;
 
-public class Chill : GoToAction
+public class RestAction : GoToAction
 {
     private IntVariable energy;
     private Transform home;

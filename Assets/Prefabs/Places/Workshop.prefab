@@ -75,6 +75,8 @@ GameObject:
   - component: {fileID: 6547315966276046012}
   - component: {fileID: 4120978201967383911}
   - component: {fileID: 2957880486528109595}
+  - component: {fileID: 2481594602533578923}
+  - component: {fileID: 4661697465687170265}
   m_Layer: 0
   m_Name: Workshop
   m_TagString: Untagged
@@ -188,6 +190,37 @@ MonoBehaviour:
   Spot: {fileID: 4491594055606413028}
   WoodGo: {fileID: 784912231774356773}
   CrateGo: {fileID: 3882110996931319579}
+--- !u!114 &2481594602533578923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282126483210735445}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4661697465687170265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282126483210735445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e608bbfbb641cf84fbb270af0e581bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hoverable: 0
 --- !u!65 &5506758504357758348
 BoxCollider:
   m_ObjectHideFlags: 0

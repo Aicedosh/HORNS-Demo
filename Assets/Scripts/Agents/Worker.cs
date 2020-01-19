@@ -49,4 +49,14 @@ public class Worker : MonoBehaviour, IAgentConfigure
         MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
         mixinConfigure.Add<TavernClient, Tavern>(TavernClientPrefab, MinTaverns, MaxTaverns, (c, t) => c.Tavern = t);
     }
+
+    private void OnMouseEnter()
+    {
+        Home.GetComponent<OutlineController>().Hovered = true;
+    }
+
+    private void OnMouseExit()
+    {
+        Home.GetComponent<OutlineController>().Hovered = false;
+    }
 }
