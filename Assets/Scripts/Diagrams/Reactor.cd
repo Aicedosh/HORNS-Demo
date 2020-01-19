@@ -10,18 +10,6 @@
       <FileName>Assets\Scripts\HORNS\Reactors\MerchantWorkReactor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="UnconditionalReactor">
-    <Position X="4.25" Y="0.5" Width="2.25" />
-    <Members>
-      <Method Name="Start" Hidden="true" />
-      <Method Name="Update" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAACAAgAAAAAAAAAAAAEAAAAAAAAQAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\HORNS\Reactors\UnconditionalReactor.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="VariableReactor&lt;T&gt;">
     <Position X="0.5" Y="0.5" Width="2.5" />
     <Members>
@@ -30,6 +18,17 @@
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAgEAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HORNS\Reactors\VariableReactor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RainReactor">
+    <Position X="3.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Reactors\RainReactor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
