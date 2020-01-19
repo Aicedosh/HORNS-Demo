@@ -22,12 +22,6 @@ public class GoToTavernAction : GoToAction
         action.AddResult(numberOfCustomers.Variable, new IntegerAddResult(1));
     }
 
-    protected override void OnArrive()
-    {
-        base.OnArrive();
-        Complete();
-    }
-
     protected override void Start()
     {
         base.Start();
