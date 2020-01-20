@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25147584a1ab1834ea47a2a2e732532a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LogPlanTime: 1
 --- !u!114 &300118225
 MonoBehaviour:
   m_ObjectHideFlags: 0
