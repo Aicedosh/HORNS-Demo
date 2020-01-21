@@ -12,6 +12,7 @@ public class BasicAgent : MonoBehaviour
     public IEnumerable<BoolVariable> IsInTavernVariables => GetComponentsInChildren<TavernClient>().Select(tc => tc.IsInTavern);
 
     public bool RunsAway;
+    public GameObject RunSpot;
 
     private GameObject enemy;
 
@@ -25,6 +26,15 @@ public class BasicAgent : MonoBehaviour
         if(IsNearDanger != null)
         {
             IsNearDanger.Variable.Value = (enemy.transform.position - this.transform.position).magnitude <= DangerDistance;
+        }
+
+        if(RunSpot != null)
+        {
+            Vector3 dir = enemy.transform.position - this.transform.position;
+            dir.y = 0;
+            dir = -100 * dir.normalized;
+            Vector3 offset = new Vector3(dir.x, 3f, dir.z);
+            RunSpot.transform.SetPositionAndRotation(transform.position + offset, Quaternion.identity);
         }
     }
 }

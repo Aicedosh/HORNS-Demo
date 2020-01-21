@@ -6,23 +6,39 @@ using UnityEngine;
 
 public class RunAwayAction : GoToAction
 {
-    private Transform[] spots;
+    public float RunTime = 10f;
+    private float timeElapsed;
+
     private BasicAgent agent;
 
     protected override void Start()
     {
         base.Start();
-        GameObject runAwayGo = GameObject.FindGameObjectWithTag("RunAwaySpot");
-        spots = Enumerable.Range(0, runAwayGo.transform.childCount).Select(i => runAwayGo.transform.GetChild(i)).ToArray();
         agent = GetComponentInParent<BasicAgent>();
+    }
+
+    protected override void Update()
+    {
+        if(agent.RunsAway)
+        {
+            timeElapsed += Time.deltaTime;
+            if(timeElapsed >= RunTime)
+            {
+                Cancel();
+            }
+        }
+        base.Update();
     }
 
     protected override void Perform()
     {
         base.Perform();
         navigator.Run();
-        navigator.GoToNearest(spots, OnWalkEnd);
+
+        navigator.Follow(agent.RunSpot.transform, OnWalkEnd);
+
         agent.RunsAway = true;
+        timeElapsed = 0f;
     }
 
     protected override void SetupAction(Action action)
@@ -37,10 +53,6 @@ public class RunAwayAction : GoToAction
 
         action.AddPrecondition(agent.IsNearDanger.Variable, new BooleanPrecondition(true));
         action.AddResult(agent.IsNearDanger.Variable, new BooleanResult(false));
-    }
-
-    protected override void FinishWork() {
-        Cancel();
     }
 
     protected override void OnActionEnd()
