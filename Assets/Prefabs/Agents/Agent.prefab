@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055011985131292054}
   - component: {fileID: 4079276334853881616}
+  - component: {fileID: 5792157008582010564}
   m_Layer: 0
   m_Name: Reactors
   m_TagString: Untagged
@@ -41,6 +42,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7ff9cc362a2cdf4f83904a9218890be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5792157008582010564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538794739264360255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689042d23ce7cb14babeb6be00cff0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4247288941157461094
@@ -102,7 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoalDistance: 1.5
   WalkAnimationTreshold: 0.2
-  Speed: 1.3
+  WalkSpeed: 1.3
+  RunSpeed: 3
   WalkSpeedChangeIntervalMinSec: 1.2
   WalkSpeedChangeIntervalMaxSec: 3
   WalkSpeedChangeTimeMinSec: 0.3
@@ -197,7 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c4cf0d72e4b1c4b86262fcfb005bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DangerDistance: 15
   Hunger: {fileID: 2769506028550637835}
+  IsNearDanger: {fileID: 414783692792396545}
+  RunsAway: 0
 --- !u!114 &9114203173581995111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e608bbfbb641cf84fbb270af0e581bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hoverable: 1
 --- !u!114 &7915595816398401990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6130611809293703399}
+  - component: {fileID: 5934790162227393092}
   m_Layer: 0
   m_Name: Actions
   m_TagString: Untagged
@@ -270,6 +289,23 @@ Transform:
   m_Father: {fileID: 4247288941157461145}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5934790162227393092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5496683940218649921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef262d05acd40c4082fe5fc2b63ad46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  TimeToComplete: 0
+  Hide: 0
+  Show: 0
 --- !u!1 &6996420048475194665
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2654180067842632687}
   - component: {fileID: 2769506028550637835}
+  - component: {fileID: 414783692792396545}
   m_Layer: 0
   m_Name: Variables
   m_TagString: Untagged
@@ -344,6 +381,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Hunger
+--- !u!114 &414783692792396545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454096308185634628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Is in danger
 --- !u!1 &9066784227287660356
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6331617859194908318}
   - component: {fileID: 8550938629976918450}
+  - component: {fileID: 7403408203650625757}
   m_Layer: 0
   m_Name: Needs
   m_TagString: Untagged
@@ -391,3 +442,19 @@ MonoBehaviour:
   Multiplier: 140
   Variable: {fileID: 2769506028550637835}
   ZeroLevel: 100
+--- !u!114 &7403408203650625757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066784227287660356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dd10d4eaed1204399589e8be454617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DesiredValue: 0
+  Variable: {fileID: 414783692792396545}
+  TrueValue: -100
+  FalseValue: 100

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CommandLineParser : MonoBehaviour
 {
     public static bool SkipMenu;
-    public static bool DisableCollisions = true;
+    public static bool DisableCollisions;
     public static bool LogTimes;
     public static int? QuitAfter;
     public static int? Merchants;
