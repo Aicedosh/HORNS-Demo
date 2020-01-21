@@ -6,10 +6,10 @@ public abstract class VariableReactor<T> : MonoBehaviour, HORNS.IVariableObserve
 {
     protected AgentAI agentAI;
 
-    protected abstract bool ShouldRecalculate(T value);
-    public void ValueChanged(T value)
+    protected abstract bool ShouldRecalculate(T oldValue, T newValue);
+    public void ValueChanged(T old, T value)
     {
-        if(ShouldRecalculate(value) && !agentAI.PerformedActionThisFrame)
+        if(ShouldRecalculate(old, value) && !agentAI.PerformedActionThisFrame)
         {
             agentAI.RecalculatePlan();
         }
