@@ -58,7 +58,10 @@ public class RunAwayAction : GoToAction
     protected override void OnActionEnd()
     {
         base.OnActionEnd();
-        navigator.Walk();
+        if (FindObjectOfType<Weather>().Rains.Variable.Value == false)
+        {
+            navigator.Walk();
+        }
         agent.RunsAway = false;
     }
 }
