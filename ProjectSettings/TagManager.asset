@@ -7,6 +7,8 @@ TagManager:
   - Selectable
   - Sun
   - RainRestSpot
+  - Enemy
+  - RunAwaySpot
   layers:
   - Default
   - TransparentFX

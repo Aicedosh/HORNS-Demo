@@ -39,7 +39,9 @@ public class RunAwayAction : GoToAction
         action.AddResult(agent.IsNearDanger.Variable, new BooleanResult(false));
     }
 
-    protected override void FinishWork() { }
+    protected override void FinishWork() {
+        Cancel();
+    }
 
     protected override void OnActionEnd()
     {

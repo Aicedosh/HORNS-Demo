@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1898095044322474180}
   - component: {fileID: 1898095044322474234}
   - component: {fileID: 1898095044322474235}
+  - component: {fileID: 8546612817791091835}
   m_Layer: 0
   m_Name: Rest Spot
   m_TagString: Untagged
@@ -58,3 +59,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CrowdSize: {fileID: 1898095044322474234}
+  EnemyIsHere: {fileID: 8546612817791091835}
+--- !u!114 &8546612817791091835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898095044322474181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Enemy is here

@@ -29,6 +29,7 @@ public class Eat : GoToAction
     {
         base.SetupAction(action);
         action.AddCost(RestSpot.CrowdSize.Variable, v => -CrowdFactor * v);
+        action.AddCost(RestSpot.EnemyIsHere.Variable, e => e ? 1f : 0f);
     }
 
     protected override void OnArrive()
@@ -42,5 +43,11 @@ public class Eat : GoToAction
     {
         base.OnActionEnd();
         animator.SetBool("Eat", false);
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        RestSpot.EnemyIsHere.Variable.Value = (transform.position - RestSpot.transform.position).magnitude <= 5f;
     }
 }

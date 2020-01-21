@@ -7,4 +7,6 @@ public class RestSpot : MonoBehaviour
 {
     public IntVariable CrowdSize;
     public IEnumerable<Transform> Spots => Enumerable.Range(0, transform.childCount).Select(i => transform.GetChild(i).transform);
+
+    public BoolVariable EnemyIsHere;
 }
