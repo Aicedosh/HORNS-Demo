@@ -2878,7 +2878,8 @@ MonoBehaviour:
   NumberOfTreesLenght: 13
   NumberOfTreesWidth: 10
   Padding: 0.2
-  RespawnTime: 5
+  MinRespawnTime: 0.5
+  MaxRespawnTime: 30
   Prefabs:
   - {fileID: 191266, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
 --- !u!4 &844248705
@@ -3004,7 +3005,8 @@ MonoBehaviour:
   NumberOfTreesLenght: 15
   NumberOfTreesWidth: 12
   Padding: 0.5
-  RespawnTime: 5
+  MinRespawnTime: 0.5
+  MaxRespawnTime: 60
   Prefabs:
   - {fileID: 191266, guid: c44bd9bdc114d4a60932c0087d9d1732, type: 3}
 --- !u!4 &934863411
