@@ -7,6 +7,7 @@ public class AgentSpawner : MonoBehaviour
     public GameObject[] AgentPrefabs;
 
     private SimplePriorityQueue<Home> homes;
+    private static int id;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class AgentSpawner : MonoBehaviour
     {
         GameObject go = Instantiate(prefab, home.Spot.transform.position, Quaternion.identity);
         go.transform.parent = transform;
+        go.name = $"Agent {id++}";
 
         foreach(IAgentConfigure conf in go.GetComponentsInChildren<IAgentConfigure>())
         {

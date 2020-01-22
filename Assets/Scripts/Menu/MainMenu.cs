@@ -5,6 +5,14 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject OptionsGo;
 
+    private void Start()
+    {
+        if(CommandLineParser.SkipMenu)
+        {
+            Play();
+        }
+    }
+
     public void Play()
     {
         Loading.LoadScene("DemoScene");

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RainReactor : MonoBehaviour, HORNS.IVariableObserver
+public class RainReactor : MonoBehaviour, HORNS.IVariableObserver<bool>
 {
     private AgentAI agentAI;
 
@@ -12,8 +12,17 @@ public class RainReactor : MonoBehaviour, HORNS.IVariableObserver
         agentAI = GetComponentInParent<AgentAI>();
     }
 
-    public void ValueChanged()
+    public void ValueChanged(bool old, bool value)
     {
         agentAI.RecalculatePlan();
+        Navigator nav = agentAI.GetComponent<Navigator>();
+        if(value)
+        {
+            nav.Run();
+        }
+        else
+        {
+            nav.Walk();
+        }
     }
 }

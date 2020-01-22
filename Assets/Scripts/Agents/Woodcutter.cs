@@ -25,7 +25,7 @@ public class Woodcutter : MonoBehaviour, HORNS.IVariableObserver<bool>, IAgentCo
         mixinConfigure.Add<ObjectSeller, Shop>(WoodSellerPrefab, MinShops, MaxShops, (c, t) => c.Shop = t, s => s.Occupied);
     }
 
-    public void ValueChanged(bool value)
+    public void ValueChanged(bool old, bool value)
     {
         if(value)
         {

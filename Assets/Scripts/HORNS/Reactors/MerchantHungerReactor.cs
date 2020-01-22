@@ -7,7 +7,7 @@ public class MerchantHungerReactor : VariableReactor<int>
     private BoolVariable isShopOpen;
     private IntVariable hunger;
 
-    protected override bool ShouldRecalculate(int value)
+    protected override bool ShouldRecalculate(int oldValue, int newValue)
     {
         return isShopOpen.LibVariable.Value;
     }

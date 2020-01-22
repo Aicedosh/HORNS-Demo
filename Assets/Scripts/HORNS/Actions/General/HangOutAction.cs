@@ -34,6 +34,7 @@ public class HangOutAction : GoToAction
         base.SetupAction(action);
 
         action.AddCost(crowdSize.Variable, n => Factor * (n - DesiredCrowdSize) * (n - DesiredCrowdSize));
+        action.AddCost(RestSpot.EnemyIsHere.Variable, e => e ? float.PositiveInfinity : 0);
     }
 
     protected override void OnArrive()

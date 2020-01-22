@@ -8,6 +8,7 @@ public class Shop : MonoBehaviour
     public Transform ClientSpot;
     public BoolVariable IsOpen;
     public IntVariable WoodCount;
+    public GameObject ClosedSign;
 
     public bool Occupied { get; set; }
 
@@ -19,5 +20,7 @@ public class Shop : MonoBehaviour
         {
             WoodGos[i].SetActive(i + 1 <= WoodCount.Variable.Value);
         }
+
+        ClosedSign.SetActive(!IsOpen.Variable.Value);
     }
 }

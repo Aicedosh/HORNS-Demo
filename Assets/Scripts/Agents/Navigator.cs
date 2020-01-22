@@ -23,7 +23,8 @@ public class Navigator : MonoBehaviour
     public float GoalDistance;
     public float WalkAnimationTreshold;
 
-    public float Speed = 1.3f;
+    public float WalkSpeed = 1.3f;
+    public float RunSpeed = 2.2f;
     public float WalkSpeedChangeIntervalMinSec = 2.5f;
     public float WalkSpeedChangeIntervalMaxSec = 7f;
     public float WalkSpeedChangeTimeMinSec = 1.5f;
@@ -36,6 +37,8 @@ public class Navigator : MonoBehaviour
     private float timeSinceChange;
     private float currentSpeed;
     private float speedDelta;
+
+    private bool runs;
 
     // Start is called before the first frame update
     void Start()
@@ -55,10 +58,10 @@ public class Navigator : MonoBehaviour
             timeSinceChange = 0f;
         }
 
-        currentSpeed = Mathf.Lerp(currentSpeed, speedDelta * Speed, timeSinceChange/changingTime);
+        currentSpeed = Mathf.Lerp(currentSpeed, speedDelta * WalkSpeed, timeSinceChange/changingTime);
 
         nav.speed = currentSpeed;
-        anim.speed = currentSpeed / Speed;
+        anim.speed = currentSpeed / WalkSpeed;
         timeToChange -= Time.deltaTime;
         timeSinceChange += Time.deltaTime;
     }
@@ -66,7 +69,10 @@ public class Navigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeSpeed();
+        if(!runs)
+        {
+            ChangeSpeed();
+        }
 
         if(isFollowing)
         {
@@ -113,6 +119,10 @@ public class Navigator : MonoBehaviour
         }
 
         anim.SetBool("Walk", nav.velocity.magnitude > WalkAnimationTreshold || isRotating);
+        if (tag != "Enemy")
+        {
+            anim.SetFloat("Speed", nav.velocity.magnitude);
+        }
     }
 
     public void Stop()
@@ -121,6 +131,18 @@ public class Navigator : MonoBehaviour
         isWalking = false;
         isFollowing = false;
         nav.isStopped = false;
+    }
+
+    public void Walk()
+    {
+        runs = false;
+        nav.speed = WalkSpeed;
+    }
+
+    public void Run()
+    {
+        runs = true;
+        nav.speed = RunSpeed;
     }
 
     public bool GoTo(Transform transform, System.Action<bool> finishCallback = null, Transform lookAt = null)

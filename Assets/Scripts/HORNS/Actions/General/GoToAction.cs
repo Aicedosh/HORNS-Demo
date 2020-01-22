@@ -47,6 +47,7 @@ public abstract class GoToAction : BasicAction
     // Update is called once per frame
     protected virtual void Update()
     {
+
         if (arrived)
         {
             timeElapsed += Time.deltaTime;

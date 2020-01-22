@@ -7,7 +7,7 @@ public class MerchantWorkReactor : VariableReactor<bool>
     [HideInInspector]
     public BoolVariable HasObjectToSell;
 
-    protected override bool ShouldRecalculate(bool value)
+    protected override bool ShouldRecalculate(bool old, bool n)
     {
         return true;
     }

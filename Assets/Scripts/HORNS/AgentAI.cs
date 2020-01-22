@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class AgentAI : MonoBehaviour, IDisplayable
@@ -24,9 +25,35 @@ public class AgentAI : MonoBehaviour, IDisplayable
     private bool skippedFirstTime;
     public bool InitializedActions { get; set; }
 
+    private bool logTime;
+    private TimeLogger timeLogger;
+
+    public void EnableTimeLog(string filename)
+    {
+        timeLogger = new TimeLogger(filename);
+        logTime = true;
+    }
+
+    public void DisableTimeLog()
+    {
+        logTime = false;
+        timeLogger = null;
+    }
+
+    private void OnDestroy()
+    {
+        timeLogger?.Destroy();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        if(CommandLineParser.DisableCollisions)
+        {
+            GetComponent<Collider>().isTrigger = true;
+            GetComponent<NavMeshAgent>().radius = 0.01f;
+        }
+
         source = new CancellationTokenSource();
         objectName = name;
 
@@ -38,6 +65,11 @@ public class AgentAI : MonoBehaviour, IDisplayable
             {
                 Debug.Log($"Calculated plan for {objectName}: {a.PlannedActions.Count()} action{(a.PlannedActions.Count() > 1 ? "s" : "")}, Cost: {a.PlannedActions.Sum(ac => ac.CachedCost)} ({a.LastPlanTime.TotalMilliseconds}ms)");
                 timeStats.AddTime(a.LastPlanTime.TotalMilliseconds, objectName);
+
+                if(logTime)
+                {
+                    timeLogger.LogPlanTime(a.LastPlanTime.TotalMilliseconds);
+                }
             }
             else
             {
@@ -130,6 +162,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
     public void RecalculatePlan()
     {
+        Debug.Log($"[{gameObject.name}] Recalc");
         if (source == null)
         {
             //We didn't even start calculations, probably someone called us too early as the reaction to variable value initialization

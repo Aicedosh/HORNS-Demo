@@ -16,7 +16,7 @@
 @CALL :test_program iscc, "Inno Setup" || @EXIT
 
 @IF EXIST %HORNS_CSPROJ% (
-	@CALL :test_program dotnet, "dotnet runtime" || @EXIT
+	@CALL :test_program dotnet, "dotnet runtime" || (@ECHO ERROR && @PAUSE && @EXIT)
 
 	@ECHO Found HORNS library project file: "%HORNS_CSPROJ%"
 	@ECHO Building library from source...
@@ -31,10 +31,10 @@
 )
 
 @ECHO Building for Windows 64...
-@Unity "%WIN64_BUILD_DIR%\%APP_NAME%.exe" -quit -batchmode -projectPath "%DEMO_PROJ_DIR%" -executeMethod Build.BuildWin64
+@Unity "%WIN64_BUILD_DIR%\%APP_NAME%.exe" -quit -batchmode -projectPath "%DEMO_PROJ_DIR%" -executeMethod Build.BuildWin64 || (@ECHO ERROR && @PAUSE && @EXIT)
 @ECHO Done
 @ECHO Building for Linux...
-@Unity "%LINUX_BUILD_DIR%\%APP_NAME%.x86_64" -quit -batchmode -projectPath "%DEMO_PROJ_DIR%" -executeMethod Build.BuildLinux
+@Unity "%LINUX_BUILD_DIR%\%APP_NAME%.x86_64" -quit -batchmode -projectPath "%DEMO_PROJ_DIR%" -executeMethod Build.BuildLinux || (@ECHO ERROR && @PAUSE && @EXIT)
 @ECHO Done
 
 @iscc /DInstallerDir="%INSTALLER_DIR%" /DOutputDir="%BUILD_DIR%" /DExeDir="%WIN64_BUILD_DIR%" "%INSTALLER_DIR%\Windows.iss"
