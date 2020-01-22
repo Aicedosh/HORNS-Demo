@@ -24,9 +24,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512b80ee0d694f24292f3d79c65591f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Sell wood
   TimeToComplete: 5
   Hide: 0
-  WoodSold: 1
+  Show: 0
   MoneyGained: 2
 --- !u!1001 &2575947153278554104
 PrefabInstance:

@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
+  ActionName: Rest
   TimeToComplete: 30
   Hide: 1
   Show: 1

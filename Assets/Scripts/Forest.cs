@@ -12,9 +12,11 @@ public class Forest : MonoBehaviour
     public int NumberOfTreesWidth;
 
     public float Padding;
-    public float RespawnTime;
+    public float MinRespawnTime;
+    public float MaxRespawnTime;
 
-    private float timeElapsed = 0f;
+    private float timeSinceRegrowth = 0f;
+    private int totalTreesCount;
 
     public GameObject[] Prefabs;
 
@@ -52,6 +54,7 @@ public class Forest : MonoBehaviour
             {
                 if (IsInElipse(x, z, Length/2, Width/2))
                 {
+                    totalTreesCount++;
                     SpawnAt(x, z);
                 }
             }
@@ -65,19 +68,18 @@ public class Forest : MonoBehaviour
 
     private void Update()
     {
-        timeElapsed += Time.deltaTime;
-
-        if(timeElapsed >= RespawnTime * (NumberOfTreesLenght * NumberOfTreesWidth / 2) / locations.Count)
+        if(locations.Count > 0)
         {
-            timeElapsed -= RespawnTime;
+            timeSinceRegrowth += Time.deltaTime;
+        }
 
-            if(locations.Count > 0)
-            {
-                int idx = Random.Range(0, locations.Count);
-                var loc = locations[idx];
-                SpawnAt(loc.Item1, loc.Item2);
-                locations.RemoveAt(idx);
-            }
+        if (timeSinceRegrowth >= Mathf.Lerp(MaxRespawnTime, MinRespawnTime, ((float)locations.Count) / totalTreesCount))
+        {
+            timeSinceRegrowth = 0f; 
+            int idx = Random.Range(0, locations.Count);
+            var loc = locations[idx];
+            SpawnAt(loc.Item1, loc.Item2);
+            locations.RemoveAt(idx);
         }
     }
 
