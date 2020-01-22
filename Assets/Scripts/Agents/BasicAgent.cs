@@ -25,7 +25,9 @@ public class BasicAgent : MonoBehaviour
     {
         if(IsNearDanger != null)
         {
-            IsNearDanger.Variable.Value = (enemy.transform.position - this.transform.position).magnitude <= DangerDistance;
+            bool isInDanger = (enemy.transform.position - this.transform.position).magnitude <= DangerDistance;
+            //Debug.Log($"[{gameObject.name}] Is in danger: {isInDanger}");
+            IsNearDanger.Variable.Value = isInDanger;
         }
 
         if(RunSpot != null)

@@ -162,6 +162,7 @@ public class AgentAI : MonoBehaviour, IDisplayable
 
     public void RecalculatePlan()
     {
+        Debug.Log($"[{gameObject.name}] Recalc");
         if (source == null)
         {
             //We didn't even start calculations, probably someone called us too early as the reaction to variable value initialization
