@@ -34,6 +34,7 @@ public class Worker : MonoBehaviour, IAgentConfigure
             a.TimeToComplete = 30;
             a.DesiredCrowdSize = 2;
             a.Factor = 0.5f;
+            a.ActionName = "Hang out " + rs.name.ToLower();
         }
 
 
@@ -45,6 +46,7 @@ public class Worker : MonoBehaviour, IAgentConfigure
         rainRest.TimeToComplete = 10;
         rainRest.DesiredCrowdSize = 2;
         rainRest.Factor = 0.5f;
+        rainRest.ActionName = "Hang out " + rainRest.RestSpot.name.ToLower();
 
         MixinConfigure mixinConfigure = new MixinConfigure(transform, home);
         mixinConfigure.Add<TavernClient, Tavern>(TavernClientPrefab, MinTaverns, MaxTaverns, (c, t) => c.Tavern = t);

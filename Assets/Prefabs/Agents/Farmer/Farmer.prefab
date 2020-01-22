@@ -43,8 +43,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
+  ActionName: Sell radish
   TimeToComplete: 1.2
   Hide: 0
+  Show: 0
   MoneyGained: 1
 --- !u!114 &5049375785918030912
 MonoBehaviour:
@@ -60,8 +62,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 10
   BaseCost: 0
+  ActionName: Pick radish
   TimeToComplete: 10
   Hide: 0
+  Show: 0
   EnergyLost: 5
 --- !u!1001 &1617157957515179384
 PrefabInstance:

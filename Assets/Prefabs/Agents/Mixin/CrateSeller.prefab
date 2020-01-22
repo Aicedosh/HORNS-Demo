@@ -26,8 +26,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 7
   BaseCost: 0
+  ActionName: Buy wood
   TimeToComplete: 2
   Hide: 0
+  Show: 0
 --- !u!114 &4283165463956938287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,8 +44,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 7
   BaseCost: 0
+  ActionName: Sell crate
   TimeToComplete: 5
   Hide: 0
+  Show: 0
   MoneyGained: 7
 --- !u!114 &3006689911709855140
 MonoBehaviour:

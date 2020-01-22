@@ -335,9 +335,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
+  ActionName: Run away
   TimeToComplete: 0
   Hide: 0
   Show: 0
+  RunTime: 10
 --- !u!1 &6996420048475194665
 GameObject:
   m_ObjectHideFlags: 0

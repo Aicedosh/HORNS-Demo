@@ -1,54 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &281303737724149691
+--- !u!114 &9202760598557360066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
+  m_GameObject: {fileID: 8976354868975511579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fca346cb7fcc6c04196e35b09ba2a46f, type: 3}
+  m_Script: {fileID: 11500000, guid: 04a17d90a27c8574abc854a3960ddc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
-  TimeToComplete: 2
-  Hide: 0
---- !u!114 &2200618822532381219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887658aee00c5e8409a487eee3c972aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
-  TimeToComplete: 1.2
-  Hide: 0
---- !u!114 &7311958711223217105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732724530125158716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9125f8d5e92bd0f4caa6f0bc83a4e594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
-  TimeToComplete: 25
-  Hide: 0
-  EnergyConsumed: 15
+  Workshop: {fileID: 0}
+  HasWood: {fileID: 4118600569219808321}
+  HasCrate: {fileID: 5544028284184003071}
+  Log: {fileID: 0}
+  Crate: {fileID: 0}
+  Hammer: {fileID: 0}
+  CrateSellerPrefab: {fileID: 8597788008767391766, guid: 09015cd75af7fd440a46745f7a493152,
+    type: 3}
+  MinShops: 2
+  MaxShops: 2
 --- !u!114 &4118600569219808321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,28 +48,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Has crate
---- !u!114 &9202760598557360066
+--- !u!114 &281303737724149691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8976354868975511579}
+  m_GameObject: {fileID: 732724530125158716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a17d90a27c8574abc854a3960ddc0e, type: 3}
+  m_Script: {fileID: 11500000, guid: fca346cb7fcc6c04196e35b09ba2a46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Workshop: {fileID: 0}
-  HasWood: {fileID: 4118600569219808321}
-  HasCrate: {fileID: 5544028284184003071}
-  Log: {fileID: 0}
-  Crate: {fileID: 0}
-  Hammer: {fileID: 0}
-  CrateSellerPrefab: {fileID: 8597788008767391766, guid: 09015cd75af7fd440a46745f7a493152,
-    type: 3}
-  MinShops: 2
-  MaxShops: 2
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Pickup crate
+  TimeToComplete: 2
+  Hide: 0
+  Show: 0
+--- !u!114 &2200618822532381219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732724530125158716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887658aee00c5e8409a487eee3c972aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Carry wood
+  TimeToComplete: 1.2
+  Hide: 0
+  Show: 0
+--- !u!114 &7311958711223217105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732724530125158716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9125f8d5e92bd0f4caa6f0bc83a4e594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Create crate
+  TimeToComplete: 25
+  Hide: 0
+  Show: 0
+  EnergyConsumed: 15
 --- !u!1001 &8906944446435115997
 PrefabInstance:
   m_ObjectHideFlags: 0

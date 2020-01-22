@@ -137,8 +137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
+  ActionName: Go to tavern
   TimeToComplete: 0
   Hide: 1
+  Show: 0
 --- !u!114 &4633110251673806022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
+  ActionName: Leave tavern
   Variable: {fileID: 0}
   EndValue: 0
   Cost: 0

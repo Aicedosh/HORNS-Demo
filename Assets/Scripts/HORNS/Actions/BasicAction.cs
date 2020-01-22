@@ -8,6 +8,8 @@ public abstract class BasicAction : MonoBehaviour
     public float RainCost = 0f;
     public float BaseCost = 0f;
 
+    public string ActionName;
+
     public class LibAction : HORNS.Action
     {
         private BasicAction basicAction;
@@ -16,7 +18,7 @@ public abstract class BasicAction : MonoBehaviour
             this.basicAction = basicAction;
         }
 
-        public string Name => basicAction.GetType().Name;
+        public string Name => basicAction.ActionName;
 
         public override void Perform()
         {

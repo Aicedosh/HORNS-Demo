@@ -1,68 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &219265054451036121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238781062181971641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a6a3affd04bc3a40baf2aab225f1ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
---- !u!114 &1916581995602704015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238781062181971641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f73abd0c61da247b42e0eaa382db61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
-  TimeToComplete: 0
-  Hide: 0
---- !u!114 &3536544135314050770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238781062181971641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89e0a7b3c768a24dab9a4f586a57339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RainCost: 0
-  BaseCost: 0
-  Variable: {fileID: 0}
-  EndValue: 0
-  Cost: 1
---- !u!114 &1776994645113067307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660237650771160252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25282c518b0c0334babc5266854511bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DesiredValue: 1
-  Variable: {fileID: 0}
-  TrueValue: 1
-  FalseValue: 0
 --- !u!114 &2741785590195457738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +17,74 @@ MonoBehaviour:
   TavernClientPrefab: {fileID: 2408879738005708695, guid: 79310719e2c7e524ba6f6dbd99abed5d,
     type: 3}
   Shop: {fileID: 0}
+--- !u!114 &219265054451036121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238781062181971641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6a3affd04bc3a40baf2aab225f1ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Work in shop
+--- !u!114 &1916581995602704015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238781062181971641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f73abd0c61da247b42e0eaa382db61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Go to shop
+  TimeToComplete: 0
+  Hide: 0
+  Show: 0
+--- !u!114 &3536544135314050770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238781062181971641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89e0a7b3c768a24dab9a4f586a57339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 0
+  ActionName: Leave shop
+  Variable: {fileID: 0}
+  EndValue: 0
+  Cost: 1
+  Show: 0
+--- !u!114 &1776994645113067307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660237650771160252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25282c518b0c0334babc5266854511bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DesiredValue: 1
+  Variable: {fileID: 0}
+  TrueValue: 1
+  FalseValue: 0
 --- !u!114 &3722841425850530513
 MonoBehaviour:
   m_ObjectHideFlags: 0
