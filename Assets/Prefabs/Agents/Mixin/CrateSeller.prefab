@@ -26,7 +26,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 7
   BaseCost: 0
-  ActionName: Buy wood
+  ActionName: Get wood
   TimeToComplete: 2
   Hide: 0
   Show: 0
