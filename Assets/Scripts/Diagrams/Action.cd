@@ -23,7 +23,7 @@
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAEBCAAQKAAgwIEAAAAAAAAAQAABgAAAAAAAAAAIgA=</HashCode>
+      <HashCode>AAAEBCAAQKAAgwIEAAAAAAAAAQAABgAAAAAEAAAAIgA=</HashCode>
       <FileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,26 +45,22 @@
   <Class Name="GoToAction">
     <Position X="5" Y="7.5" Width="2" />
     <Members>
-      <Field Name="_collider" Hidden="true" />
-      <Field Name="_nav" Hidden="true" />
       <Field Name="arrived" Hidden="true" />
       <Method Name="FinishWork" Hidden="true" />
       <Field Name="Hide" Hidden="true" />
       <Property Name="isInTavernVariables" Hidden="true" />
       <Field Name="navigator" Hidden="true" />
-      <Field Name="prevRadius" Hidden="true" />
-      <Method Name="SetAgentVisibility" Hidden="true" />
       <Method Name="Start" Hidden="true" />
       <Field Name="timeElapsed" Hidden="true" />
       <Method Name="Update" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AASEgCAABKQgAAAAGAAAAAAAACAAAAEAAAAAAEAQAAA=</HashCode>
+      <HashCode>AASEgCAABKQgAgAAGAAAAhAAAAAEAAAAAAAAAEAAAgA=</HashCode>
       <FileName>Assets\Scripts\HORNS\Actions\General\GoToAction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PickRadish">
-    <Position X="3.5" Y="10.5" Width="1.75" />
+    <Position X="3.5" Y="11.75" Width="1.75" />
     <Members>
       <Field Name="animator" Hidden="true" />
       <Method Name="Start" Hidden="true" />
@@ -75,7 +71,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ChopTree">
-    <Position X="6" Y="10.5" Width="2.75" />
+    <Position X="6" Y="11.75" Width="2.75" />
     <Members>
       <Field Name="chopTimeElapsed" Hidden="true" />
       <Field Name="energy" Hidden="true" />

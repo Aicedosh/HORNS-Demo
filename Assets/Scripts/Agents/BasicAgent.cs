@@ -23,20 +23,23 @@ public class BasicAgent : MonoBehaviour
 
     private void Update()
     {
-        if(IsNearDanger != null)
+        if(enemy != null)
         {
-            bool isInDanger = (enemy.transform.position - this.transform.position).magnitude <= DangerDistance;
-            //Debug.Log($"[{gameObject.name}] Is in danger: {isInDanger}");
-            IsNearDanger.Variable.Value = isInDanger;
-        }
+            if (IsNearDanger != null)
+            {
+                bool isInDanger = (enemy.transform.position - this.transform.position).magnitude <= DangerDistance;
+                //Debug.Log($"[{gameObject.name}] Is in danger: {isInDanger}");
+                IsNearDanger.Variable.Value = isInDanger;
+            }
 
-        if(RunSpot != null)
-        {
-            Vector3 dir = enemy.transform.position - this.transform.position;
-            dir.y = 0;
-            dir = -100 * dir.normalized;
-            Vector3 offset = new Vector3(dir.x, 3f, dir.z);
-            RunSpot.transform.SetPositionAndRotation(transform.position + offset, Quaternion.identity);
+            if (RunSpot != null)
+            {
+                Vector3 dir = enemy.transform.position - this.transform.position;
+                dir.y = 0;
+                dir = -100 * dir.normalized;
+                Vector3 offset = new Vector3(dir.x, 3f, dir.z);
+                RunSpot.transform.SetPositionAndRotation(transform.position + offset, Quaternion.identity);
+            }
         }
     }
 }
