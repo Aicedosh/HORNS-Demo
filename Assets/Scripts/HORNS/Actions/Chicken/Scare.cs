@@ -4,7 +4,7 @@ using System.Linq;
 using HORNS;
 using UnityEngine;
 
-public class Eat : GoToAction
+public class Scare : GoToAction
 {
     public RestSpot RestSpot;
     public int CrowdFactor;
@@ -36,13 +36,13 @@ public class Eat : GoToAction
     {
         base.OnArrive();
         animator.SetBool("Run", false);
-        animator.SetBool("Eat", true);
+        animator.SetBool("Turn Head", true);
     }
 
     protected override void OnActionEnd()
     {
         base.OnActionEnd();
-        animator.SetBool("Eat", false);
+        animator.SetBool("Turn Head", false);
     }
 
     protected override void Update()

@@ -9,12 +9,17 @@ public class SpawnAgents : MonoBehaviour
     private int quitAfter = -1;
     private float startTime;
 
+    public GameObject ChickenPrefab;
+    public Vector3 ChickenSpawnLocation;
+
     public class CountParams
     {
         public int MerchantCount;
         public int WoodcutterCount;
         public int CarpenterCount;
         public int FarmerCount;
+
+        public bool Chicken;
     }
 
     private static CountParams instance;
@@ -29,7 +34,9 @@ public class SpawnAgents : MonoBehaviour
                     MerchantCount = 3,
                     WoodcutterCount = 9,
                     CarpenterCount = 5,
-                    FarmerCount = 12
+                    FarmerCount = 12,
+
+                    Chicken = true
                 };
             }
             return instance;
@@ -70,6 +77,11 @@ public class SpawnAgents : MonoBehaviour
         foreach(Shop s in FindObjectsOfType<Shop>().Where(s => s.Occupied == false))
         {
             Destroy(s.gameObject);
+        }
+
+        if(Params.Chicken && !CommandLineParser.DisableChicken)
+        {
+            Instantiate(ChickenPrefab, ChickenSpawnLocation, Quaternion.identity);
         }
     }
 }

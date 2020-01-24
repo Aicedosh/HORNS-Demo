@@ -11,10 +11,11 @@ public class Chicken : MonoBehaviour
 
         foreach(RestSpot rs in FindObjectsOfType<RestSpot>())
         {
-            Eat c = go.AddComponent<Eat>();
+            Scare c = go.AddComponent<Scare>();
             c.RestSpot = rs;
             c.CrowdFactor = 1;
             c.TimeToComplete = 15;
+            c.ActionName = "Scare";
         }
     }
 

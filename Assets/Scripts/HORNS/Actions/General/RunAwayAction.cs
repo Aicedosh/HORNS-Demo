@@ -7,7 +7,7 @@ using UnityEngine;
 public class RunAwayAction : GoToAction
 {
     public float RunTime = 10f;
-    private float timeElapsed;
+    private float runTimeElapsed;
 
     private BasicAgent agent;
 
@@ -21,8 +21,8 @@ public class RunAwayAction : GoToAction
     {
         if(agent.RunsAway)
         {
-            timeElapsed += Time.deltaTime;
-            if(timeElapsed >= RunTime)
+            runTimeElapsed += Time.deltaTime;
+            if(runTimeElapsed >= RunTime)
             {
                 Cancel();
             }
@@ -38,7 +38,7 @@ public class RunAwayAction : GoToAction
         navigator.Follow(agent.RunSpot.transform, OnWalkEnd);
 
         agent.RunsAway = true;
-        timeElapsed = 0f;
+        runTimeElapsed = 0f;
     }
 
     protected override void SetupAction(Action action)
