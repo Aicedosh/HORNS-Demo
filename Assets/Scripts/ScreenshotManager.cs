@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 public class ScreenshotManager : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class ScreenshotManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            System.IO.Directory.CreateDirectory("Screenshots");
-            string path = $"Screenshots/Screenshot-{System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ff")}.png";
-            Debug.Log($"Saving screenshot to {path}");
-            ScreenCapture.CaptureScreenshot(path);
+            string dirPath = Path.Combine(Directory.GetCurrentDirectory(), "Screenshots");
+            Directory.CreateDirectory(dirPath);
+            string filePath = Path.Combine(dirPath, $"Screenshot-{System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ff")}.png");
+            Debug.Log($"Saving screenshot to {filePath}");
+            ScreenCapture.CaptureScreenshot(filePath);
         }
     }
 }
