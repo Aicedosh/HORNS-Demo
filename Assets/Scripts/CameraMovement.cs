@@ -11,77 +11,127 @@ public class CameraMovement : MonoBehaviour
 
     public float ZeroLevel;
 
-    public Transform Followed;
-    private Vector3 oldPos;
+    private bool freeLooking;
+
+    private int boundary = 10;
 
     private void Start()
     {
-        if(Followed != null)
-        {
-            oldPos = Followed.position;
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Followed != null)
+        if (Input.GetMouseButtonDown(1))
         {
-            transform.Translate(Followed.position - oldPos, Space.World);
-            oldPos = Followed.position;
+            ToggleFreeLook(true);
         }
 
-        float a = (ZeroLevel-transform.position.y) / transform.forward.y;
-        Vector3 pivot = new Vector3(transform.position.x + a * transform.forward.x, ZeroLevel, transform.position.z + a * transform.forward.z);
-
-        Vector3 forward = transform.worldToLocalMatrix.MultiplyVector(transform.forward);
-
-        transform.RotateAround(pivot, transform.right, -Input.mouseScrollDelta.y * AngularSpeed * Time.deltaTime / Time.timeScale);
-        transform.Translate(forward * Input.mouseScrollDelta.y * TowardsSpeed * Time.deltaTime / Time.timeScale);
-
-        Vector3 forward2d = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
-        Vector3 right2d = new Vector3(transform.right.x, 0, transform.right.z).normalized;
-
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetMouseButtonUp(1))
         {
-            transform.Translate(forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
+            ToggleFreeLook(false);
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(-forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
-        }
+        Zoom();
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
-        }
+        Move();
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
-        }
+        Rotate();
+    }
 
-        if (Input.GetKey(KeyCode.Q))
-        {
-            transform.RotateAround(pivot, Vector3.up, RotateSpeed * Time.deltaTime / Time.timeScale);
-        }
+    private void ToggleFreeLook(bool value)
+    {
+        freeLooking = value;
+        Cursor.visible = !value;
+        Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
+    }
 
-        if (Input.GetKey(KeyCode.E))
+    private void Zoom()
+    {
+        float zoomFactor = 0;
+        if (Input.mouseScrollDelta.y != 0)
         {
-            transform.RotateAround(pivot, Vector3.up, -RotateSpeed * Time.deltaTime / Time.timeScale);
+            zoomFactor += Input.mouseScrollDelta.y;
         }
 
         if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
         {
-            transform.RotateAround(pivot, transform.right, -AngularSpeed * Time.deltaTime / Time.timeScale);
-            transform.Translate(forward * TowardsSpeed * Time.deltaTime / Time.timeScale);
+            zoomFactor += 1;
         }
 
         if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
         {
-            transform.RotateAround(pivot, transform.right, AngularSpeed * Time.deltaTime / Time.timeScale);
-            transform.Translate(forward * -TowardsSpeed * Time.deltaTime / Time.timeScale);
+            zoomFactor -= 1;
         }
+        
+        Vector3 newPos = zoomFactor * transform.forward * TowardsSpeed * Time.deltaTime / Time.timeScale + transform.position;
+        newPos.y = Mathf.Max(newPos.y, ZeroLevel);
+        transform.position = newPos;
+    }
+
+    private void Move()
+    {
+        float forwardFactor = 0, rightFactor = 0;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.mousePosition.y > Screen.height - boundary)
+        {
+            forwardFactor += 1;
+        }
+
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || Input.mousePosition.y < boundary)
+        {
+            forwardFactor -= 1;
+        }
+
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.mousePosition.x > Screen.width - boundary)
+        {
+            rightFactor += 1;
+        }
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.mousePosition.x < boundary)
+        {
+            rightFactor -= 1;
+        }
+
+        Vector3 forward2d = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+        Vector3 right2d = new Vector3(transform.right.x, 0, transform.right.z).normalized;
+        transform.Translate(forwardFactor * forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
+        transform.Translate(rightFactor * right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
+    }
+
+    private void Rotate()
+    {
+        float xfactor = 0, yfactor = 0;
+        if (freeLooking)
+        {
+            xfactor -= Input.GetAxis("Mouse Y");
+            yfactor += Input.GetAxis("Mouse X");
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            yfactor -= 1;
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            yfactor += 1;
+        }
+        
+        float newx = transform.localEulerAngles.x + xfactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        if (newx < 0)
+        {
+            newx += 360;
+        }
+        if (newx < 180)
+        {
+            newx = Mathf.Clamp(newx, 0, 90);
+        }
+        else
+        {
+            newx = Mathf.Clamp(newx, 270, 360);
+        }
+        float newy = transform.localEulerAngles.y + yfactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        transform.localEulerAngles = new Vector3(newx, newy, 0f);
     }
 }

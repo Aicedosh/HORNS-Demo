@@ -3217,11 +3217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowardsSpeed: 20
-  AngularSpeed: 20
+  AngularSpeed: 10
   MoveSpeed: 15
   RotateSpeed: 60
   ZeroLevel: 1
-  Followed: {fileID: 0}
 --- !u!45 &963194230
 Skybox:
   m_ObjectHideFlags: 0
