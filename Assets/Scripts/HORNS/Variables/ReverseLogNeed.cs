@@ -11,7 +11,7 @@ public class ReverseLogNeed : LogNeed
     {
         if(value > ZeroLevel)
         {
-            return -10;
+            return -Multiplier * value;
         }
         return Multiplier * Mathf.Log10(-value + 1 + ZeroLevel);
     }
