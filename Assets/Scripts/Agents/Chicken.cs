@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Chicken : MonoBehaviour
 {
+    public IntVariable Energy;
+    public BoolVariable IsAtNest;
+
+    public int ScareBaseCost;
+    public int ScareEnergyCost;
+    public int ScareCrowdFactor;
+    public int ScareTime;
+    public int StartEnergy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +22,14 @@ public class Chicken : MonoBehaviour
         {
             Scare c = go.AddComponent<Scare>();
             c.RestSpot = rs;
-            c.CrowdFactor = 1;
-            c.TimeToComplete = 15;
+            c.CrowdFactor = ScareCrowdFactor;
+            c.TimeToComplete = ScareTime;
             c.ActionName = "Scare";
+            c.EnergyCost = ScareEnergyCost;
+            c.BaseCost = ScareBaseCost;
         }
+
+        Energy.Variable.Value = StartEnergy;
     }
 
     // Update is called once per frame

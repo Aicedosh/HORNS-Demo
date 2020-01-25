@@ -8,15 +8,18 @@ public class Scare : GoToAction
 {
     public RestSpot RestSpot;
     public int CrowdFactor;
+    public int EnergyCost;
 
     public override bool IsIdle => true;
 
     private Animator animator;
+    private Chicken chicken;
 
     protected override void Start()
     {
         base.Start();
         animator = GetComponentInParent<BasicAgent>().GetComponentInChildren<Animator>();
+        chicken = GetComponentInParent<Chicken>();
     }
 
     protected override void Perform()
@@ -28,6 +31,8 @@ public class Scare : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
+        action.AddPrecondition(chicken.IsAtNest.Variable, new BooleanPrecondition(false));
+        action.AddResult(chicken.Energy.Variable, new IntegerAddResult(-EnergyCost));
         action.AddCost(RestSpot.CrowdSize.Variable, v => -CrowdFactor * v);
         action.AddCost(RestSpot.EnemyIsHere.Variable, e => e ? 1f : 0f);
     }
