@@ -1,26 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
   <Class Name="BoolVariable">
-    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Position X="3.75" Y="2.75" Width="2.75" />
     <Members>
       <Method Name="GetComponent" Hidden="true" />
-      <Property Name="Variable" Hidden="true" />
     </Members>
+    <AssociationLine Name="LibVariable" Type="HORNS.Variable&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="3.983" />
+        <Point X="5.375" Y="4.875" />
+        <Point X="4.25" Y="4.875" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HORNS\Variables\BoolVariable.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LibVariable" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="IntVariable">
-    <Position X="3.5" Y="0.5" Width="2.5" />
+    <Position X="0.5" Y="2.75" Width="2.5" />
     <Members>
       <Method Name="GetComponent" Hidden="true" />
-      <Property Name="Variable" Hidden="true" />
     </Members>
+    <AssociationLine Name="LibVariable" Type="HORNS.Variable&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.625" Y="3.983" />
+        <Point X="1.625" Y="4.875" />
+        <Point X="2.75" Y="4.875" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\HORNS\Variables\IntVariable.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LibVariable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HORNS.Variable&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DemoVariable&lt;T&gt;">
+    <Position X="1.5" Y="0.5" Width="4" />
+    <Members>
+      <Method Name="AddObserver" Hidden="true" />
+      <Field Name="Name" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAAAAAAAABAQAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Variables\Variable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

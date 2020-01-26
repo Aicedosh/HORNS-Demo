@@ -6,25 +6,44 @@
       <Field Name="aiTask" Hidden="true" />
       <Method Name="CancelAction" Hidden="true" />
       <Field Name="ClassName" Hidden="true" />
+      <Method Name="DisableTimeLog" Hidden="true" />
       <Field Name="display" Hidden="true" />
+      <Method Name="EnableTimeLog" Hidden="true" />
       <Method Name="GetComponent" Hidden="true" />
       <Method Name="HandleAI" Hidden="true" />
       <Method Name="Init" Hidden="true" />
       <Property Name="InitializedActions" Hidden="true" />
+      <Field Name="logTime" Hidden="true" />
       <Field Name="objectName" Hidden="true" />
+      <Method Name="OnDestroy" Hidden="true" />
       <Property Name="PerformedActionThisFrame" Hidden="true" />
       <Field Name="shouldRecalculate" Hidden="true" />
       <Field Name="skippedFirstTime" Hidden="true" />
       <Field Name="source" Hidden="true" />
       <Method Name="Start" Hidden="true" />
+      <Field Name="timeLogger" Hidden="true" />
       <Field Name="timeStats" Hidden="true" />
-      <Method Name="Update" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AQwAAAAAACCABwIIAAAIBAAIAAEAABIAAAACIEBAAAA=</HashCode>
+      <HashCode>AQwBAAAAACCQBwIIAAAIBAAIAAEAABICAAACIEJAAEA=</HashCode>
       <FileName>Assets\Scripts\HORNS\AgentAI.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agent" />
+      <Property Name="CurrentAction" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HORNS.Agent" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="BasicAction" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBCAAQKAAgwIEAAAAAAAAAQAABgAAAAAEAAAAIgA=</HashCode>
+      <FileName>Assets\Scripts\HORNS\Actions\BasicAction.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

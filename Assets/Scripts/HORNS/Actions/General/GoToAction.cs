@@ -21,7 +21,7 @@ public abstract class GoToAction : BasicAction
 
     protected override void Perform()
     {
-        hide.SetAgentVisibility(true);
+        hide?.SetAgentVisibility(true);
     }
 
     protected override void SetupAction(Action action)

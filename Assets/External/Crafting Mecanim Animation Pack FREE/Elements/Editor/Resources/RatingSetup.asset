@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RatingSetup
   m_EditorClassIdentifier: 
   active: 1
-  counter: 6
-  lastCheck: 438803.10924134916
+  counter: 1
+  lastCheck: 438884.49181432585

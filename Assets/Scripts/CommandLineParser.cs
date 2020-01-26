@@ -8,6 +8,7 @@ public class CommandLineParser : MonoBehaviour
     public static bool SkipMenu;
     public static bool DisableCollisions;
     public static bool LogTimes;
+    public static bool DisableChicken;
     public static int? QuitAfter;
     public static int? Merchants;
     public static int? Woodcutters;
@@ -62,6 +63,11 @@ public class CommandLineParser : MonoBehaviour
                 if (arg == "log-times")
                 {
                     LogTimes = true;
+                }
+
+                if(arg == "disable-chicken")
+                {
+                    DisableChicken = true;
                 }
             }
         }

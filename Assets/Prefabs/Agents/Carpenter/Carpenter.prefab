@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainCost: 0
   BaseCost: 0
-  ActionName: Pickup crate
+  ActionName: Pick up crate
   TimeToComplete: 2
   Hide: 0
   Show: 0
