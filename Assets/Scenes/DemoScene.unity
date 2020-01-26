@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChickenPrefab: {fileID: 1940046858538369579, guid: 1a76f0565e8bcbd438987c98841ad33d,
     type: 3}
-  ChickenSpawnLocation: {x: 9.774078, y: 0.0000004768372, z: 18.72412}
+  ChickenSpawnLocation: {x: 17, y: -4, z: 150}
 --- !u!114 &300118225
 MonoBehaviour:
   m_ObjectHideFlags: 0
