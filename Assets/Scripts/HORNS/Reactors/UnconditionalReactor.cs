@@ -19,7 +19,7 @@ public class UnconditionalReactor : MonoBehaviour, HORNS.IVariableObserver
     // Start is called before the first frame update
     void Start()
     {
-        agentAI = GetComponent<AgentAI>();
+        agentAI = GetComponentInParent<AgentAI>();
         foreach(DemoVariable var in Variables)
         {
             var.AbstractVariable.Observe(this);

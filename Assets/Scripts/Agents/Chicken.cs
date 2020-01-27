@@ -6,6 +6,7 @@ public class Chicken : MonoBehaviour
 {
     public IntVariable Energy;
     public BoolVariable IsAtNest;
+    public BoolVariable IsAngry;
 
     public int ScareBaseCost;
     public int ScareEnergyCost;
@@ -30,6 +31,7 @@ public class Chicken : MonoBehaviour
         }
 
         Energy.Variable.Value = StartEnergy;
+        IsAngry.Variable.Value = true;
     }
 
     // Update is called once per frame
