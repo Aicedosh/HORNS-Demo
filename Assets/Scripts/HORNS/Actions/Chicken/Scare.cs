@@ -31,6 +31,7 @@ public class Scare : GoToAction
     protected override void SetupAction(Action action)
     {
         base.SetupAction(action);
+        action.AddPrecondition(chicken.IsAngry.Variable, new BooleanPrecondition(true));
         action.AddPrecondition(chicken.IsAtNest.Variable, new BooleanPrecondition(false));
         action.AddResult(chicken.Energy.Variable, new IntegerAddResult(-EnergyCost));
         action.AddCost(RestSpot.CrowdSize.Variable, v => -CrowdFactor * v);

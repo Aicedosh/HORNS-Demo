@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8572180924618696851}
   - component: {fileID: 4633372957710201129}
   - component: {fileID: 771152011127545711}
+  - component: {fileID: 7638298380271777973}
   m_Layer: 0
   m_Name: Variables
   m_TagString: Untagged
@@ -58,6 +59,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Is resting
+--- !u!114 &7638298380271777973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26533315903947684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6202cb11741e1649ae00c7246b79b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Is angry
 --- !u!1 &1939018211130241443
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939018211130241468}
   - component: {fileID: 4067238141238262621}
+  - component: {fileID: 8406641574388397147}
   - component: {fileID: 5054483019319780204}
   - component: {fileID: 1661758735638399609}
   m_Layer: 0
@@ -109,7 +124,27 @@ MonoBehaviour:
   TimeToComplete: 5
   Hide: 0
   Show: 0
+  MinDistanceFromNest: 3
+  MaxDistanceFromNest: 10
   EnergyRestored: 2
+--- !u!114 &8406641574388397147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939018211130241443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d415d4649042645b0abbff8beb5ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainCost: 0
+  BaseCost: 1000
+  ActionName: Rest calmly
+  TimeToComplete: 10
+  Hide: 0
+  Show: 0
   MinDistanceFromNest: 3
   MaxDistanceFromNest: 10
 --- !u!114 &5054483019319780204
@@ -447,6 +482,7 @@ Transform:
   - {fileID: 1939018211130241468}
   - {fileID: 8572180924618696851}
   - {fileID: 4753889379533485148}
+  - {fileID: 8943553500651480268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -575,11 +611,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Energy: {fileID: 4633372957710201129}
   IsAtNest: {fileID: 771152011127545711}
+  IsAngry: {fileID: 7638298380271777973}
   ScareBaseCost: 2
   ScareEnergyCost: 5
   ScareCrowdFactor: 1
   ScareTime: 15
-  StartEnergy: 100
+  StartEnergy: 50
 --- !u!114 &1939018211240978546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,3 +1226,48 @@ MonoBehaviour:
   DesiredValue: 100
   Multiplier: 100
   Variable: {fileID: 4633372957710201129}
+--- !u!1 &7634217302499876991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8943553500651480268}
+  - component: {fileID: 3970775113096125267}
+  m_Layer: 0
+  m_Name: Reactor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8943553500651480268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634217302499876991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1938672751467726629}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3970775113096125267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634217302499876991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb91d273438315479b54207aa36810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Variables:
+  - {fileID: 7638298380271777973}
