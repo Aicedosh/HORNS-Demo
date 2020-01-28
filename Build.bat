@@ -20,7 +20,7 @@
 
 	@ECHO Found HORNS library project file: "%HORNS_CSPROJ%"
 	@ECHO Building library from source...
-	dotnet publish "%HORNS_CSPROJ%" -o "%HORNS_LIB_DIR%"
+	dotnet publish "%HORNS_CSPROJ%" -c Release -o "%HORNS_LIB_DIR%"
 	
 	@COPY "%HORNS_LIB_DIR%*.dll" "%DEMO_LIB_DIR%" /Y
 	@COPY "%HORNS_LIB_DIR%*.pdb" "%DEMO_LIB_DIR%" /Y
