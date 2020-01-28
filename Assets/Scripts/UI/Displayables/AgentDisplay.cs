@@ -37,7 +37,7 @@ public class AgentDisplay : MonoBehaviour
                 text.fontStyle = FontStyle.Bold;
             }
 
-            go.transform.SetParent(ActionList.transform);
+            go.transform.SetParent(ActionList.transform, false);
 
             ++idx;
         }

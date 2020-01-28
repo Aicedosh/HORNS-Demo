@@ -64,7 +64,7 @@ public class AgentUI : MonoBehaviour
             foreach (var displayable in selectedAgent.GetComponentsInChildren<IDisplayable>())
             {
                 var go = displayable.GetComponent();
-                go.transform.SetParent(DisplayCanvas.transform);
+                go.transform.SetParent(DisplayCanvas.transform, false);
             }
 
             var oc = selectedAgent.GetComponent<OutlineController>();
