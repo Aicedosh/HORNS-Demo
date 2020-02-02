@@ -14,7 +14,7 @@ public class DangerReactor : VariableReactor<bool>
 
     protected override bool ShouldRecalculate(bool oldValue, bool newValue)
     {
-        Debug.Log($"[{transform.parent.gameObject.name}] {oldValue} : {newValue} ; RA: {agent.RunsAway}");
+        //Debug.Log($"[{transform.parent.gameObject.name}] {oldValue} : {newValue} ; RA: {agent.RunsAway}");
         return newValue && !agent.RunsAway && oldValue != newValue;
     }
 }

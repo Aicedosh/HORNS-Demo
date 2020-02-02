@@ -6,12 +6,18 @@ using Cinemachine;
 public class UIController : MonoBehaviour
 {
     public Canvas AgentCanvasGroup;
+    public Canvas TopPanel;
     public CinemachineVirtualCamera FollowCamera;
     private AgentUI agentUI;
 
     // Start is called before the first frame update
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            TopPanel.enabled = !TopPanel.enabled;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");

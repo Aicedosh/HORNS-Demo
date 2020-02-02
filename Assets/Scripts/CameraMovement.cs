@@ -5,16 +5,17 @@ using UnityEngine.EventSystems;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float TowardsSpeed;
-    public float AngularSpeed;
     public float MoveSpeed;
+    public float VerticalSpeed;
+    public float ZoomSpeed;
+    public float ZoomMouseMult;
     public float RotateSpeed;
+    public float RotateMouseMult;
 
     public float ZeroLevel;
+    public int Boundary;
 
     private bool freeLooking;
-
-    private int boundary = 10;
 
     private void Start()
     {
@@ -38,6 +39,8 @@ public class CameraMovement : MonoBehaviour
 
         Move();
 
+        MoveVertical();
+
         Rotate();
     }
 
@@ -53,7 +56,7 @@ public class CameraMovement : MonoBehaviour
         float zoomFactor = 0;
         if (EventSystem.current.IsPointerOverGameObject() == false && Input.mouseScrollDelta.y != 0)
         {
-            zoomFactor += Input.mouseScrollDelta.y;
+            zoomFactor += Input.mouseScrollDelta.y * ZoomMouseMult;
         }
 
         if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
@@ -66,7 +69,7 @@ public class CameraMovement : MonoBehaviour
             zoomFactor -= 1;
         }
         
-        Vector3 newPos = zoomFactor * transform.forward * TowardsSpeed * Time.deltaTime / Time.timeScale + transform.position;
+        Vector3 newPos = zoomFactor * transform.forward * ZoomSpeed * Time.deltaTime / Time.timeScale + transform.position;
         newPos.y = Mathf.Max(newPos.y, ZeroLevel);
         transform.position = newPos;
     }
@@ -75,25 +78,25 @@ public class CameraMovement : MonoBehaviour
     {
         float forwardFactor = 0, rightFactor = 0;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y > Screen.height - boundary))
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y > Screen.height - Boundary))
         {
             forwardFactor += 1;
         }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y < boundary))
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y < Boundary))
         {
             forwardFactor -= 1;
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x > Screen.width - boundary))
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x > Screen.width - Boundary))
         {
             rightFactor += 1;
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x < boundary))
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x < Boundary))
         {
             rightFactor -= 1;
         }
@@ -104,26 +107,44 @@ public class CameraMovement : MonoBehaviour
         transform.Translate(rightFactor * right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
     }
 
+    private void MoveVertical()
+    {
+        float upFactor = 0;
+        if (Input.GetKey(KeyCode.PageUp))
+        {
+            upFactor += 1;
+        }
+
+        if (Input.GetKey(KeyCode.PageDown))
+        {
+            upFactor -= 1;
+        }
+
+        Vector3 newPos = upFactor * Vector3.up * VerticalSpeed * Time.deltaTime / Time.timeScale + transform.position;
+        newPos.y = Mathf.Max(newPos.y, ZeroLevel);
+        transform.position = newPos;
+    }
+
     private void Rotate()
     {
-        float xfactor = 0, yfactor = 0;
+        float xFactor = 0, yFactor = 0;
         if (freeLooking)
         {
-            xfactor -= Input.GetAxis("Mouse Y");
-            yfactor += Input.GetAxis("Mouse X");
+            xFactor -= Input.GetAxis("Mouse Y") * RotateMouseMult;
+            yFactor += Input.GetAxis("Mouse X") * RotateMouseMult;
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            yfactor -= 1;
+            yFactor -= 1;
         }
 
         if (Input.GetKey(KeyCode.E))
         {
-            yfactor += 1;
+            yFactor += 1;
         }
         
-        float newx = transform.localEulerAngles.x + xfactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        float newx = transform.localEulerAngles.x + xFactor * RotateSpeed * Time.deltaTime / Time.timeScale;
         if (newx < 0)
         {
             newx += 360;
@@ -136,7 +157,7 @@ public class CameraMovement : MonoBehaviour
         {
             newx = Mathf.Clamp(newx, 270, 360);
         }
-        float newy = transform.localEulerAngles.y + yfactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        float newy = transform.localEulerAngles.y + yFactor * RotateSpeed * Time.deltaTime / Time.timeScale;
         transform.localEulerAngles = new Vector3(newx, newy, 0f);
     }
 }
