@@ -9,6 +9,8 @@ public class BoolVariableDisplay : MonoBehaviour
     public BoolVariable Variable { private get; set; }
     public Text Text;
     public Button SwitchButton;
+    public Sprite TrueSprite;
+    public Sprite FalseSprite;
 
     void Start()
     {
@@ -23,6 +25,6 @@ public class BoolVariableDisplay : MonoBehaviour
     void Update()
     {
         Text.text = Variable.Name;
-        SwitchButton.GetComponentInChildren<Text>().text = Variable.Variable.Value ? "TRUE" : "FALSE";
+        SwitchButton.GetComponent<Image>().sprite = Variable.Variable.Value ? TrueSprite : FalseSprite;
     }
 }

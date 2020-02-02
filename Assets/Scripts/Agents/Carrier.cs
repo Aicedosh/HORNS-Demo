@@ -26,6 +26,11 @@ public class Carrier : MonoBehaviour
 
     public void PickupEvent()
     {
+        if (carried == null)
+        {
+            //we didn't pick up an item, someone just clicked the checkbox
+            return;
+        }
         carried.SetActive(true);
 
         action.OnPickup();
@@ -33,6 +38,11 @@ public class Carrier : MonoBehaviour
 
     public void PutdownEvent()
     {
+        if (carried == null)
+        {
+            //we didn't pick up an item, someone just clicked the checkbox
+            return;
+        }
         carried.SetActive(false);
 
         action.OnPutdown();

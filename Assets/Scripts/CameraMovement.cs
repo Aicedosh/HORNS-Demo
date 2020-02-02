@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class CameraMovement : MonoBehaviour
     private void Zoom()
     {
         float zoomFactor = 0;
-        if (Input.mouseScrollDelta.y != 0)
+        if (EventSystem.current.IsPointerOverGameObject() == false && Input.mouseScrollDelta.y != 0)
         {
             zoomFactor += Input.mouseScrollDelta.y;
         }
@@ -73,22 +74,26 @@ public class CameraMovement : MonoBehaviour
     private void Move()
     {
         float forwardFactor = 0, rightFactor = 0;
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.mousePosition.y > Screen.height - boundary)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) 
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y > Screen.height - boundary))
         {
             forwardFactor += 1;
         }
 
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || Input.mousePosition.y < boundary)
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) 
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y < boundary))
         {
             forwardFactor -= 1;
         }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || Input.mousePosition.x > Screen.width - boundary)
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) 
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x > Screen.width - boundary))
         {
             rightFactor += 1;
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || Input.mousePosition.x < boundary)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) 
+            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x < boundary))
         {
             rightFactor -= 1;
         }
