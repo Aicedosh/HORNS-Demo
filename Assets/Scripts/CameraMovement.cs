@@ -35,8 +35,6 @@ public class CameraMovement : MonoBehaviour
             ToggleFreeLook(false);
         }
 
-        Debug.Log(Time.unscaledDeltaTime);
-
         Zoom();
 
         Move();
