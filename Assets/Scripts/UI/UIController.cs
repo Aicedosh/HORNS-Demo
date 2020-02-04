@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public CinemachineVirtualCamera FollowCamera;
     private AgentUI agentUI;
 
+    private bool paused = false;
+    private float previousScale = 1;
+
     // Start is called before the first frame update
     void Update()
     {
@@ -58,6 +61,20 @@ public class UIController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Slash))
         {
             Time.timeScale = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (paused)
+            {
+                Time.timeScale = previousScale;
+            }
+            else
+            {
+                previousScale = Time.timeScale;
+                Time.timeScale = 0;
+            }
+            paused = !paused;
         }
 
         if (Input.GetMouseButtonDown(0))

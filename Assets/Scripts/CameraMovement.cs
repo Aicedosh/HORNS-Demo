@@ -35,6 +35,8 @@ public class CameraMovement : MonoBehaviour
             ToggleFreeLook(false);
         }
 
+        Debug.Log(Time.unscaledDeltaTime);
+
         Zoom();
 
         Move();
@@ -69,7 +71,7 @@ public class CameraMovement : MonoBehaviour
             zoomFactor -= 1;
         }
         
-        Vector3 newPos = zoomFactor * transform.forward * ZoomSpeed * Time.deltaTime / Time.timeScale + transform.position;
+        Vector3 newPos = zoomFactor * transform.forward * ZoomSpeed * Time.unscaledDeltaTime + transform.position;
         newPos.y = Mathf.Max(newPos.y, ZeroLevel);
         transform.position = newPos;
     }
@@ -103,8 +105,8 @@ public class CameraMovement : MonoBehaviour
 
         Vector3 forward2d = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
         Vector3 right2d = new Vector3(transform.right.x, 0, transform.right.z).normalized;
-        transform.Translate(forwardFactor * forward2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
-        transform.Translate(rightFactor * right2d * MoveSpeed * Time.deltaTime / Time.timeScale, Space.World);
+        transform.Translate(forwardFactor * forward2d * MoveSpeed * Time.unscaledDeltaTime, Space.World);
+        transform.Translate(rightFactor * right2d * MoveSpeed * Time.unscaledDeltaTime, Space.World);
     }
 
     private void MoveVertical()
@@ -120,7 +122,7 @@ public class CameraMovement : MonoBehaviour
             upFactor -= 1;
         }
 
-        Vector3 newPos = upFactor * Vector3.up * VerticalSpeed * Time.deltaTime / Time.timeScale + transform.position;
+        Vector3 newPos = upFactor * Vector3.up * VerticalSpeed * Time.unscaledDeltaTime + transform.position;
         newPos.y = Mathf.Max(newPos.y, ZeroLevel);
         transform.position = newPos;
     }
@@ -144,7 +146,7 @@ public class CameraMovement : MonoBehaviour
             yFactor += 1;
         }
         
-        float newx = transform.localEulerAngles.x + xFactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        float newx = transform.localEulerAngles.x + xFactor * RotateSpeed * Time.unscaledDeltaTime;
         if (newx < 0)
         {
             newx += 360;
@@ -157,7 +159,7 @@ public class CameraMovement : MonoBehaviour
         {
             newx = Mathf.Clamp(newx, 270, 360);
         }
-        float newy = transform.localEulerAngles.y + yFactor * RotateSpeed * Time.deltaTime / Time.timeScale;
+        float newy = transform.localEulerAngles.y + yFactor * RotateSpeed * Time.unscaledDeltaTime;
         transform.localEulerAngles = new Vector3(newx, newy, 0f);
     }
 }
