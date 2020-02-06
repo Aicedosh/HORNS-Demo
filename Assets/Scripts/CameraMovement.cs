@@ -15,6 +15,8 @@ public class CameraMovement : MonoBehaviour
     public float ZeroLevel;
     public int Boundary;
 
+    public bool EdgeScrolling;
+
     private bool freeLooking;
 
     private void Start()
@@ -25,6 +27,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            EdgeScrolling = !EdgeScrolling;
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             ToggleFreeLook(true);
@@ -78,25 +85,25 @@ public class CameraMovement : MonoBehaviour
     {
         float forwardFactor = 0, rightFactor = 0;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y > Screen.height - Boundary))
+            || (EdgeScrolling && EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y > Screen.height - Boundary))
         {
             forwardFactor += 1;
         }
 
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y < Boundary))
+            || (EdgeScrolling && EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.y < Boundary))
         {
             forwardFactor -= 1;
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x > Screen.width - Boundary))
+            || (EdgeScrolling && EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x > Screen.width - Boundary))
         {
             rightFactor += 1;
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) 
-            || (EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x < Boundary))
+            || (EdgeScrolling && EventSystem.current.IsPointerOverGameObject() == false && Input.mousePosition.x < Boundary))
         {
             rightFactor -= 1;
         }

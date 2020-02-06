@@ -2,60 +2,62 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-// not used for now
 public class CameraSwitchController : MonoBehaviour
 {
     PlayableDirector townDirector;
     public CinemachineVirtualCamera TownCam;
+    public double TownTime;
 
-    public CinemachineVirtualCamera FollowCam;
-
-    PlayableDirector rainDirector;
-    public CinemachineVirtualCamera RainCam;
+    PlayableDirector slideDirector;
+    public CinemachineVirtualCamera SlideCam;
+    public double SlideTime;
 
     // Start is called before the first frame update
     void Start()
     {
         townDirector = TownCam.GetComponent<PlayableDirector>();
         townDirector.Stop();
-        rainDirector = RainCam.GetComponent<PlayableDirector>();
-        rainDirector.Stop();
+
+        slideDirector = SlideCam.GetComponent<PlayableDirector>();
+        slideDirector.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Keypad0))
         {
-            TownCam.Priority = 20;
-            townDirector.Stop();
-            townDirector.Play();
-
-            FollowCam.Priority = 10;
-
-            RainCam.Priority = 10;
-            rainDirector.Stop();
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            TownCam.Priority = 10;
+            TownCam.enabled = false;
             townDirector.Stop();
 
-            FollowCam.Priority = 20;
-
-            RainCam.Priority = 10;
-            rainDirector.Stop();
+            SlideCam.enabled = false;
+            slideDirector.Stop();
         }
-        else if (Input.GetKeyDown(KeyCode.V))
+
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            TownCam.Priority = 10;
+            TownCam.enabled = true;
+            StartPlay(townDirector, TownTime);
+
+            SlideCam.enabled = false;
+            slideDirector.Stop();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            TownCam.enabled = false;
             townDirector.Stop();
 
-            FollowCam.Priority = 10;
-
-            RainCam.Priority = 20;
-            rainDirector.Stop();
-            rainDirector.Play();
+            SlideCam.enabled = true;
+            StartPlay(slideDirector, SlideTime);
         }
+    }
+
+    void StartPlay(PlayableDirector director, double time)
+    {
+        director.Stop();
+        director.RebuildGraph();
+        director.playableGraph.GetRootPlayable(0).SetSpeed(director.duration / time);
+        director.Play();
     }
 }
