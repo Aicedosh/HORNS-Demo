@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: house-trick
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 635ed5b1b3554b3478a021e095003293,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635ed5b1b3554b3478a021e095003293, type: 3}
 --- !u!4 &6925402043502930207 stripped
